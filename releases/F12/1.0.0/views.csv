@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Employee Directory,EMPLOYEES,deck,primary,FullName:Ascending,DepartmentID,FullName;EmployeeCode;PositionID;EmploymentStatus;Phone;Email
+Employee Details,EMPLOYEES,detail,ref,,,EmployeeCode;FullName;Email;Phone;DepartmentID;PositionID;EmploymentStatus;JoinDate;ExitDate
+Expiring Contracts,CONTRACTS,table,menu,EndDate:Ascending,Status,ContractNumber;EmployeeID;ContractType;StartDate;EndDate;Status
+New Employee,EMPLOYEES,form,menu,,,EmployeeCode;FullName;Email;Phone;DepartmentID;PositionID;EmploymentStatus;JoinDate
+HR Dashboard,EMPLOYEES,dashboard,primary,,,

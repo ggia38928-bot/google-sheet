@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F12",
+  "name": "Quản lý hồ sơ nhân sự & hợp đồng lao động",
+  "version": "1.0.0",
+  "description": "Hệ thống quản lý toàn diện hồ sơ nhân viên, vòng đời nhân sự, theo dõi hợp đồng lao động, cảnh báo hạn gia hạn và bảo mật thông tin đãi ngộ",
+  "tables": [
+    {
+      "name": "Employees",
+      "headers": [
+        "ID",
+        "EmployeeCode",
+        "FullName",
+        "WorkEmail",
+        "TeamID",
+        "JobTitle",
+        "HireDate",
+        "ExitDate",
+        "EmploymentStatus",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 14,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "EmploymentContracts",
+      "headers": [
+        "ID",
+        "ContractNumber",
+        "EmployeeID",
+        "Type",
+        "StartDate",
+        "EndDate",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "EmployeeFiles",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "Category",
+        "FileID",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "EmergencyContacts",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "Name",
+        "Relationship",
+        "Phone",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "EmploymentEvents",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "Type",
+        "EffectiveDate",
+        "FromTeamID",
+        "ToTeamID",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Compensation",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "EffectiveFrom",
+        "Amount",
+        "AccessGroup",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    }
+  ]
+}

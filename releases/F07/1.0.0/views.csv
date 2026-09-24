@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Active Contracts,Contracts,deck,primary,EndDate:Ascending,Status,ContractNumber;Title;Counterparty;CurrentAmount;EndDate
+Milestone Timeline,Milestones,calendar,primary,DueDate:Ascending,,ContractID;MilestoneName;DueDate;Amount;Status
+Contract Amendments,Amendments,table,menu,SignedDate:Descending,Status,ContractID;AmendmentNumber;SignedDate;ValueChange;Status
+New Contract,Contracts,form,menu,,,ContractNumber;Title;Counterparty;SignedDate;StartDate;EndDate;BaseAmount
+Contract Dashboard,Contracts,dashboard,primary,,,

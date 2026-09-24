@@ -1,0 +1,44 @@
+{
+  "sku": "F26",
+  "name": "Lớp học, điểm danh và học phí",
+  "version": "1.0.0",
+  "category": "Hợp đồng, Văn bản & Đào tạo",
+  "codexRef": "F26 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "G014",
+    "G020",
+    "G092",
+    "G167",
+    "G177",
+    "G218"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Học thứ 2/4, có 1 ngày nghỉ trong kỳ: ngày hết 4 buổi phải bỏ qua ngày nghỉ (tính ngày kết thúc khóa học chính xác khi có ngày nghỉ xen kẽ). Điểm danh trùng cùng học sinh/buổi bị chặn. Buổi hủy không trừ credit.",
+  "generatedAt": "2026-09-12T07:56:25.757Z"
+}

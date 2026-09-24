@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F34",
+  "name": "Lập ngân sách doanh nghiệp",
+  "version": "1.0.0",
+  "description": "Hoạch định dự toán ngân sách đa phòng ban/dự án, khóa baseline, theo dõi thực chi và cam kết chưa giải ngân, kiểm soát vượt ngân sách và điều chỉnh dự toán",
+  "tables": [
+    {
+      "name": "BUDGET_VERSIONS",
+      "headers": [
+        "Mã phiên bản",
+        "Tên ngân sách",
+        "Năm tài chính",
+        "Kịch bản",
+        "Trạng thái",
+        "Ngày phê duyệt",
+        "Người lập"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "BUDGET_LINES",
+      "headers": [
+        "Mã dòng dự toán",
+        "Mã phiên bản",
+        "Kỳ ngân sách",
+        "Phòng ban",
+        "Mã dự án",
+        "Khoản mục chi phí",
+        "Ngân sách phê duyệt (VND)",
+        "Thực tế đã chi (VND)",
+        "Cam kết chưa chi (VND)",
+        "Khả dụng còn lại (VND)",
+        "Tỷ lệ sử dụng (%)",
+        "Diễn giải"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "BUDGET_ACTUALS",
+      "headers": [
+        "Mã chi thực tế",
+        "Ngày chi",
+        "Kỳ ngân sách",
+        "Phòng ban",
+        "Mã dự án",
+        "Khoản mục chi phí",
+        "Số tiền thực chi (VND)",
+        "Mã nguồn tham chiếu",
+        "Trạng thái",
+        "Diễn giải"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "BUDGET_COMMITMENTS",
+      "headers": [
+        "Mã cam kết",
+        "Mã dòng dự toán",
+        "Số tiền cam kết (VND)",
+        "Hợp đồng / PO tham chiếu",
+        "Ngày cam kết",
+        "Trạng thái",
+        "Diễn giải"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "BUDGET_REQUESTS",
+      "headers": [
+        "Mã đề xuất",
+        "Mã dòng dự toán",
+        "Số tiền xin điều chỉnh (VND)",
+        "Lý do xin điều chỉnh",
+        "Người đề xuất",
+        "Trạng thái",
+        "Ngày duyệt"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 1
+    }
+  ]
+}

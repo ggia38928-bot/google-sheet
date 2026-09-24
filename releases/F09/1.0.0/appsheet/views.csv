@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Executive Calendar,Events,calendar,primary,StartAt:Ascending,,Title;StartAt;EndAt;Location;Status
+Upcoming Meetings,Events,deck,primary,StartAt:Ascending,Status,Title;StartAt;EndAt;Location;OrganizerEmail
+Action Items Board,ActionItems,table,menu,DueDate:Ascending,Status,TaskTitle;AssigneeEmail;DueDate;Status
+New Meeting Form,Events,form,menu,,,Title;Type;StartAt;EndAt;Location;OrganizerEmail
+Executive Dashboard,Events,dashboard,primary,,,

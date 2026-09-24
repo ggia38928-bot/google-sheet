@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Minh Templates Factory Commercial Tiering Specification",
+  "version": "2.0.0",
+  "currency": "VND",
+  "tiers": {
+    "FREE_DEMO": {
+      "tierId": "free_demo",
+      "name": "Bản Demo Miễn Phí",
+      "priceVnd": 0,
+      "purpose": "Trải nghiệm tính năng và xem trước giao diện trên website",
+      "deliveryMethod": "Public copy link (https://docs.google.com/spreadsheets/d/{ID}/copy)",
+      "dataMode": "DEMO (10-15 dòng mẫu tiếng Việt thực tế)",
+      "features": {
+        "dashboard": "Scorecard cơ bản (1 chỉ số tổng quát)",
+        "charts": "Không có biểu đồ",
+        "formulas": "Hàm cơ bản (SUM, AVERAGE, COUNTIF)",
+        "automation": "Không có Apps Script tự động",
+        "protection": "Không khóa công thức (Unprotected)",
+        "dataValidation": "Không có dropdown hoặc dropdown tối giản"
+      }
+    },
+    "FREE_CLEAN": {
+      "tierId": "free_clean",
+      "name": "Bản Sạch Miễn Phí",
+      "priceVnd": 0,
+      "purpose": "Khách hàng tự trải nghiệm nhập liệu ban đầu",
+      "deliveryMethod": "Public copy link (https://docs.google.com/spreadsheets/d/{ID}/copy)",
+      "dataMode": "CLEAN (0 dòng dữ liệu, công thức cơ bản giữ nguyên)",
+      "features": {
+        "dashboard": "Scorecard cơ bản (1 chỉ số)",
+        "charts": "Không có biểu đồ",
+        "formulas": "Hàm cơ bản (SUM, AVERAGE, COUNTIF)",
+        "automation": "Không có Apps Script",
+        "protection": "Không khóa công thức",
+        "dataValidation": "Cơ bản"
+      }
+    },
+    "BASIC": {
+      "tierId": "basic",
+      "name": "Gói Basic Cá Nhân",
+      "priceVnd": 49000,
+      "purpose": "Dành cho cá nhân kinh doanh hoặc người dùng cần mẫu bảng tính chuẩn chỉ",
+      "deliveryMethod": "Secure customer copy link sau khi thanh toán",
+      "dataMode": "Gồm cả Clean và Demo",
+      "features": {
+        "dashboard": "3 Thẻ KPI Scorecards khối màu cơ bản",
+        "charts": "1 Biểu đồ tổng quan cơ bản",
+        "formulas": "Hàm điều kiện đơn (SUMIF, COUNTIF, IF, ROUND)",
+        "automation": "Menu tiện ích xem tài liệu",
+        "protection": "Cố định dòng tiêu đề (Freeze Pane)",
+        "dataValidation": "Data Validation dropdowns danh mục đầy đủ"
+      }
+    },
+    "PRO": {
+      "tierId": "pro",
+      "name": "Gói Pro Chuyên Nghiệp",
+      "priceVnd": 119000,
+      "purpose": "Dành cho chủ hộ kinh doanh, startup, người quản lý cần báo cáo chuyên sâu (Bestseller)",
+      "deliveryMethod": "Secure customer copy link + Mã nguồn setup.gs độc lập",
+      "dataMode": "Hỗ trợ 1-click chuyển đổi Demo / Clean qua menu",
+      "features": {
+        "dashboard": "5-6 Thẻ KPI Scorecards chuyên sâu + Bảng cảnh báo trạng thái tự đổi màu",
+        "charts": "2-3 Biểu đồ phân tích đa chiều (Donut, Column, Bar Chart)",
+        "formulas": "Hàm đa điều kiện nâng cao (SUMIFS, COUNTIFS, SUMPRODUCT, IFERROR, MAX/MIN kẹp an toàn)",
+        "automation": "Menu tùy chỉnh '⚡ MINH TEMPLATES PRO' (Cài Demo / Làm sạch dữ liệu)",
+        "protection": "Khóa bảo vệ toàn bộ dải ô chứa công thức (Protected Range)",
+        "dataValidation": "Dropdowns động liên kết giữa các bảng"
+      }
+    },
+    "BUSINESS": {
+      "tierId": "business",
+      "name": "Gói Business Doanh Nghiệp",
+      "priceVnd": 499000,
+      "purpose": "Dành cho công ty vừa và nhỏ (SMB), quản lý nhiều kho/tài khoản/nhân sự, phân quyền",
+      "deliveryMethod": "Gói giải pháp hoàn chỉnh + Hướng dẫn vận hành đa phòng ban",
+      "dataMode": "Clean / Demo + Mẫu kiểm kê / đối soát định kỳ",
+      "features": {
+        "dashboard": "Executive Multi-Dashboard đa bộ lọc (kỳ báo cáo, phòng ban, chi nhánh)",
+        "charts": "Hệ thống biểu đồ tương tác thời gian thực",
+        "formulas": "Công thức mảng động (ARRAYFORMULA, QUERY, FILTER, UNIQUE, LAMBDA)",
+        "automation": "Triggers tự động (Tự điền CompletedAt không thể sửa tay, Nhật ký Audit Trail)",
+        "protection": "Phân quyền theo dải ô cho từng nhân viên/cấp quản lý",
+        "appsheetReady": "Cấu trúc bảng/cột chuẩn hóa 100% sẵn sàng import vào AppSheet"
+      }
+    },
+    "PREMIUM_APP": {
+      "tierId": "premium_app",
+      "name": "Gói App Di Động (AppSheet)",
+      "priceVnd": 990000,
+      "purpose": "Quản lý di động trên iOS/Android, quét mã vạch, chụp ảnh chứng từ",
+      "deliveryMethod": "Bàn giao AppSheet Template Copy + Hướng dẫn phân quyền AppSheet",
+      "features": {
+        "mobileApp": "App di động hoàn chỉnh cài trên iPhone / Android",
+        "scanning": "Quét mã vạch Barcode / QR Code bằng camera điện thoại",
+        "attachments": "Chụp ảnh hóa đơn, chứng từ lưu trữ trực tiếp lên Google Drive",
+        "offlineMode": "Nhập liệu offline khi mất mạng và tự động đồng bộ khi có kết nối",
+        "security": "Phân quyền Role-based (Admin, Manager, Staff)"
+      }
+    },
+    "WEB_APP": {
+      "tierId": "web_app",
+      "name": "Gói Web App Chuyên Nghiệp",
+      "priceVnd": 1990000,
+      "purpose": "Hệ thống Web App độc lập giao diện responsive hiện đại trên trình duyệt",
+      "deliveryMethod": "Mã nguồn Web App (HTML/CSS/JS) + Apps Script Backend Deploy Guide",
+      "features": {
+        "webInterface": "Giao diện Web App tương tác nhanh, không cần mở file bảng tính",
+        "authentication": "Xác thực danh tính người dùng Google Workspace",
+        "performance": "Ghi nhận dữ liệu tức thì không bị độ trễ tải trang tính",
+        "database": "Google Sheets đóng vai trò Database lưu trữ vĩnh viễn"
+      }
+    }
+  }
+}

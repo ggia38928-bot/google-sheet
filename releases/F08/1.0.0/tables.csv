@@ -1,0 +1,7 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Documents,Documents,ID,DocNumber,ADDS_AND_UPDATES,
+Directives,Directives,ID,Content,ADDS_AND_UPDATES,
+DocumentVersions,DocumentVersions,ID,FileName,ADDS_ONLY,
+Dispatches,Dispatches,ID,Recipient,ADDS_ONLY,
+Categories,Categories,ID,Name,READ_ONLY,
+Settings,Settings,Key,Key,READ_ONLY,

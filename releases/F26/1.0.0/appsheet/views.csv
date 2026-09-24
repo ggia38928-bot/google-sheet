@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Class Timetable,Sessions,calendar,primary,SessionDate:Ascending,,ClassID;SessionDate;StartTime;EndTime;Topic;Status
+Student Roster,Enrollments,deck,primary,StudentID:Ascending,ClassID,StudentID;ClassID;RemainingSessions;Status
+Attendance Sheet,Attendance,table,menu,SessionID:Descending,,SessionID;StudentID;Result;ConsumedCredit
+Tuition Billing,TuitionInvoices,table,menu,DueDate:Ascending,Status,InvoiceCode;StudentID;Amount;PaidAmount;DueDate;Status
+Education Dashboard,Classes,dashboard,primary,,,

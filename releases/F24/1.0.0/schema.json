@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F24",
+  "name": "ERP Lite cơ bản cho đơn vị nhỏ",
+  "version": "1.0.0",
+  "description": "Hệ thống ERP thu nhỏ kết nối Bán hàng (SO), Mua hàng (PO), Quản trị Kho hàng (Ledger), Dòng tiền (Journal) và Công nợ 2 chiều",
+  "tables": [
+    {
+      "name": "SALES_ORDERS",
+      "headers": [
+        "Mã đơn bán",
+        "Ngày tạo đơn",
+        "Mã khách hàng",
+        "Tên khách hàng",
+        "Tổng giá trị (VND)",
+        "Đã thanh toán (VND)",
+        "Công nợ còn lại (VND)",
+        "Giao hàng",
+        "Thanh toán"
+      ],
+      "colCount": 9,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "PURCHASE_ORDERS",
+      "headers": [
+        "Mã đơn mua",
+        "Ngày lập đơn",
+        "Mã nhà cung cấp",
+        "Tên nhà cung cấp",
+        "Tổng giá trị (VND)",
+        "Đã thanh toán (VND)",
+        "Còn phải trả (VND)",
+        "Nhập kho",
+        "Thanh toán"
+      ],
+      "colCount": 9,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "INVENTORY_LEDGER",
+      "headers": [
+        "Mã phát sinh",
+        "Ngày chứng từ",
+        "Loại biến động",
+        "Đơn tham chiếu",
+        "Mã SKU",
+        "Tên hàng hóa",
+        "Số lượng",
+        "Đơn giá vốn",
+        "Thành tiền giá vốn"
+      ],
+      "colCount": 9,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "FINANCE_JOURNAL",
+      "headers": [
+        "Mã bút toán",
+        "Ngày ghi sổ",
+        "Phân loại",
+        "Chứng từ gốc",
+        "Tài khoản",
+        "Số tiền (VND)",
+        "Diễn giải chi tiết",
+        "Trạng thái"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "MASTER_PRODUCTS",
+      "headers": [
+        "Mã SKU",
+        "Tên sản phẩm",
+        "Nhóm hàng",
+        "ĐVT",
+        "Giá vốn (VND)",
+        "Giá bán (VND)",
+        "Tồn kho hiện tại",
+        "Giá trị tồn (VND)"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "MASTER_PARTIES",
+      "headers": [
+        "Mã đối tác",
+        "Tên công ty / Đối tác",
+        "Vai trò",
+        "Số điện thoại",
+        "Địa chỉ",
+        "Công nợ tích lũy (VND)"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 5
+    }
+  ]
+}

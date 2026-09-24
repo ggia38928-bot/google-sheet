@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F09",
+  "name": "Lịch lãnh đạo, cuộc họp và công tác",
+  "version": "1.0.0",
+  "description": "Quản lý lịch họp ban lãnh đạo, điều phối phòng họp và xe công tác, phân công nhiệm vụ action items sau họp, chống xung đột lịch trình",
+  "tables": [
+    {
+      "name": "Events",
+      "headers": [
+        "ID",
+        "Title",
+        "Type",
+        "StartAt",
+        "EndAt",
+        "Location",
+        "OrganizerEmail",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Attendees",
+      "headers": [
+        "ID",
+        "EventID",
+        "UserEmail",
+        "Role",
+        "Response",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "MeetingResources",
+      "headers": [
+        "ID",
+        "ResourceCode",
+        "Name",
+        "Type",
+        "Capacity",
+        "Location",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Reservations",
+      "headers": [
+        "ID",
+        "EventID",
+        "ResourceID",
+        "StartAt",
+        "EndAt",
+        "BufferMinutes",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Trips",
+      "headers": [
+        "ID",
+        "EventID",
+        "LeaderEmail",
+        "Destination",
+        "Transport",
+        "Budget",
+        "ActualCost",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "ActionItems",
+      "headers": [
+        "ID",
+        "EventID",
+        "TaskTitle",
+        "AssigneeEmail",
+        "DueDate",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    }
+  ]
+}

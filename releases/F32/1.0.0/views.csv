@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Today Attendance,ATTENDANCE_LOGS,deck,primary,CheckInTime:Descending,LogDate,EmployeeID;LogDate;CheckInTime;CheckOutTime
+Timesheet Summary,TIMESHEETS,table,primary,WorkDate:Descending,EmployeeID,EmployeeID;WorkDate;ShiftID;WorkHours;OvertimeHours;Status
+Shift Roster,SHIFTS,table,menu,StartTime:Ascending,,ShiftName;StartTime;EndTime;BreakMinutes;StandardHours
+Check-in Form,ATTENDANCE_LOGS,form,primary,,,EmployeeID;LogDate;CheckInTime
+Attendance Dashboard,TIMESHEETS,dashboard,menu,,,

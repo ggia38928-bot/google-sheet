@@ -1,0 +1,16 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+Students,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Students,StudentCode,Text,Y,N,N,,,,TRUE,
+Students,FullName,Text,Y,N,Y,,,,TRUE,
+Students,GuardianName,Text,N,N,N,,,,TRUE,
+Students,GuardianPhone,Phone,Y,N,N,,,,TRUE,
+Enrollments,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Enrollments,StudentID,Ref,Y,N,N,,,,TRUE,Students
+Enrollments,ClassID,Ref,Y,N,N,,,,TRUE,Classes
+Enrollments,TotalCreditSessions,Number,Y,N,N,16,,,TRUE,
+Enrollments,UsedSessions,Number,Y,N,N,0,,,FALSE,
+Enrollments,RemainingSessions,Number,Y,N,N,16,[TotalCreditSessions] - [UsedSessions],,FALSE,
+Attendance,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Attendance,SessionID,Ref,Y,N,N,,,,TRUE,Sessions
+Attendance,StudentID,Ref,Y,N,N,,,,TRUE,Students
+Attendance,Result,Enum,Y,N,Y,"PRESENT",,LIST("PRESENT", "ABSENT_EXCUSED", "ABSENT_UNEXCUSED"),TRUE,

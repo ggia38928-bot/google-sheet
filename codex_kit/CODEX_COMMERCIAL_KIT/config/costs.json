@@ -1,0 +1,33 @@
+{
+  "asOf": "2026-09-07",
+  "currency": "VND",
+  "usdVndPlanningRate": 26000,
+  "fxIsAssumptionNotLiveQuote": true,
+  "hourValueVnd": 150000,
+  "productiveHoursPerWeek": 30,
+  "qaDocsRate": 0.25,
+  "officialListUsd": {"chatgptPlusMonthly":20,"appsheetStarterUserMonthly":5,"appsheetCoreUserMonthly":10,"appsheetEnterprisePlusUserMonthly":20},
+  "deliveryPhases": [
+    {"name":"Core, installer, data contracts", "lowHours":60, "highHours":100},
+    {"name":"3 Sheets: F01/F17/F18", "lowHours":48, "highHours":84},
+    {"name":"CRM Web App F05", "lowHours":60, "highHours":100},
+    {"name":"CRM AppSheet F05, shared schema", "lowHours":24, "highHours":40},
+    {"name":"ERP Lite Web F24", "lowHours":120, "highHours":200},
+    {"name":"ERP Lite AppSheet F24", "lowHours":40, "highHours":64}
+  ],
+  "sellerMonthlyScenarios": [
+    {"name":"Prototype", "existingPlusUsd":20,"newSubscriptionUsd":0,"extraUsageBudgetUsd":20,"storeHostingAllowanceUsd":0,"backupAllowanceUsd":5,"annualDomainAllowanceUsd":20,"sellerPaidAppsheetUsers":0,"appsheetUserUsd":10},
+    {"name":"Pilot with 2 paid internal users", "existingPlusUsd":20,"newSubscriptionUsd":0,"extraUsageBudgetUsd":50,"storeHostingAllowanceUsd":20,"backupAllowanceUsd":10,"annualDomainAllowanceUsd":20,"sellerPaidAppsheetUsers":2,"appsheetUserUsd":10},
+    {"name":"Larger operation with 10 paid internal users", "existingPlusUsd":20,"newSubscriptionUsd":0,"extraUsageBudgetUsd":100,"storeHostingAllowanceUsd":40,"backupAllowanceUsd":20,"annualDomainAllowanceUsd":20,"sellerPaidAppsheetUsers":10,"appsheetUserUsd":10}
+  ],
+  "customerCorePaidUserScenarios": [1,5,10,20],
+  "unitEconomicsExample": {"salePriceVnd":499000,"refundRate":0.05,"paymentFeeRate":0.03,"supportHoursPerOrder":0.5,"deliveryCostPerOrderVnd":5000,"monthlyScenarioIndex":1,"developmentCostVnd":66000000,"recoveryMonths":6},
+  "portfolioGroups": [
+    {"name":"Simple families", "count":18,"lowHoursEach":20,"highHoursEach":40},
+    {"name":"Medium families", "count":20,"lowHoursEach":50,"highHoursEach":90},
+    {"name":"Complex families", "count":12,"lowHoursEach":100,"highHoursEach":180},
+    {"name":"Utilities", "count":29,"lowHoursEach":4,"highHoursEach":12},
+    {"name":"Shared core", "count":1,"lowHoursEach":80,"highHoursEach":140}
+  ],
+  "notes": ["Effort, hourly value, exchange rate and allowances are editable planning assumptions, not vendor quotes.","Prices exclude tax, FX/card fees and plan-specific entitlement adjustments.","Prototype allowance does not authorize free commercial AppSheet usage.","Customer-owned AppSheet licences are not seller revenue and are excluded from seller costs.","Avoid double-counting AppSheet Core if a customer's qualifying Workspace subscription already includes it.","Portfolio estimate is an alternative full-scope model, not an amount to add on top of deliveryPhases."]
+}

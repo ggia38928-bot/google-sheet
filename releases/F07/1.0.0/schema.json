@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F07",
+  "name": "Hợp đồng, phụ lục và phát sinh",
+  "version": "1.0.0",
+  "description": "Quản lý hợp đồng thương mại, phụ lục điều chỉnh giá trị, mốc nghiệm thu và thanh toán độc lập, cảnh báo hạn hợp đồng",
+  "tables": [
+    {
+      "name": "Contracts",
+      "headers": [
+        "ID",
+        "ContractNumber",
+        "Title",
+        "Counterparty",
+        "SignedDate",
+        "StartDate",
+        "EndDate",
+        "BaseAmount",
+        "ApprovedVariations",
+        "CurrentAmount",
+        "Currency",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 17,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Amendments",
+      "headers": [
+        "ID",
+        "ContractID",
+        "AmendmentNumber",
+        "SignedDate",
+        "ValueChange",
+        "Reason",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Milestones",
+      "headers": [
+        "ID",
+        "ContractID",
+        "MilestoneName",
+        "DueDate",
+        "Amount",
+        "AcceptedAt",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "ContractPayments",
+      "headers": [
+        "ID",
+        "ContractID",
+        "MilestoneID",
+        "Amount",
+        "PaidAt",
+        "PaymentMethod",
+        "Reference",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "ContractFiles",
+      "headers": [
+        "ID",
+        "ContractID",
+        "FileName",
+        "Version",
+        "FileUrl",
+        "UploadedAt",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+My Leave Balance,LEAVE_BALANCES,deck,primary,EmployeeID:Ascending,,EmployeeID;Year;TotalEntitled;UsedDays;RemainingDays
+Pending Leave Requests,LEAVE_REQUESTS,table,primary,StartDate:Ascending,Status,EmployeeID;LeaveTypeID;StartDate;EndDate;DaysCount;Status
+Leave Calendar,LEAVE_REQUESTS,calendar,primary,StartDate:Ascending,,EmployeeID;StartDate;EndDate;Status
+Request Leave Form,LEAVE_REQUESTS,form,menu,,,LeaveTypeID;StartDate;EndDate;DaysCount;Reason
+Leave Dashboard,LEAVE_REQUESTS,dashboard,menu,,,

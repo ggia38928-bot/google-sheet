@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F38",
+  "name": "Quản lý nghỉ phép & số dư phép năm",
+  "version": "1.0.0",
+  "description": "Quản lý hạn mức và số dư phép năm lũy kế, tạo đơn xin nghỉ linh hoạt (nguyên ngày/nửa ngày), tự động trừ ngày làm việc theo lịch loại trừ Thứ 7/Chủ Nhật/Ngày Lễ và quy trình duyệt cấp tốc",
+  "tables": [
+    {
+      "name": "LeaveTypes",
+      "headers": [
+        "ID",
+        "TypeCode",
+        "Name",
+        "DeductBalance",
+        "MaxDaysPerYear",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "LeavePolicies",
+      "headers": [
+        "ID",
+        "PolicyName",
+        "EffectiveFrom",
+        "EntitlementRule",
+        "CarryoverRule",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "LeaveBalances",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "Year",
+        "TypeID",
+        "Opening",
+        "Accrued",
+        "Used",
+        "Pending",
+        "Remaining",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 14,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "LeaveRequests",
+      "headers": [
+        "ID",
+        "RequestNumber",
+        "EmployeeID",
+        "TypeID",
+        "StartDate",
+        "EndDate",
+        "StartHalf",
+        "EndHalf",
+        "DurationDays",
+        "Reason",
+        "State",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 16,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "WorkCalendar",
+      "headers": [
+        "ID",
+        "Date",
+        "DayOfWeek",
+        "IsWorkingDay",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "LeaveApprovals",
+      "headers": [
+        "ID",
+        "RequestID",
+        "ApproverEmail",
+        "Decision",
+        "DecisionAt",
+        "Comment",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 3
+    }
+  ]
+}

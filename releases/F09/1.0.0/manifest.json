@@ -1,0 +1,40 @@
+{
+  "sku": "F09",
+  "name": "Lịch lãnh đạo, cuộc họp và công tác",
+  "version": "1.0.0",
+  "category": "Dịch vụ khách hàng & Đặt lịch hẹn",
+  "codexRef": "F09 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "T009",
+    "G061"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Hai cuộc họp giao nhau chặn đặt cùng phòng. Cuộc họp kết thúc 10:00 cho phép cuộc sau bắt đầu 10:00 khi buffer=0. Chặn trùng lịch người tham dự cùng khung giờ.",
+  "generatedAt": "2026-09-12T04:03:45.086Z"
+}

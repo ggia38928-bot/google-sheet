@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F01",
+  "name": "Quản lý công việc & Ma trận Eisenhower",
+  "version": "1.0.0",
+  "description": "Hệ thống quản lý hiệu suất cá nhân và công việc, phân loại tự động 4 góc ma trận Eisenhower, tính số ngày quá hạn và đo lường tỷ lệ hoàn thành",
+  "tables": [
+    {
+      "name": "Tasks",
+      "headers": [
+        "ID",
+        "Title",
+        "OwnerEmail",
+        "Priority",
+        "StartDate",
+        "DueDate",
+        "Status",
+        "Progress",
+        "CompletedAt",
+        "DaysLate",
+        "CategoryID",
+        "Important",
+        "Urgent",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 18,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "Categories",
+      "headers": [
+        "ID",
+        "Name",
+        "Color",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "TaskEvents",
+      "headers": [
+        "ID",
+        "TaskID",
+        "EventType",
+        "EventAt",
+        "ActorEmail",
+        "Notes",
+        "CreatedAt"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 1
+    }
+  ]
+}

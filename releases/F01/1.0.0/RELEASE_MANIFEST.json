@@ -1,0 +1,60 @@
+{
+  "familyId": "F01",
+  "name": "Việc cá nhân và ưu tiên",
+  "sku": "F01-SHEET",
+  "version": "1.0.0",
+  "schemaVersion": 1,
+  "status": "implemented_local",
+  "testedOnGoogle": false,
+  "locale": "vi-VN",
+  "timeZone": "Asia/Ho_Chi_Minh",
+  "currency": "VND",
+  "sourceMapIds": [
+    "T006",
+    "T013",
+    "G075",
+    "G094",
+    "G114",
+    "G131",
+    "G169",
+    "G173",
+    "G195",
+    "G199",
+    "G216"
+  ],
+  "requiredServices": [
+    "Google Sheets",
+    "Google Apps Script (V8)",
+    "AppSheet (Tùy chọn di động)"
+  ],
+  "includedFiles": [
+    "installer.js",
+    "clean/workbook.json",
+    "clean/Tasks.csv",
+    "demo/workbook.json",
+    "demo/Tasks.csv",
+    "appsheet/tables.csv",
+    "appsheet/columns.csv",
+    "appsheet/views.csv",
+    "appsheet/actions.csv",
+    "appsheet/bots.md",
+    "appsheet/APPSHEET_SETUP.md",
+    "docs/README.md",
+    "docs/FAQ.md",
+    "docs/TROUBLESHOOTING.md"
+  ],
+  "testSummary": {
+    "totalTests": 50,
+    "passedTests": 50,
+    "passRate": "100.0%",
+    "acceptanceCriterionPass": true,
+    "acceptanceEvidence": "Fixture 3 việc: 1 DONE đúng hạn, 1 TODO quá hạn, 1 CANCELLED -> Tỷ lệ hoàn thành = 50.0%, Việc quá hạn = 1"
+  },
+  "knownLimitations": [
+    "Chưa có OAuth token của tài khoản Google thật để tạo Google Spreadsheet từ xa qua CLI (Trạng thái giữ ở mức implemented_local)",
+    "AppSheet không có public REST API cho tài khoản miễn phí để tự động build app; người triển khai cấu hình theo bộ file CSV và APPSHEET_SETUP.md"
+  ],
+  "demoUrl": null,
+  "copyUrl": null,
+  "buildDate": "2026-09-07T12:00:00.000Z"
+}

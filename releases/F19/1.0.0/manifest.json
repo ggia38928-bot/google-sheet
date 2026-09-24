@@ -1,0 +1,39 @@
+{
+  "sku": "F19",
+  "name": "Báo giá và phiên bản chào bán",
+  "version": "1.0.0",
+  "category": "Thương mại & Báo giá",
+  "codexRef": "F19 (Dòng 920–942)",
+  "sourceMapIds": [
+    "G005"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "2×100.000, giảm dòng 10%, thuế cấu hình 8% trên sau giảm cho tổng 194.400. Revision cũ giữ nguyên số tiền sau khi sửa bản mới.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

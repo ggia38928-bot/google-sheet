@@ -1,0 +1,65 @@
+{
+  "sku": "F02",
+  "name": "Dự án, công việc đội nhóm và KPI",
+  "version": "1.0.0",
+  "category": "Quản trị dự án & Đội nhóm",
+  "codexRef": "F02 (Dòng 474–501)",
+  "sourceMapIds": [
+    "T008",
+    "T010",
+    "T011",
+    "T016",
+    "G004",
+    "G018",
+    "G026",
+    "G027",
+    "G029",
+    "G035",
+    "G039",
+    "G048",
+    "G066",
+    "G067",
+    "G069",
+    "G075",
+    "G077",
+    "G087",
+    "G094",
+    "G114",
+    "G169",
+    "G173",
+    "G195",
+    "G199",
+    "G200",
+    "G216",
+    "G226"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Hai việc có trọng số 1 và 3, tiến độ 100% và 0% cho tiến độ dự án 25%. Đổi nhân sự không mất lịch sử. Gantt qua giao thừa đúng vị trí; chu trình phụ thuộc A→B→A bị từ chối.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

@@ -1,0 +1,2301 @@
+{
+  "scanTimestamp": "2026-09-11T07:37:44.185Z",
+  "primaryRoot": "D:/google sheet",
+  "secondaryDir": "C:/Users/MSI PC/Downloads/google sheet",
+  "summary": {
+    "totalFilesInD": 291,
+    "totalFilesInC": 286,
+    "duplicatePathsCount": 284,
+    "exactContentMatches": 276,
+    "differingContentMatches": 8,
+    "onlyInDCount": 7,
+    "onlyInCCount": 2
+  },
+  "duplicates": [
+    {
+      "relPath": "ARCHITECTURE.md",
+      "sizeD": 8679,
+      "sizeC": 8679,
+      "exactMatch": true,
+      "hashD": "fb544f52e6b068522d818e8ce7354f18685c40ae82a41c4576e28fae9e58c417",
+      "hashC": "fb544f52e6b068522d818e8ce7354f18685c40ae82a41c4576e28fae9e58c417"
+    },
+    {
+      "relPath": "ARCHITECTURE_V2.md",
+      "sizeD": 9127,
+      "sizeC": 9127,
+      "exactMatch": true,
+      "hashD": "2d548ce2c8ea989598626d3eb47868ba22917c3e6848a148fafc013eeee50b3e",
+      "hashC": "2d548ce2c8ea989598626d3eb47868ba22917c3e6848a148fafc013eeee50b3e"
+    },
+    {
+      "relPath": "ASSUMPTIONS.md",
+      "sizeD": 2098,
+      "sizeC": 2098,
+      "exactMatch": true,
+      "hashD": "db52e6e6149ad2f9d31810d04ab72ad5cd943673324bc3e7f66853884b42378e",
+      "hashC": "db52e6e6149ad2f9d31810d04ab72ad5cd943673324bc3e7f66853884b42378e"
+    },
+    {
+      "relPath": "audit_scan.js",
+      "sizeD": 631,
+      "sizeC": 631,
+      "exactMatch": true,
+      "hashD": "93d4b2d884fa187d2f614ae7f4d7a0f661c3a2604f1b9f3deb0199b6e4988645",
+      "hashC": "93d4b2d884fa187d2f614ae7f4d7a0f661c3a2604f1b9f3deb0199b6e4988645"
+    },
+    {
+      "relPath": "BLOCKERS.md",
+      "sizeD": 2533,
+      "sizeC": 2533,
+      "exactMatch": true,
+      "hashD": "1f1b90152f35ea9724499bd0891754f2d20be0215acf61ded4a0d871cf72601e",
+      "hashC": "1f1b90152f35ea9724499bd0891754f2d20be0215acf61ded4a0d871cf72601e"
+    },
+    {
+      "relPath": "BUILD_ALL_TEMPLATES_CODEX.md",
+      "sizeD": 202038,
+      "sizeC": 202038,
+      "exactMatch": true,
+      "hashD": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e",
+      "hashC": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e"
+    },
+    {
+      "relPath": "BUILD_MANIFEST.json",
+      "sizeD": 20716,
+      "sizeC": 20709,
+      "exactMatch": false,
+      "hashD": "6fd080f967ffa56f1ca37419bfd8a2e75802a06475bcae050d4efe6dd53b77c6",
+      "hashC": "158d8b884d541abdcd6dae718928aedd8c3c82ee20713fdc3fe9945199a3f64c"
+    },
+    {
+      "relPath": "BUILD_QUEUE.md",
+      "sizeD": 2580,
+      "sizeC": 2580,
+      "exactMatch": true,
+      "hashD": "a562c040a370547bb7a1dd0c6d68c11f475c24eb59cf488c38a8a80027adf46c",
+      "hashC": "a562c040a370547bb7a1dd0c6d68c11f475c24eb59cf488c38a8a80027adf46c"
+    },
+    {
+      "relPath": "BUILD_REPORT.md",
+      "sizeD": 6807,
+      "sizeC": 6807,
+      "exactMatch": true,
+      "hashD": "2844ee0605a066f0a0e5c926278b3f0db45333f07b3a2e97c82882b2c3107820",
+      "hashC": "2844ee0605a066f0a0e5c926278b3f0db45333f07b3a2e97c82882b2c3107820"
+    },
+    {
+      "relPath": "CLEANUP_PLAN.md",
+      "sizeD": 2791,
+      "sizeC": 2791,
+      "exactMatch": true,
+      "hashD": "06e79d6e8cb85f88c6e83dc244529c53c12ab91c4dd6406d16f145607315d6b0",
+      "hashC": "06e79d6e8cb85f88c6e83dc244529c53c12ab91c4dd6406d16f145607315d6b0"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\.gitignore",
+      "sizeD": 93,
+      "sizeC": 93,
+      "exactMatch": true,
+      "hashD": "b88ecaa746180bebd9060c06688691e824a98f5e819cd7cfa5b72cdf5890d315",
+      "hashC": "b88ecaa746180bebd9060c06688691e824a98f5e819cd7cfa5b72cdf5890d315"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\AGENTS.md",
+      "sizeD": 1065,
+      "sizeC": 1065,
+      "exactMatch": true,
+      "hashD": "90db5d8df42bd7ff375f969efede7b31daf4eef47b62aa0cf99f7fbf3f9e03e9",
+      "hashC": "90db5d8df42bd7ff375f969efede7b31daf4eef47b62aa0cf99f7fbf3f9e03e9"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\baseline\\BUILD_ALL_TEMPLATES_CODEX.md",
+      "sizeD": 202038,
+      "sizeC": 202038,
+      "exactMatch": true,
+      "hashD": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e",
+      "hashC": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\config\\costs.json",
+      "sizeD": 2850,
+      "sizeC": 2850,
+      "exactMatch": true,
+      "hashD": "4b2af4d7a17187cbe46c1915a75a9a295ffd56b7058be15fbe8acbe295f34801",
+      "hashC": "4b2af4d7a17187cbe46c1915a75a9a295ffd56b7058be15fbe8acbe295f34801"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\config\\release-evidence.example.json",
+      "sizeD": 1056,
+      "sizeC": 1056,
+      "exactMatch": true,
+      "hashD": "a1ba406876ca7db3e7402905d21747ee90a45975e1f12fea779ca9b1e174f7cd",
+      "hashC": "a1ba406876ca7db3e7402905d21747ee90a45975e1f12fea779ca9b1e174f7cd"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\config\\workflow-prompts.json",
+      "sizeD": 37307,
+      "sizeC": 37307,
+      "exactMatch": true,
+      "hashD": "065cc02c8669814122f22a51504480a8f7c8111a7d446ae1fa36362b1adc0d94",
+      "hashC": "065cc02c8669814122f22a51504480a8f7c8111a7d446ae1fa36362b1adc0d94"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\docs\\BUGFIX_EXAMPLE.md",
+      "sizeD": 1323,
+      "sizeC": 1323,
+      "exactMatch": true,
+      "hashD": "cff9e097b1df2d511bfe5b18130138c927e1fbf611be93650f345a113b5e511c",
+      "hashC": "cff9e097b1df2d511bfe5b18130138c927e1fbf611be93650f345a113b5e511c"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\docs\\IMPLEMENTATION_GUIDE.md",
+      "sizeD": 42634,
+      "sizeC": 42634,
+      "exactMatch": true,
+      "hashD": "28eb2bf41c841a87dfcc759581189415f84d476d5f3cd6ec3a21b394af72f14d",
+      "hashC": "28eb2bf41c841a87dfcc759581189415f84d476d5f3cd6ec3a21b394af72f14d"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\gas\\ClientRpc.html",
+      "sizeD": 852,
+      "sizeC": 852,
+      "exactMatch": true,
+      "hashD": "d48aa3e7fef5f7e8b48cec10c079e23ae49e5f03ef5a60769e3392d64ebef8d0",
+      "hashC": "d48aa3e7fef5f7e8b48cec10c079e23ae49e5f03ef5a60769e3392d64ebef8d0"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\gas\\Code.gs",
+      "sizeD": 4592,
+      "sizeC": 4592,
+      "exactMatch": true,
+      "hashD": "7c828f4da46102c1bf5e44451f4235496dcd2c9c46f9a3de0edbcaa58e58fc0f",
+      "hashC": "7c828f4da46102c1bf5e44451f4235496dcd2c9c46f9a3de0edbcaa58e58fc0f"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\gas\\Domain.gs",
+      "sizeD": 5539,
+      "sizeC": 5539,
+      "exactMatch": true,
+      "hashD": "aaaa4338547195bb710d83a56551adff6fc36c95e6dfe19bf629e94ed9c647fe",
+      "hashC": "aaaa4338547195bb710d83a56551adff6fc36c95e6dfe19bf629e94ed9c647fe"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\gas\\FormulaQA.gs",
+      "sizeD": 3397,
+      "sizeC": 3397,
+      "exactMatch": true,
+      "hashD": "7c23fd88ea717662d2f4c3d94522d00f280e5e66e82d78f5457ac308f67938b8",
+      "hashC": "7c23fd88ea717662d2f4c3d94522d00f280e5e66e82d78f5457ac308f67938b8"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\gas\\Inventory.gs",
+      "sizeD": 2293,
+      "sizeC": 2293,
+      "exactMatch": true,
+      "hashD": "b92ccc1f4b478efd19a05aa12924c25ba230c1a20834c11c6bd2b7ee2ac1e849",
+      "hashC": "b92ccc1f4b478efd19a05aa12924c25ba230c1a20834c11c6bd2b7ee2ac1e849"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\package.json",
+      "sizeD": 482,
+      "sizeC": 482,
+      "exactMatch": true,
+      "hashD": "518af1e0e4681a47cecfcbbd7874d4ea28a98a7f71b2eb4850ff025f7a7dcd6a",
+      "hashC": "518af1e0e4681a47cecfcbbd7874d4ea28a98a7f71b2eb4850ff025f7a7dcd6a"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\PROMPTS_ALL.md",
+      "sizeD": 36582,
+      "sizeC": 36582,
+      "exactMatch": true,
+      "hashD": "7e90b4f9da5c110c028a053068975814e7d38a11de0f3207b0ceb77991bdaa4e",
+      "hashC": "7e90b4f9da5c110c028a053068975814e7d38a11de0f3207b0ceb77991bdaa4e"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\reference\\domain.mjs",
+      "sizeD": 5364,
+      "sizeC": 5364,
+      "exactMatch": true,
+      "hashD": "e4eef3bf67dabdd898ff57e800ed3f4a2ba1f989bec4b7ebd4580b2550ed7014",
+      "hashC": "e4eef3bf67dabdd898ff57e800ed3f4a2ba1f989bec4b7ebd4580b2550ed7014"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\reference\\inventory.mjs",
+      "sizeD": 2648,
+      "sizeC": 2648,
+      "exactMatch": true,
+      "hashD": "b16c305c5cf10fe09558de5c4e83437cfc9b14981eecd28c0c959c8cac9348f2",
+      "hashC": "b16c305c5cf10fe09558de5c4e83437cfc9b14981eecd28c0c959c8cac9348f2"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\reference\\outbox.mjs",
+      "sizeD": 868,
+      "sizeC": 868,
+      "exactMatch": true,
+      "hashD": "f59fb620fc0907329df3b7664e7c63725dcad2c37363bbcd193bfc3624a1771d",
+      "hashC": "f59fb620fc0907329df3b7664e7c63725dcad2c37363bbcd193bfc3624a1771d"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\START_HERE.txt",
+      "sizeD": 1187,
+      "sizeC": 1187,
+      "exactMatch": true,
+      "hashD": "ab86cee6b9c9364740b7d7ae689cc1e59abbd1b119d1f23fa9ebe56869e89b80",
+      "hashC": "ab86cee6b9c9364740b7d7ae689cc1e59abbd1b119d1f23fa9ebe56869e89b80"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\costs.test.mjs",
+      "sizeD": 1356,
+      "sizeC": 1356,
+      "exactMatch": true,
+      "hashD": "49f3090d4a83b05c906abddf451c01db30574cfe5c2b4dd7cbd94acb32ded148",
+      "hashC": "49f3090d4a83b05c906abddf451c01db30574cfe5c2b4dd7cbd94acb32ded148"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\domain.test.mjs",
+      "sizeD": 4888,
+      "sizeC": 4888,
+      "exactMatch": true,
+      "hashD": "79ec12bb414c702dfd6a3f7ede87335cb99cda48cad997ef28bb6975eda3948b",
+      "hashC": "79ec12bb414c702dfd6a3f7ede87335cb99cda48cad997ef28bb6975eda3948b"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\gas-build.test.mjs",
+      "sizeD": 764,
+      "sizeC": 764,
+      "exactMatch": true,
+      "hashD": "21bd98f5e8c31fabee8d5d5557b5a79a66066d175af906e7ba373b42956ee998",
+      "hashC": "21bd98f5e8c31fabee8d5d5557b5a79a66066d175af906e7ba373b42956ee998"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\inventory.test.mjs",
+      "sizeD": 2952,
+      "sizeC": 2952,
+      "exactMatch": true,
+      "hashD": "023be076d0a7ce7424d6eb8b47fc25c0149835f9115534961d7634505cf2ef5f",
+      "hashC": "023be076d0a7ce7424d6eb8b47fc25c0149835f9115534961d7634505cf2ef5f"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\outbox.test.mjs",
+      "sizeD": 1145,
+      "sizeC": 1145,
+      "exactMatch": true,
+      "hashD": "60bd892cc940eda73a47e55cb936f9b76871cef5d739162f2d8ffd7e02f65e62",
+      "hashC": "60bd892cc940eda73a47e55cb936f9b76871cef5d739162f2d8ffd7e02f65e62"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tests\\release-gate.test.mjs",
+      "sizeD": 2121,
+      "sizeC": 2121,
+      "exactMatch": true,
+      "hashD": "46a8f76a757f72afb44ebb857b0c057a7af62ee0138f7434dd1dfde3ce2ac06c",
+      "hashC": "46a8f76a757f72afb44ebb857b0c057a7af62ee0138f7434dd1dfde3ce2ac06c"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tools\\build-gas.mjs",
+      "sizeD": 1218,
+      "sizeC": 1218,
+      "exactMatch": true,
+      "hashD": "d52fa7e5d588ad0ed37c495a7bcfbbc699ade5356e063f0df244d92b9bc53c2a",
+      "hashC": "d52fa7e5d588ad0ed37c495a7bcfbbc699ade5356e063f0df244d92b9bc53c2a"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tools\\check-kit.mjs",
+      "sizeD": 1704,
+      "sizeC": 1704,
+      "exactMatch": true,
+      "hashD": "d0284194405d217d71f413d8187de68cb83359d9b9e0bab1bbbcc0798ad55589",
+      "hashC": "d0284194405d217d71f413d8187de68cb83359d9b9e0bab1bbbcc0798ad55589"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tools\\cost-model.mjs",
+      "sizeD": 3040,
+      "sizeC": 3040,
+      "exactMatch": true,
+      "hashD": "e9f0933ba8f069f57ed35362c6bc0415946e59f2d6b2f85f36867945291f6e87",
+      "hashC": "e9f0933ba8f069f57ed35362c6bc0415946e59f2d6b2f85f36867945291f6e87"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tools\\list-prompts.mjs",
+      "sizeD": 303,
+      "sizeC": 303,
+      "exactMatch": true,
+      "hashD": "75940a5eaaad891c2267db5c9d39388135b8965e4eab0cec038925d7df64a963",
+      "hashC": "75940a5eaaad891c2267db5c9d39388135b8965e4eab0cec038925d7df64a963"
+    },
+    {
+      "relPath": "CODEX_COMMERCIAL_KIT\\CODEX_COMMERCIAL_KIT\\tools\\release-gate.mjs",
+      "sizeD": 3403,
+      "sizeC": 3403,
+      "exactMatch": true,
+      "hashD": "5698c3e3ef6341df12b4dc841a4f50f9853436ed842f04191146391546937655",
+      "hashC": "5698c3e3ef6341df12b4dc841a4f50f9853436ed842f04191146391546937655"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\.gitignore",
+      "sizeD": 93,
+      "sizeC": 93,
+      "exactMatch": true,
+      "hashD": "b88ecaa746180bebd9060c06688691e824a98f5e819cd7cfa5b72cdf5890d315",
+      "hashC": "b88ecaa746180bebd9060c06688691e824a98f5e819cd7cfa5b72cdf5890d315"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\AGENTS.md",
+      "sizeD": 1065,
+      "sizeC": 1065,
+      "exactMatch": true,
+      "hashD": "90db5d8df42bd7ff375f969efede7b31daf4eef47b62aa0cf99f7fbf3f9e03e9",
+      "hashC": "90db5d8df42bd7ff375f969efede7b31daf4eef47b62aa0cf99f7fbf3f9e03e9"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\baseline\\BUILD_ALL_TEMPLATES_CODEX.md",
+      "sizeD": 202038,
+      "sizeC": 202038,
+      "exactMatch": true,
+      "hashD": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e",
+      "hashC": "f0b1cb319d74143d09eadb86b326b1e250e40e75de2335a455785fea6e00581e"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\config\\costs.json",
+      "sizeD": 2850,
+      "sizeC": 2850,
+      "exactMatch": true,
+      "hashD": "4b2af4d7a17187cbe46c1915a75a9a295ffd56b7058be15fbe8acbe295f34801",
+      "hashC": "4b2af4d7a17187cbe46c1915a75a9a295ffd56b7058be15fbe8acbe295f34801"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\config\\release-evidence.example.json",
+      "sizeD": 1056,
+      "sizeC": 1056,
+      "exactMatch": true,
+      "hashD": "a1ba406876ca7db3e7402905d21747ee90a45975e1f12fea779ca9b1e174f7cd",
+      "hashC": "a1ba406876ca7db3e7402905d21747ee90a45975e1f12fea779ca9b1e174f7cd"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\config\\workflow-prompts.json",
+      "sizeD": 37307,
+      "sizeC": 37307,
+      "exactMatch": true,
+      "hashD": "065cc02c8669814122f22a51504480a8f7c8111a7d446ae1fa36362b1adc0d94",
+      "hashC": "065cc02c8669814122f22a51504480a8f7c8111a7d446ae1fa36362b1adc0d94"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\docs\\BUGFIX_EXAMPLE.md",
+      "sizeD": 1323,
+      "sizeC": 1323,
+      "exactMatch": true,
+      "hashD": "cff9e097b1df2d511bfe5b18130138c927e1fbf611be93650f345a113b5e511c",
+      "hashC": "cff9e097b1df2d511bfe5b18130138c927e1fbf611be93650f345a113b5e511c"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\docs\\IMPLEMENTATION_GUIDE.md",
+      "sizeD": 42634,
+      "sizeC": 42634,
+      "exactMatch": true,
+      "hashD": "28eb2bf41c841a87dfcc759581189415f84d476d5f3cd6ec3a21b394af72f14d",
+      "hashC": "28eb2bf41c841a87dfcc759581189415f84d476d5f3cd6ec3a21b394af72f14d"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\gas\\ClientRpc.html",
+      "sizeD": 852,
+      "sizeC": 852,
+      "exactMatch": true,
+      "hashD": "d48aa3e7fef5f7e8b48cec10c079e23ae49e5f03ef5a60769e3392d64ebef8d0",
+      "hashC": "d48aa3e7fef5f7e8b48cec10c079e23ae49e5f03ef5a60769e3392d64ebef8d0"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\gas\\Code.gs",
+      "sizeD": 4592,
+      "sizeC": 4592,
+      "exactMatch": true,
+      "hashD": "7c828f4da46102c1bf5e44451f4235496dcd2c9c46f9a3de0edbcaa58e58fc0f",
+      "hashC": "7c828f4da46102c1bf5e44451f4235496dcd2c9c46f9a3de0edbcaa58e58fc0f"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\gas\\Domain.gs",
+      "sizeD": 5539,
+      "sizeC": 5539,
+      "exactMatch": true,
+      "hashD": "aaaa4338547195bb710d83a56551adff6fc36c95e6dfe19bf629e94ed9c647fe",
+      "hashC": "aaaa4338547195bb710d83a56551adff6fc36c95e6dfe19bf629e94ed9c647fe"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\gas\\FormulaQA.gs",
+      "sizeD": 3397,
+      "sizeC": 3397,
+      "exactMatch": true,
+      "hashD": "7c23fd88ea717662d2f4c3d94522d00f280e5e66e82d78f5457ac308f67938b8",
+      "hashC": "7c23fd88ea717662d2f4c3d94522d00f280e5e66e82d78f5457ac308f67938b8"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\gas\\Inventory.gs",
+      "sizeD": 2293,
+      "sizeC": 2293,
+      "exactMatch": true,
+      "hashD": "b92ccc1f4b478efd19a05aa12924c25ba230c1a20834c11c6bd2b7ee2ac1e849",
+      "hashC": "b92ccc1f4b478efd19a05aa12924c25ba230c1a20834c11c6bd2b7ee2ac1e849"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\package.json",
+      "sizeD": 482,
+      "sizeC": 482,
+      "exactMatch": true,
+      "hashD": "518af1e0e4681a47cecfcbbd7874d4ea28a98a7f71b2eb4850ff025f7a7dcd6a",
+      "hashC": "518af1e0e4681a47cecfcbbd7874d4ea28a98a7f71b2eb4850ff025f7a7dcd6a"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\PROMPTS_ALL.md",
+      "sizeD": 36582,
+      "sizeC": 36582,
+      "exactMatch": true,
+      "hashD": "7e90b4f9da5c110c028a053068975814e7d38a11de0f3207b0ceb77991bdaa4e",
+      "hashC": "7e90b4f9da5c110c028a053068975814e7d38a11de0f3207b0ceb77991bdaa4e"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\reference\\domain.mjs",
+      "sizeD": 5364,
+      "sizeC": 5364,
+      "exactMatch": true,
+      "hashD": "e4eef3bf67dabdd898ff57e800ed3f4a2ba1f989bec4b7ebd4580b2550ed7014",
+      "hashC": "e4eef3bf67dabdd898ff57e800ed3f4a2ba1f989bec4b7ebd4580b2550ed7014"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\reference\\inventory.mjs",
+      "sizeD": 2648,
+      "sizeC": 2648,
+      "exactMatch": true,
+      "hashD": "b16c305c5cf10fe09558de5c4e83437cfc9b14981eecd28c0c959c8cac9348f2",
+      "hashC": "b16c305c5cf10fe09558de5c4e83437cfc9b14981eecd28c0c959c8cac9348f2"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\reference\\outbox.mjs",
+      "sizeD": 868,
+      "sizeC": 868,
+      "exactMatch": true,
+      "hashD": "f59fb620fc0907329df3b7664e7c63725dcad2c37363bbcd193bfc3624a1771d",
+      "hashC": "f59fb620fc0907329df3b7664e7c63725dcad2c37363bbcd193bfc3624a1771d"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\START_HERE.txt",
+      "sizeD": 1187,
+      "sizeC": 1187,
+      "exactMatch": true,
+      "hashD": "ab86cee6b9c9364740b7d7ae689cc1e59abbd1b119d1f23fa9ebe56869e89b80",
+      "hashC": "ab86cee6b9c9364740b7d7ae689cc1e59abbd1b119d1f23fa9ebe56869e89b80"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\costs.test.mjs",
+      "sizeD": 1356,
+      "sizeC": 1356,
+      "exactMatch": true,
+      "hashD": "49f3090d4a83b05c906abddf451c01db30574cfe5c2b4dd7cbd94acb32ded148",
+      "hashC": "49f3090d4a83b05c906abddf451c01db30574cfe5c2b4dd7cbd94acb32ded148"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\domain.test.mjs",
+      "sizeD": 4888,
+      "sizeC": 4888,
+      "exactMatch": true,
+      "hashD": "79ec12bb414c702dfd6a3f7ede87335cb99cda48cad997ef28bb6975eda3948b",
+      "hashC": "79ec12bb414c702dfd6a3f7ede87335cb99cda48cad997ef28bb6975eda3948b"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\gas-build.test.mjs",
+      "sizeD": 764,
+      "sizeC": 764,
+      "exactMatch": true,
+      "hashD": "21bd98f5e8c31fabee8d5d5557b5a79a66066d175af906e7ba373b42956ee998",
+      "hashC": "21bd98f5e8c31fabee8d5d5557b5a79a66066d175af906e7ba373b42956ee998"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\inventory.test.mjs",
+      "sizeD": 2952,
+      "sizeC": 2952,
+      "exactMatch": true,
+      "hashD": "023be076d0a7ce7424d6eb8b47fc25c0149835f9115534961d7634505cf2ef5f",
+      "hashC": "023be076d0a7ce7424d6eb8b47fc25c0149835f9115534961d7634505cf2ef5f"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\outbox.test.mjs",
+      "sizeD": 1145,
+      "sizeC": 1145,
+      "exactMatch": true,
+      "hashD": "60bd892cc940eda73a47e55cb936f9b76871cef5d739162f2d8ffd7e02f65e62",
+      "hashC": "60bd892cc940eda73a47e55cb936f9b76871cef5d739162f2d8ffd7e02f65e62"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tests\\release-gate.test.mjs",
+      "sizeD": 2121,
+      "sizeC": 2121,
+      "exactMatch": true,
+      "hashD": "46a8f76a757f72afb44ebb857b0c057a7af62ee0138f7434dd1dfde3ce2ac06c",
+      "hashC": "46a8f76a757f72afb44ebb857b0c057a7af62ee0138f7434dd1dfde3ce2ac06c"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tools\\build-gas.mjs",
+      "sizeD": 1218,
+      "sizeC": 1218,
+      "exactMatch": true,
+      "hashD": "d52fa7e5d588ad0ed37c495a7bcfbbc699ade5356e063f0df244d92b9bc53c2a",
+      "hashC": "d52fa7e5d588ad0ed37c495a7bcfbbc699ade5356e063f0df244d92b9bc53c2a"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tools\\check-kit.mjs",
+      "sizeD": 1704,
+      "sizeC": 1704,
+      "exactMatch": true,
+      "hashD": "d0284194405d217d71f413d8187de68cb83359d9b9e0bab1bbbcc0798ad55589",
+      "hashC": "d0284194405d217d71f413d8187de68cb83359d9b9e0bab1bbbcc0798ad55589"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tools\\cost-model.mjs",
+      "sizeD": 3040,
+      "sizeC": 3040,
+      "exactMatch": true,
+      "hashD": "e9f0933ba8f069f57ed35362c6bc0415946e59f2d6b2f85f36867945291f6e87",
+      "hashC": "e9f0933ba8f069f57ed35362c6bc0415946e59f2d6b2f85f36867945291f6e87"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tools\\list-prompts.mjs",
+      "sizeD": 303,
+      "sizeC": 303,
+      "exactMatch": true,
+      "hashD": "75940a5eaaad891c2267db5c9d39388135b8965e4eab0cec038925d7df64a963",
+      "hashC": "75940a5eaaad891c2267db5c9d39388135b8965e4eab0cec038925d7df64a963"
+    },
+    {
+      "relPath": "codex_kit\\CODEX_COMMERCIAL_KIT\\tools\\release-gate.mjs",
+      "sizeD": 3403,
+      "sizeC": 3403,
+      "exactMatch": true,
+      "hashD": "5698c3e3ef6341df12b4dc841a4f50f9853436ed842f04191146391546937655",
+      "hashC": "5698c3e3ef6341df12b4dc841a4f50f9853436ed842f04191146391546937655"
+    },
+    {
+      "relPath": "config\\tiers.json",
+      "sizeD": 6131,
+      "sizeC": 6131,
+      "exactMatch": true,
+      "hashD": "b7732a9c7828da2d2ab322a3ae5ad0467428fc2077ea59bb1cfad425a989ac00",
+      "hashC": "b7732a9c7828da2d2ab322a3ae5ad0467428fc2077ea59bb1cfad425a989ac00"
+    },
+    {
+      "relPath": "configs\\skus\\f01.config.js",
+      "sizeD": 7787,
+      "sizeC": 7787,
+      "exactMatch": true,
+      "hashD": "bb767a2a15969ff6a725a6a1d0a1554cc0863805edfd5ac4088f9bc3ff821084",
+      "hashC": "bb767a2a15969ff6a725a6a1d0a1554cc0863805edfd5ac4088f9bc3ff821084"
+    },
+    {
+      "relPath": "configs\\skus\\f02.config.js",
+      "sizeD": 11845,
+      "sizeC": 11845,
+      "exactMatch": true,
+      "hashD": "ae6c9a75dc642aad2b13224043068cf67cbdb7ee4764746734f5fd6030e455ba",
+      "hashC": "ae6c9a75dc642aad2b13224043068cf67cbdb7ee4764746734f5fd6030e455ba"
+    },
+    {
+      "relPath": "configs\\skus\\f05.config.js",
+      "sizeD": 9539,
+      "sizeC": 9539,
+      "exactMatch": true,
+      "hashD": "aa29db98a24f46b0ffacb34eddeb87ce920e38c07f5f1d85b38177caec318597",
+      "hashC": "aa29db98a24f46b0ffacb34eddeb87ce920e38c07f5f1d85b38177caec318597"
+    },
+    {
+      "relPath": "configs\\skus\\f17.config.js",
+      "sizeD": 9809,
+      "sizeC": 9809,
+      "exactMatch": true,
+      "hashD": "45909ce06db85b61dba8cdd60255b03b2cb425e50bd16a8cfa2a6ac9c6dfab1a",
+      "hashC": "45909ce06db85b61dba8cdd60255b03b2cb425e50bd16a8cfa2a6ac9c6dfab1a"
+    },
+    {
+      "relPath": "configs\\skus\\f18.config.js",
+      "sizeD": 10418,
+      "sizeC": 10418,
+      "exactMatch": true,
+      "hashD": "dab466fe6d5875edc8ad4d62f261d400ea177e240533f91a8259b31223e2e3ac",
+      "hashC": "dab466fe6d5875edc8ad4d62f261d400ea177e240533f91a8259b31223e2e3ac"
+    },
+    {
+      "relPath": "configs\\skus\\f19.config.js",
+      "sizeD": 13098,
+      "sizeC": 13098,
+      "exactMatch": true,
+      "hashD": "2e73a0b963cb290e5e045376f5797e34edb10d49f0eac8477c15fdf59d54316b",
+      "hashC": "2e73a0b963cb290e5e045376f5797e34edb10d49f0eac8477c15fdf59d54316b"
+    },
+    {
+      "relPath": "configs\\skus\\f20.config.js",
+      "sizeD": 10446,
+      "sizeC": 10446,
+      "exactMatch": true,
+      "hashD": "d9096a0781f9041d64bcf25ed178b899cd18e9c9590312024efb66977f9e0dea",
+      "hashC": "d9096a0781f9041d64bcf25ed178b899cd18e9c9590312024efb66977f9e0dea"
+    },
+    {
+      "relPath": "configs\\skus\\f21.config.js",
+      "sizeD": 16453,
+      "sizeC": 16453,
+      "exactMatch": true,
+      "hashD": "ba9e5e0d3111b48bb6b2b7750699089588ae3206fd3149d956ead8c5698eb555",
+      "hashC": "ba9e5e0d3111b48bb6b2b7750699089588ae3206fd3149d956ead8c5698eb555"
+    },
+    {
+      "relPath": "configs\\skus\\f24.config.js",
+      "sizeD": 14429,
+      "sizeC": 14429,
+      "exactMatch": true,
+      "hashD": "4bb6866388e33fc6023859f533bddc6f5565a2ec8d84d399b97ed8b1f93d65b2",
+      "hashC": "4bb6866388e33fc6023859f533bddc6f5565a2ec8d84d399b97ed8b1f93d65b2"
+    },
+    {
+      "relPath": "configs\\skus\\f30.config.js",
+      "sizeD": 10563,
+      "sizeC": 10563,
+      "exactMatch": true,
+      "hashD": "7b8b58314737a35333a59d8b0ddf781ed6d2f3b2b655ee21375bcadc9a200620",
+      "hashC": "7b8b58314737a35333a59d8b0ddf781ed6d2f3b2b655ee21375bcadc9a200620"
+    },
+    {
+      "relPath": "configs\\skus\\f34.config.js",
+      "sizeD": 8136,
+      "sizeC": 8136,
+      "exactMatch": true,
+      "hashD": "76040db2ea56f327a4b6eac25ccd3b22b8315ba390f3917aa1a6e7c8b9cc2413",
+      "hashC": "76040db2ea56f327a4b6eac25ccd3b22b8315ba390f3917aa1a6e7c8b9cc2413"
+    },
+    {
+      "relPath": "configs\\skus\\f48.config.js",
+      "sizeD": 7388,
+      "sizeC": 7388,
+      "exactMatch": true,
+      "hashD": "4023935a0c1b394bf33e893c4a0f20b516eed38c163939167e796ffb00b3a4db",
+      "hashC": "4023935a0c1b394bf33e893c4a0f20b516eed38c163939167e796ffb00b3a4db"
+    },
+    {
+      "relPath": "generate_catalog.js",
+      "sizeD": 10385,
+      "sizeC": 10385,
+      "exactMatch": true,
+      "hashD": "0fb73e191538d9c235d82992dbee9cfb2942a007cb67617b88f91b76fb5a0354",
+      "hashC": "0fb73e191538d9c235d82992dbee9cfb2942a007cb67617b88f91b76fb5a0354"
+    },
+    {
+      "relPath": "minh-templates-codex-sources.md",
+      "sizeD": 17014,
+      "sizeC": 17014,
+      "exactMatch": true,
+      "hashD": "6af65d3f76190e561b87ff67f5e86d763c3c5ffa1ec3db28c89ef19328ed3f43",
+      "hashC": "6af65d3f76190e561b87ff67f5e86d763c3c5ffa1ec3db28c89ef19328ed3f43"
+    },
+    {
+      "relPath": "package.json",
+      "sizeD": 603,
+      "sizeC": 603,
+      "exactMatch": true,
+      "hashD": "895b6dbbfd9bd3ec37e6e2e7afb020d886acc1f0ee50edf1f89188bd5299404e",
+      "hashC": "895b6dbbfd9bd3ec37e6e2e7afb020d886acc1f0ee50edf1f89188bd5299404e"
+    },
+    {
+      "relPath": "packages\\appsheet\\src\\f01\\spec.js",
+      "sizeD": 9388,
+      "sizeC": 9388,
+      "exactMatch": true,
+      "hashD": "b2342792f460e6cba073c97b77b540e6889746855f6bb9831b97150ee186693b",
+      "hashC": "b2342792f460e6cba073c97b77b540e6889746855f6bb9831b97150ee186693b"
+    },
+    {
+      "relPath": "packages\\appsheet\\src\\generator.js",
+      "sizeD": 2379,
+      "sizeC": 2379,
+      "exactMatch": true,
+      "hashD": "60c0b1ec39b42de8ffd84c0611baf0d51c45383d4493e0e49c09bcf4427791d0",
+      "hashC": "60c0b1ec39b42de8ffd84c0611baf0d51c45383d4493e0e49c09bcf4427791d0"
+    },
+    {
+      "relPath": "packages\\appsheet\\src\\index.js",
+      "sizeD": 122,
+      "sizeC": 122,
+      "exactMatch": true,
+      "hashD": "5344d43a46ca9d5ffb94dbf990f4007a4af3140e836fa2c2f2631b23499f3f36",
+      "hashC": "5344d43a46ca9d5ffb94dbf990f4007a4af3140e836fa2c2f2631b23499f3f36"
+    },
+    {
+      "relPath": "packages\\core-engine\\package.json",
+      "sizeD": 472,
+      "sizeC": 472,
+      "exactMatch": true,
+      "hashD": "1c6c57b3211769cd6f3e36365a28f1c0adf973f705188f4e6f3d9bb29ab7c4f4",
+      "hashC": "1c6c57b3211769cd6f3e36365a28f1c0adf973f705188f4e6f3d9bb29ab7c4f4"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\gasEmitter.js",
+      "sizeD": 15691,
+      "sizeC": 15691,
+      "exactMatch": true,
+      "hashD": "48cc605e7be6aedabc8e60d717d57da36ceae11760c0d852c8cc80a9a6d4d1a0",
+      "hashC": "48cc605e7be6aedabc8e60d717d57da36ceae11760c0d852c8cc80a9a6d4d1a0"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\index.js",
+      "sizeD": 1757,
+      "sizeC": 1757,
+      "exactMatch": true,
+      "hashD": "e1a1e762adf4352e1b35571b97b6f82f16ab7262e913033ac0ba68925d887b60",
+      "hashC": "e1a1e762adf4352e1b35571b97b6f82f16ab7262e913033ac0ba68925d887b60"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\pathResolver.js",
+      "sizeD": 2724,
+      "sizeC": 5165,
+      "exactMatch": false,
+      "hashD": "f9aededfb77247243d2137d497165c606c03c71991beed43e141ac5a72d52adc",
+      "hashC": "71497e01278642ecfa82a36c0d82384e324991e273c3de8ae7e07acf27b09911"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\specValidator.js",
+      "sizeD": 1593,
+      "sizeC": 1593,
+      "exactMatch": true,
+      "hashD": "ef479d351fbdce6b503ca08d9c880104a9d7b5991cea12c1b2df0bdd3bb5809b",
+      "hashC": "ef479d351fbdce6b503ca08d9c880104a9d7b5991cea12c1b2df0bdd3bb5809b"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\syntaxChecker.js",
+      "sizeD": 1709,
+      "sizeC": 1709,
+      "exactMatch": true,
+      "hashD": "01744fcc9f4b2fc0e9e139996304cc9ef8605da455fb82893e0f0d87f9e3be33",
+      "hashC": "01744fcc9f4b2fc0e9e139996304cc9ef8605da455fb82893e0f0d87f9e3be33"
+    },
+    {
+      "relPath": "packages\\core-engine\\src\\tierTransformer.js",
+      "sizeD": 3946,
+      "sizeC": 3946,
+      "exactMatch": true,
+      "hashD": "de7419f4f2bef8b114370bd7d2905db540cffe1e3480b29a34c3f1409db1f730",
+      "hashC": "de7419f4f2bef8b114370bd7d2905db540cffe1e3480b29a34c3f1409db1f730"
+    },
+    {
+      "relPath": "packages\\domain\\src\\f01\\calculations.js",
+      "sizeD": 4169,
+      "sizeC": 4169,
+      "exactMatch": true,
+      "hashD": "69c21de6445e053be365967a4c6ad286be14511d29395afd3201d5322edbc467",
+      "hashC": "69c21de6445e053be365967a4c6ad286be14511d29395afd3201d5322edbc467"
+    },
+    {
+      "relPath": "packages\\domain\\src\\f01\\index.js",
+      "sizeD": 263,
+      "sizeC": 263,
+      "exactMatch": true,
+      "hashD": "790c52e9e305653cbe8d943e8d81f99f2c9f7d6ab099ecad88014fdbe23bb203",
+      "hashC": "790c52e9e305653cbe8d943e8d81f99f2c9f7d6ab099ecad88014fdbe23bb203"
+    },
+    {
+      "relPath": "packages\\domain\\src\\f01\\recurrence.js",
+      "sizeD": 4010,
+      "sizeC": 4010,
+      "exactMatch": true,
+      "hashD": "fc569a5143946a801eac77197d76a90bb18fb045dccd1c3c9a4c14ae1efbf9b1",
+      "hashC": "fc569a5143946a801eac77197d76a90bb18fb045dccd1c3c9a4c14ae1efbf9b1"
+    },
+    {
+      "relPath": "packages\\domain\\src\\f01\\stateMachine.js",
+      "sizeD": 2860,
+      "sizeC": 2860,
+      "exactMatch": true,
+      "hashD": "8b7507887270f08e11e7f5e6df6b87264d2830e818805d49baadde50a4c6a0bd",
+      "hashC": "8b7507887270f08e11e7f5e6df6b87264d2830e818805d49baadde50a4c6a0bd"
+    },
+    {
+      "relPath": "packages\\domain\\src\\f01\\types.js",
+      "sizeD": 954,
+      "sizeC": 954,
+      "exactMatch": true,
+      "hashD": "0d81cf39b2c5aeb4c5cc390af70c072e25063c6b84e12b7cd714e5fbef636f67",
+      "hashC": "0d81cf39b2c5aeb4c5cc390af70c072e25063c6b84e12b7cd714e5fbef636f67"
+    },
+    {
+      "relPath": "packages\\domain\\src\\index.js",
+      "sizeD": 59,
+      "sizeC": 59,
+      "exactMatch": true,
+      "hashD": "300fd86c5d31a3fc434d5b3bfe38bbff561ad7152bb62c17cd04d43ae4a6f7e6",
+      "hashC": "300fd86c5d31a3fc434d5b3bfe38bbff561ad7152bb62c17cd04d43ae4a6f7e6"
+    },
+    {
+      "relPath": "packages\\gas\\src\\f01\\code.gs",
+      "sizeD": 3834,
+      "sizeC": 3834,
+      "exactMatch": true,
+      "hashD": "19fbb6d2f5413018ccb8310ed237f9ab7447722f55a74b6023dbb11da0ce0835",
+      "hashC": "19fbb6d2f5413018ccb8310ed237f9ab7447722f55a74b6023dbb11da0ce0835"
+    },
+    {
+      "relPath": "packages\\gas\\src\\f01\\rpcRouter.js",
+      "sizeD": 9378,
+      "sizeC": 9378,
+      "exactMatch": true,
+      "hashD": "25b9a02d4a01d520d34e995feb3b84fee2a380b0a95105c1da41ea9b87dd7701",
+      "hashC": "25b9a02d4a01d520d34e995feb3b84fee2a380b0a95105c1da41ea9b87dd7701"
+    },
+    {
+      "relPath": "packages\\gas\\src\\f01\\setup.js",
+      "sizeD": 105,
+      "sizeC": 105,
+      "exactMatch": true,
+      "hashD": "cf42c203d5bc05dc86afbe598c2fe69bd743149f2e34366ad6713b378b8e27ab",
+      "hashC": "cf42c203d5bc05dc86afbe598c2fe69bd743149f2e34366ad6713b378b8e27ab"
+    },
+    {
+      "relPath": "packages\\gas\\src\\index.js",
+      "sizeD": 93,
+      "sizeC": 93,
+      "exactMatch": true,
+      "hashD": "f430e1e860f2c41f4e815cc0070417a63b70bfce127596922298688840cad10d",
+      "hashC": "f430e1e860f2c41f4e815cc0070417a63b70bfce127596922298688840cad10d"
+    },
+    {
+      "relPath": "packages\\schema\\src\\baseline.js",
+      "sizeD": 5251,
+      "sizeC": 5251,
+      "exactMatch": true,
+      "hashD": "de08f3fedcc142ce4eedf4d15e75ef6373b22d5c22ae6de608bd867b61089e30",
+      "hashC": "de08f3fedcc142ce4eedf4d15e75ef6373b22d5c22ae6de608bd867b61089e30"
+    },
+    {
+      "relPath": "packages\\schema\\src\\f01.js",
+      "sizeD": 6173,
+      "sizeC": 6173,
+      "exactMatch": true,
+      "hashD": "68b322f7ce37b75c8239429f537413c62c54afd0444e30c0f4c3ad481b51821b",
+      "hashC": "68b322f7ce37b75c8239429f537413c62c54afd0444e30c0f4c3ad481b51821b"
+    },
+    {
+      "relPath": "packages\\schema\\src\\index.js",
+      "sizeD": 444,
+      "sizeC": 444,
+      "exactMatch": true,
+      "hashD": "298e1c850a21f2e4600d6ee2f8167fd68c102917387e393c5e283ce06ceb8a7e",
+      "hashC": "298e1c850a21f2e4600d6ee2f8167fd68c102917387e393c5e283ce06ceb8a7e"
+    },
+    {
+      "relPath": "packages\\schema\\src\\validator.js",
+      "sizeD": 4219,
+      "sizeC": 4219,
+      "exactMatch": true,
+      "hashD": "8568270b526c3c8012425b47aad48ef30382cf995887fc1805c53c698bb86bc9",
+      "hashC": "8568270b526c3c8012425b47aad48ef30382cf995887fc1805c53c698bb86bc9"
+    },
+    {
+      "relPath": "packages\\sheets\\src\\compiler.js",
+      "sizeD": 2965,
+      "sizeC": 2965,
+      "exactMatch": true,
+      "hashD": "978391304b85b128c1e86bb3a6325aaad80d1bf4ce888ba0b427bc4b20699315",
+      "hashC": "978391304b85b128c1e86bb3a6325aaad80d1bf4ce888ba0b427bc4b20699315"
+    },
+    {
+      "relPath": "packages\\sheets\\src\\f01\\builder.js",
+      "sizeD": 10710,
+      "sizeC": 10710,
+      "exactMatch": true,
+      "hashD": "c75a17e578d2203f1ba70a033bf82092302700278f648cce71064a3f3f224bd2",
+      "hashC": "c75a17e578d2203f1ba70a033bf82092302700278f648cce71064a3f3f224bd2"
+    },
+    {
+      "relPath": "packages\\sheets\\src\\index.js",
+      "sizeD": 217,
+      "sizeC": 217,
+      "exactMatch": true,
+      "hashD": "15370739f16389e578833ae4f3cc8040069d45adfd2cf40259c633e5e5d973f4",
+      "hashC": "15370739f16389e578833ae4f3cc8040069d45adfd2cf40259c633e5e5d973f4"
+    },
+    {
+      "relPath": "packages\\testing\\src\\assertions.js",
+      "sizeD": 1545,
+      "sizeC": 1545,
+      "exactMatch": true,
+      "hashD": "358c7ff50e5ca2fd17b7e330b797ad7116ba765ac5436d96a561b430b3ed869f",
+      "hashC": "358c7ff50e5ca2fd17b7e330b797ad7116ba765ac5436d96a561b430b3ed869f"
+    },
+    {
+      "relPath": "packages\\testing\\src\\mockGoogle.js",
+      "sizeD": 2883,
+      "sizeC": 2883,
+      "exactMatch": true,
+      "hashD": "47ab7df12c8863e0c95065b6e0ed45623159b29432efdd9bed3465f22caec322",
+      "hashC": "47ab7df12c8863e0c95065b6e0ed45623159b29432efdd9bed3465f22caec322"
+    },
+    {
+      "relPath": "packages\\testing\\src\\runner.js",
+      "sizeD": 2436,
+      "sizeC": 2436,
+      "exactMatch": true,
+      "hashD": "688966e59bf5f80cee10a5918a840310a99f4aff66e7b5db66e020309c2c74a3",
+      "hashC": "688966e59bf5f80cee10a5918a840310a99f4aff66e7b5db66e020309c2c74a3"
+    },
+    {
+      "relPath": "packages\\testing\\src\\suites\\domain.test.js",
+      "sizeD": 9044,
+      "sizeC": 9044,
+      "exactMatch": true,
+      "hashD": "9ac9cf25177885f241ceec152a4d436f300de5d8b3577e9a6073115c8be55f8a",
+      "hashC": "9ac9cf25177885f241ceec152a4d436f300de5d8b3577e9a6073115c8be55f8a"
+    },
+    {
+      "relPath": "packages\\testing\\src\\suites\\formulas.test.js",
+      "sizeD": 8342,
+      "sizeC": 8342,
+      "exactMatch": true,
+      "hashD": "370843476d7cf62616be811a55874a82a6b206abc00be81b05a2b7c439035196",
+      "hashC": "370843476d7cf62616be811a55874a82a6b206abc00be81b05a2b7c439035196"
+    },
+    {
+      "relPath": "packages\\testing\\src\\suites\\security.test.js",
+      "sizeD": 7956,
+      "sizeC": 7956,
+      "exactMatch": true,
+      "hashD": "87614c5dec2552ce023926fd13ea4a5f82ffaa7c944f36248e48776588a03174",
+      "hashC": "87614c5dec2552ce023926fd13ea4a5f82ffaa7c944f36248e48776588a03174"
+    },
+    {
+      "relPath": "products\\f01-personal-tasks\\index.js",
+      "sizeD": 1575,
+      "sizeC": 1575,
+      "exactMatch": true,
+      "hashD": "27b350e26c9aee4220905e778d647d4d68ecac6ad54d8fb9f981391f8ec7b360",
+      "hashC": "27b350e26c9aee4220905e778d647d4d68ecac6ad54d8fb9f981391f8ec7b360"
+    },
+    {
+      "relPath": "products\\f01-personal-tasks\\package.json",
+      "sizeD": 217,
+      "sizeC": 217,
+      "exactMatch": true,
+      "hashD": "ef1cbe056385636ac80a748e1a1f440b53a87c19f3e74faf8116a046ae7c5c1c",
+      "hashC": "ef1cbe056385636ac80a748e1a1f440b53a87c19f3e74faf8116a046ae7c5c1c"
+    },
+    {
+      "relPath": "PRODUCT_CATALOG.json",
+      "sizeD": 93438,
+      "sizeC": 93438,
+      "exactMatch": true,
+      "hashD": "8da01471b8f22734542cc850949aeb5836de5c8fbbdfbd985dc87d7b73d13fbe",
+      "hashC": "8da01471b8f22734542cc850949aeb5836de5c8fbbdfbd985dc87d7b73d13fbe"
+    },
+    {
+      "relPath": "PROGRESS.md",
+      "sizeD": 4281,
+      "sizeC": 4223,
+      "exactMatch": false,
+      "hashD": "0c3ac676ef459f9cecf4c63ceb842b2d3eaea739339895f9165f4f2bf87f922e",
+      "hashC": "bb5cc221b6a93b32fee5ab8642eec674619223b575f5408f2e163f1e91cd5077"
+    },
+    {
+      "relPath": "releases\\all_installers.gs",
+      "sizeD": 281123,
+      "sizeC": 281123,
+      "exactMatch": true,
+      "hashD": "a7edae76ca2437a4c5752d1aca78b3b482d6dc808e53201cfbb86c1e76c781d3",
+      "hashC": "a7edae76ca2437a4c5752d1aca78b3b482d6dc808e53201cfbb86c1e76c781d3"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\actions.csv",
+      "sizeD": 444,
+      "sizeC": 444,
+      "exactMatch": true,
+      "hashD": "7a17d57443ca1f8cc1739c8ea5532d3fb981c8488855910c07b89aaa2db9b3a5",
+      "hashC": "7a17d57443ca1f8cc1739c8ea5532d3fb981c8488855910c07b89aaa2db9b3a5"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\APPSHEET_SETUP.md",
+      "sizeD": 2942,
+      "sizeC": 2942,
+      "exactMatch": true,
+      "hashD": "c92c7adb23b91b7eeea077cdadeb0bfffcb2211bd3560f1edc77644dee7fa034",
+      "hashC": "c92c7adb23b91b7eeea077cdadeb0bfffcb2211bd3560f1edc77644dee7fa034"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\bots.md",
+      "sizeD": 1504,
+      "sizeC": 1504,
+      "exactMatch": true,
+      "hashD": "8bfe2f4048b87317e3c3e9f54e074ad0e2635ba49f43dbf7811e20e5f4c9837d",
+      "hashC": "8bfe2f4048b87317e3c3e9f54e074ad0e2635ba49f43dbf7811e20e5f4c9837d"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\columns.csv",
+      "sizeD": 1595,
+      "sizeC": 1595,
+      "exactMatch": true,
+      "hashD": "a612148280a1ae13a185cd4b6b185c7c1e1981d98d10ab7e0f73494671c05af3",
+      "hashC": "a612148280a1ae13a185cd4b6b185c7c1e1981d98d10ab7e0f73494671c05af3"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\tables.csv",
+      "sizeD": 452,
+      "sizeC": 452,
+      "exactMatch": true,
+      "hashD": "034b0c389262d15ca63f64dc9c7b06d82938929469d0f465784237f4f81e9c57",
+      "hashC": "034b0c389262d15ca63f64dc9c7b06d82938929469d0f465784237f4f81e9c57"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\appsheet\\views.csv",
+      "sizeD": 612,
+      "sizeC": 612,
+      "exactMatch": true,
+      "hashD": "bd48b9c177649a07f39dd2bcd2198c0373fc275540345e19c3cbfbfd513ec03c",
+      "hashC": "bd48b9c177649a07f39dd2bcd2198c0373fc275540345e19c3cbfbfd513ec03c"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\clean\\Tasks.csv",
+      "sizeD": 198,
+      "sizeC": 198,
+      "exactMatch": true,
+      "hashD": "a12f08a2deeea63adef95be54b77cd82fface36cb2c74c7989b0fc610154a34d",
+      "hashC": "a12f08a2deeea63adef95be54b77cd82fface36cb2c74c7989b0fc610154a34d"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\clean\\workbook.json",
+      "sizeD": 11381,
+      "sizeC": 11381,
+      "exactMatch": true,
+      "hashD": "e1c5b44b31ecf6ce53ec7d2c86ec813704f297df163aa836e01bccd1595d9f63",
+      "hashC": "e1c5b44b31ecf6ce53ec7d2c86ec813704f297df163aa836e01bccd1595d9f63"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\demo\\Tasks.csv",
+      "sizeD": 2584,
+      "sizeC": 2584,
+      "exactMatch": true,
+      "hashD": "72424fc4d76407f0b279fd532e3b9acff2cbb9a53c2334671134805af2a484c1",
+      "hashC": "72424fc4d76407f0b279fd532e3b9acff2cbb9a53c2334671134805af2a484c1"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\demo\\workbook.json",
+      "sizeD": 15049,
+      "sizeC": 15049,
+      "exactMatch": true,
+      "hashD": "541a7e022c281fdec592b23d85f3dec339b447aa2f210014386436acd274093d",
+      "hashC": "541a7e022c281fdec592b23d85f3dec339b447aa2f210014386436acd274093d"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\docs\\FAQ.md",
+      "sizeD": 2620,
+      "sizeC": 2620,
+      "exactMatch": true,
+      "hashD": "964f196791b35c3ac0327e19ec34d45e6f5554190711d89bf5269d9bd144b165",
+      "hashC": "964f196791b35c3ac0327e19ec34d45e6f5554190711d89bf5269d9bd144b165"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\docs\\README.md",
+      "sizeD": 4398,
+      "sizeC": 4398,
+      "exactMatch": true,
+      "hashD": "c75256e655eee861f56ab57c9633b6f1a961e0b823d60ad3d5680c7b0720975f",
+      "hashC": "c75256e655eee861f56ab57c9633b6f1a961e0b823d60ad3d5680c7b0720975f"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\docs\\TROUBLESHOOTING.md",
+      "sizeD": 2754,
+      "sizeC": 2754,
+      "exactMatch": true,
+      "hashD": "f7f0b9ac67c481f4fbf5f459d237b4c90e666953e7aa952c467429b4712083a0",
+      "hashC": "f7f0b9ac67c481f4fbf5f459d237b4c90e666953e7aa952c467429b4712083a0"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 960,
+      "sizeC": 960,
+      "exactMatch": true,
+      "hashD": "c15a10537683acdc0a5ccb0876c595164714b9408b0e81eeb336c55edef2c145",
+      "hashC": "c15a10537683acdc0a5ccb0876c595164714b9408b0e81eeb336c55edef2c145"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\installer.js",
+      "sizeD": 10037,
+      "sizeC": 10037,
+      "exactMatch": true,
+      "hashD": "8281224b3e756a2775de18b21fc23e5a2e7bc14fcdf6ed5db545741aa87ca584",
+      "hashC": "8281224b3e756a2775de18b21fc23e5a2e7bc14fcdf6ed5db545741aa87ca584"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\manifest.json",
+      "sizeD": 1259,
+      "sizeC": 1259,
+      "exactMatch": true,
+      "hashD": "9dd44bc369ea8118265bf1fd6ef4cb0b69eeaae4beb2ec317feb444e824af57e",
+      "hashC": "9dd44bc369ea8118265bf1fd6ef4cb0b69eeaae4beb2ec317feb444e824af57e"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\PRD.md",
+      "sizeD": 1704,
+      "sizeC": 1704,
+      "exactMatch": true,
+      "hashD": "73e5e96f7cae9887757b8823518ed8ce963ff94be6aca9c2ee45cdad90eadb89",
+      "hashC": "73e5e96f7cae9887757b8823518ed8ce963ff94be6aca9c2ee45cdad90eadb89"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\README.md",
+      "sizeD": 937,
+      "sizeC": 937,
+      "exactMatch": true,
+      "hashD": "0a807db8f45f843861bf105e6a9873606bb5d7e0ceedfb6bf008c0161baddedc",
+      "hashC": "0a807db8f45f843861bf105e6a9873606bb5d7e0ceedfb6bf008c0161baddedc"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\RELEASE_MANIFEST.json",
+      "sizeD": 1661,
+      "sizeC": 1661,
+      "exactMatch": true,
+      "hashD": "9b06a932b37da124e1138a2590cf68b9338c4df692c481a56f90481ecf8ff447",
+      "hashC": "9b06a932b37da124e1138a2590cf68b9338c4df692c481a56f90481ecf8ff447"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\schema.json",
+      "sizeD": 1370,
+      "sizeC": 1370,
+      "exactMatch": true,
+      "hashD": "498c8a4c73c49ccf66d5e2e24622d81a63bdd5fa8f2ed8d07446acb4a34a12fb",
+      "hashC": "498c8a4c73c49ccf66d5e2e24622d81a63bdd5fa8f2ed8d07446acb4a34a12fb"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup.gs",
+      "sizeD": 18998,
+      "sizeC": 18998,
+      "exactMatch": true,
+      "hashD": "eacba292dc01e958249074a634b9cb257bf70f89b12a78a67178845e08bf947f",
+      "hashC": "eacba292dc01e958249074a634b9cb257bf70f89b12a78a67178845e08bf947f"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup_basic.gs",
+      "sizeD": 17407,
+      "sizeC": 17407,
+      "exactMatch": true,
+      "hashD": "a0883c834a637ef771346129066d889890a2392a92ad074a163dbffb00a56d70",
+      "hashC": "a0883c834a637ef771346129066d889890a2392a92ad074a163dbffb00a56d70"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup_business.gs",
+      "sizeD": 21217,
+      "sizeC": 21217,
+      "exactMatch": true,
+      "hashD": "84407aaef22a4111a8c537c2a9027461cd91cb3693a0aa827470973ad769876d",
+      "hashC": "84407aaef22a4111a8c537c2a9027461cd91cb3693a0aa827470973ad769876d"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 15283,
+      "sizeC": 15283,
+      "exactMatch": true,
+      "hashD": "ddd86a5b4b9686a755a5f5b7dc25f9caf066e2c2519fad2f8ed8826378f77e7c",
+      "hashC": "ddd86a5b4b9686a755a5f5b7dc25f9caf066e2c2519fad2f8ed8826378f77e7c"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 15279,
+      "sizeC": 15279,
+      "exactMatch": true,
+      "hashD": "696616b92ccef8728ae9bef21c3a1208d70b2310276ab41e1c6b59dd237a195d",
+      "hashC": "696616b92ccef8728ae9bef21c3a1208d70b2310276ab41e1c6b59dd237a195d"
+    },
+    {
+      "relPath": "releases\\F01\\1.0.0\\setup_pro.gs",
+      "sizeD": 18998,
+      "sizeC": 18998,
+      "exactMatch": true,
+      "hashD": "eacba292dc01e958249074a634b9cb257bf70f89b12a78a67178845e08bf947f",
+      "hashC": "eacba292dc01e958249074a634b9cb257bf70f89b12a78a67178845e08bf947f"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 962,
+      "sizeC": 962,
+      "exactMatch": true,
+      "hashD": "a40675df92e50ad20f9d251b7efd0811076808b04284976e99b93fb341a8698f",
+      "hashC": "a40675df92e50ad20f9d251b7efd0811076808b04284976e99b93fb341a8698f"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\manifest.json",
+      "sizeD": 1467,
+      "sizeC": 1467,
+      "exactMatch": true,
+      "hashD": "8ac60db76f4c42c3f71ca19ead16933b65ac76a82161711d9bdb034a2a19a106",
+      "hashC": "8ac60db76f4c42c3f71ca19ead16933b65ac76a82161711d9bdb034a2a19a106"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\PRD.md",
+      "sizeD": 2293,
+      "sizeC": 2293,
+      "exactMatch": true,
+      "hashD": "f90cdc656821b979ea6e6acaba5bd1c8b12e14de66f04fae4fb4007672db5c0b",
+      "hashC": "f90cdc656821b979ea6e6acaba5bd1c8b12e14de66f04fae4fb4007672db5c0b"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\README.md",
+      "sizeD": 930,
+      "sizeC": 930,
+      "exactMatch": true,
+      "hashD": "7b317d3c99336699e6f07d7f1d3d3843e422e7826af90fce563a8df9d2172c69",
+      "hashC": "7b317d3c99336699e6f07d7f1d3d3843e422e7826af90fce563a8df9d2172c69"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\schema.json",
+      "sizeD": 2297,
+      "sizeC": 2297,
+      "exactMatch": true,
+      "hashD": "a7ceef9b470bfe89b06ef37c376b0d87c34f052666e6dc63524547e106714a36",
+      "hashC": "a7ceef9b470bfe89b06ef37c376b0d87c34f052666e6dc63524547e106714a36"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup.gs",
+      "sizeD": 25029,
+      "sizeC": 25029,
+      "exactMatch": true,
+      "hashD": "7beabf1105406272ccbcdfedf85db1481ff39cb57ca46f7e2659ea0609379d46",
+      "hashC": "7beabf1105406272ccbcdfedf85db1481ff39cb57ca46f7e2659ea0609379d46"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup_basic.gs",
+      "sizeD": 23133,
+      "sizeC": 23133,
+      "exactMatch": true,
+      "hashD": "ed69543c5f6f905f10bb2943ae449d9cbee125d2b570ff6719d79543d03bb9e5",
+      "hashC": "ed69543c5f6f905f10bb2943ae449d9cbee125d2b570ff6719d79543d03bb9e5"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup_business.gs",
+      "sizeD": 27248,
+      "sizeC": 27248,
+      "exactMatch": true,
+      "hashD": "57a7c222a6aa28f692b71276be9d1c9a52a6e2587c7e4cc56f38ecbe3aab1072",
+      "hashC": "57a7c222a6aa28f692b71276be9d1c9a52a6e2587c7e4cc56f38ecbe3aab1072"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 20974,
+      "sizeC": 20974,
+      "exactMatch": true,
+      "hashD": "b1b254d4b8f092aac0996ff52035c069ba38be9b746d2cb6a3fe0559b97faa85",
+      "hashC": "b1b254d4b8f092aac0996ff52035c069ba38be9b746d2cb6a3fe0559b97faa85"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 20970,
+      "sizeC": 20970,
+      "exactMatch": true,
+      "hashD": "5433ba1910b2055583e31843f333125985410c07286ea5323291c19e76ecd01b",
+      "hashC": "5433ba1910b2055583e31843f333125985410c07286ea5323291c19e76ecd01b"
+    },
+    {
+      "relPath": "releases\\F02\\1.0.0\\setup_pro.gs",
+      "sizeD": 25029,
+      "sizeC": 25029,
+      "exactMatch": true,
+      "hashD": "7beabf1105406272ccbcdfedf85db1481ff39cb57ca46f7e2659ea0609379d46",
+      "hashC": "7beabf1105406272ccbcdfedf85db1481ff39cb57ca46f7e2659ea0609379d46"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 871,
+      "sizeC": 871,
+      "exactMatch": true,
+      "hashD": "df8a2b78b803ccbeca78299e4fbf6bfd0907cc0328c9c5bd9bbf8be1041850e7",
+      "hashC": "df8a2b78b803ccbeca78299e4fbf6bfd0907cc0328c9c5bd9bbf8be1041850e7"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\manifest.json",
+      "sizeD": 1185,
+      "sizeC": 1185,
+      "exactMatch": true,
+      "hashD": "7ff5d82d390639dd4fc4d6899086bd3ba5ddcf22883de01efc0faebfda2fb280",
+      "hashC": "7ff5d82d390639dd4fc4d6899086bd3ba5ddcf22883de01efc0faebfda2fb280"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\PRD.md",
+      "sizeD": 1576,
+      "sizeC": 1576,
+      "exactMatch": true,
+      "hashD": "ca3533dc3cf421256b4c72b62f2b120a113bdfc2fdddd93ed2d675de9338aa89",
+      "hashC": "ca3533dc3cf421256b4c72b62f2b120a113bdfc2fdddd93ed2d675de9338aa89"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\README.md",
+      "sizeD": 916,
+      "sizeC": 916,
+      "exactMatch": true,
+      "hashD": "fba099d450d08e4370dcb9a0e7a90912b445261455ecd97c47ebb11307e11b64",
+      "hashC": "fba099d450d08e4370dcb9a0e7a90912b445261455ecd97c47ebb11307e11b64"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\schema.json",
+      "sizeD": 1505,
+      "sizeC": 1505,
+      "exactMatch": true,
+      "hashD": "a44c7fb1e22fb85b01a5c88ac3ab188b82c2cfbd2c033beb3aad30bda5ff41da",
+      "hashC": "a44c7fb1e22fb85b01a5c88ac3ab188b82c2cfbd2c033beb3aad30bda5ff41da"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup.gs",
+      "sizeD": 20455,
+      "sizeC": 20455,
+      "exactMatch": true,
+      "hashD": "4648ef25ebb0ff907f7c1ed4b1a88f27729e52584cfbaa622e259532e50eb7a4",
+      "hashC": "4648ef25ebb0ff907f7c1ed4b1a88f27729e52584cfbaa622e259532e50eb7a4"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup_basic.gs",
+      "sizeD": 18668,
+      "sizeC": 18668,
+      "exactMatch": true,
+      "hashD": "002d3682783fa7c525ed2111aba0edcc4a0cfed4786758fde511f595f4d116f0",
+      "hashC": "002d3682783fa7c525ed2111aba0edcc4a0cfed4786758fde511f595f4d116f0"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup_business.gs",
+      "sizeD": 22674,
+      "sizeC": 22674,
+      "exactMatch": true,
+      "hashD": "bf96b6459980717365c0e5392f4bd50a6627a4ad6d0831a6bb3342b26f191c55",
+      "hashC": "bf96b6459980717365c0e5392f4bd50a6627a4ad6d0831a6bb3342b26f191c55"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 16376,
+      "sizeC": 16376,
+      "exactMatch": true,
+      "hashD": "c72be2b52e95715c4ab283839a187ee903d6b938fb16afbe07d237e05bc538f9",
+      "hashC": "c72be2b52e95715c4ab283839a187ee903d6b938fb16afbe07d237e05bc538f9"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 16372,
+      "sizeC": 16372,
+      "exactMatch": true,
+      "hashD": "e4192712ac4efe80c5911be9108dbddadbdb0695ecccdba97354d223b8eae780",
+      "hashC": "e4192712ac4efe80c5911be9108dbddadbdb0695ecccdba97354d223b8eae780"
+    },
+    {
+      "relPath": "releases\\F05\\1.0.0\\setup_pro.gs",
+      "sizeD": 20455,
+      "sizeC": 20455,
+      "exactMatch": true,
+      "hashD": "4648ef25ebb0ff907f7c1ed4b1a88f27729e52584cfbaa622e259532e50eb7a4",
+      "hashC": "4648ef25ebb0ff907f7c1ed4b1a88f27729e52584cfbaa622e259532e50eb7a4"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 894,
+      "sizeC": 894,
+      "exactMatch": true,
+      "hashD": "fbeb46a4bb07c98f828acaf33b6fe9ba9d1f9d65f56fd18033aa9d8befb897a4",
+      "hashC": "fbeb46a4bb07c98f828acaf33b6fe9ba9d1f9d65f56fd18033aa9d8befb897a4"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\manifest.json",
+      "sizeD": 1185,
+      "sizeC": 1185,
+      "exactMatch": true,
+      "hashD": "2b423300eca4cb5c929f986f690d89c8d06a72ef88d5fdc05867cce88113fe37",
+      "hashC": "2b423300eca4cb5c929f986f690d89c8d06a72ef88d5fdc05867cce88113fe37"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\PRD.md",
+      "sizeD": 1567,
+      "sizeC": 1567,
+      "exactMatch": true,
+      "hashD": "e02e7237e66ef54bcad685409fc5b961eb8baf9bfad51745241123699d75236a",
+      "hashC": "e02e7237e66ef54bcad685409fc5b961eb8baf9bfad51745241123699d75236a"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\README.md",
+      "sizeD": 934,
+      "sizeC": 934,
+      "exactMatch": true,
+      "hashD": "781c9d036bfda923dade3047d10050a96b26cf5a3c3225816bb76244925defeb",
+      "hashC": "781c9d036bfda923dade3047d10050a96b26cf5a3c3225816bb76244925defeb"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\schema.json",
+      "sizeD": 1367,
+      "sizeC": 1367,
+      "exactMatch": true,
+      "hashD": "74992b71f6331c8d1833e22c8ad85ea15e873d2df2d72e7f595fbf834628e5c7",
+      "hashC": "74992b71f6331c8d1833e22c8ad85ea15e873d2df2d72e7f595fbf834628e5c7"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup.gs",
+      "sizeD": 20690,
+      "sizeC": 20690,
+      "exactMatch": true,
+      "hashD": "09bf7253720d1ff15fca70065eda8c7c861f96f5fe16618f2df726615f74496f",
+      "hashC": "09bf7253720d1ff15fca70065eda8c7c861f96f5fe16618f2df726615f74496f"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup_basic.gs",
+      "sizeD": 19017,
+      "sizeC": 19017,
+      "exactMatch": true,
+      "hashD": "524586a973267261da4698053df8616a5924723eaca29e367dcf2c5a0e55a3ee",
+      "hashC": "524586a973267261da4698053df8616a5924723eaca29e367dcf2c5a0e55a3ee"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup_business.gs",
+      "sizeD": 22909,
+      "sizeC": 22909,
+      "exactMatch": true,
+      "hashD": "a3b30edc7e42145a835abb0560520ef5b10de72a031f6313fe6f2e5d6f1d756c",
+      "hashC": "a3b30edc7e42145a835abb0560520ef5b10de72a031f6313fe6f2e5d6f1d756c"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 16852,
+      "sizeC": 16852,
+      "exactMatch": true,
+      "hashD": "e5d9ab1d68d8e1e9b538784f2aa8b96273730c94aede145c34c426bbbc715b7e",
+      "hashC": "e5d9ab1d68d8e1e9b538784f2aa8b96273730c94aede145c34c426bbbc715b7e"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 16848,
+      "sizeC": 16848,
+      "exactMatch": true,
+      "hashD": "c751ea32c8b0d9321392c07af2febb0b8f5223ed6ce81f31cd185a83fc5fc150",
+      "hashC": "c751ea32c8b0d9321392c07af2febb0b8f5223ed6ce81f31cd185a83fc5fc150"
+    },
+    {
+      "relPath": "releases\\F17\\1.0.0\\setup_pro.gs",
+      "sizeD": 20690,
+      "sizeC": 20690,
+      "exactMatch": true,
+      "hashD": "09bf7253720d1ff15fca70065eda8c7c861f96f5fe16618f2df726615f74496f",
+      "hashC": "09bf7253720d1ff15fca70065eda8c7c861f96f5fe16618f2df726615f74496f"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 922,
+      "sizeC": 922,
+      "exactMatch": true,
+      "hashD": "27e8ed70b9d63422e4bfe50ff01bede514d20b92d9be6dcbc8b34f1994caed85",
+      "hashC": "27e8ed70b9d63422e4bfe50ff01bede514d20b92d9be6dcbc8b34f1994caed85"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\manifest.json",
+      "sizeD": 1160,
+      "sizeC": 1160,
+      "exactMatch": true,
+      "hashD": "e63efbd7e0bb8cc35d377752f386e5dc7ad50af5440f857216c2891ecca2d9f7",
+      "hashC": "e63efbd7e0bb8cc35d377752f386e5dc7ad50af5440f857216c2891ecca2d9f7"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\PRD.md",
+      "sizeD": 1543,
+      "sizeC": 1543,
+      "exactMatch": true,
+      "hashD": "f6c6d0869dbbbb85f5a875c224db100fc8467c04146cb440516f9d46856f9d65",
+      "hashC": "f6c6d0869dbbbb85f5a875c224db100fc8467c04146cb440516f9d46856f9d65"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\README.md",
+      "sizeD": 921,
+      "sizeC": 921,
+      "exactMatch": true,
+      "hashD": "0cb25c73bfee92e790e2b79248d38c1ac86cf4450f870c11563159848e957b26",
+      "hashC": "0cb25c73bfee92e790e2b79248d38c1ac86cf4450f870c11563159848e957b26"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\schema.json",
+      "sizeD": 1504,
+      "sizeC": 1504,
+      "exactMatch": true,
+      "hashD": "2f7d43898c09069fc31d723cc2b5ece938270730099a0bd75bd424cbf2bbad0d",
+      "hashC": "2f7d43898c09069fc31d723cc2b5ece938270730099a0bd75bd424cbf2bbad0d"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup.gs",
+      "sizeD": 22065,
+      "sizeC": 22065,
+      "exactMatch": true,
+      "hashD": "df38019a7c56a2b29c7529426414e0f61487fecac74e512f13d0e6356b1eb37d",
+      "hashC": "df38019a7c56a2b29c7529426414e0f61487fecac74e512f13d0e6356b1eb37d"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup_basic.gs",
+      "sizeD": 20427,
+      "sizeC": 20427,
+      "exactMatch": true,
+      "hashD": "0361ed4bbdab1e5d892bcd7f283f06a62247ae42936eff64cec1e8fa141212b5",
+      "hashC": "0361ed4bbdab1e5d892bcd7f283f06a62247ae42936eff64cec1e8fa141212b5"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup_business.gs",
+      "sizeD": 24284,
+      "sizeC": 24284,
+      "exactMatch": true,
+      "hashD": "3296e15b60a05199714dd57014db4f66e0fead2270ef27019189d3bdf4342999",
+      "hashC": "3296e15b60a05199714dd57014db4f66e0fead2270ef27019189d3bdf4342999"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 18206,
+      "sizeC": 18206,
+      "exactMatch": true,
+      "hashD": "2954a3670a7f8e59e438a3e88b94182ca6f1c536198aa50ca93f0c08030787a1",
+      "hashC": "2954a3670a7f8e59e438a3e88b94182ca6f1c536198aa50ca93f0c08030787a1"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 18202,
+      "sizeC": 18202,
+      "exactMatch": true,
+      "hashD": "cffd089e58666e474d69ed7465702aef96f198d770e6946ae2361630bc782517",
+      "hashC": "cffd089e58666e474d69ed7465702aef96f198d770e6946ae2361630bc782517"
+    },
+    {
+      "relPath": "releases\\F18\\1.0.0\\setup_pro.gs",
+      "sizeD": 22065,
+      "sizeC": 22065,
+      "exactMatch": true,
+      "hashD": "df38019a7c56a2b29c7529426414e0f61487fecac74e512f13d0e6356b1eb37d",
+      "hashC": "df38019a7c56a2b29c7529426414e0f61487fecac74e512f13d0e6356b1eb37d"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 881,
+      "sizeC": 881,
+      "exactMatch": true,
+      "hashD": "96bf50cb8cec10bbf8db128b3f3756389bbded09c0c8ae8afbb28e9d690d0829",
+      "hashC": "96bf50cb8cec10bbf8db128b3f3756389bbded09c0c8ae8afbb28e9d690d0829"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\manifest.json",
+      "sizeD": 1064,
+      "sizeC": 1064,
+      "exactMatch": true,
+      "hashD": "62f91b73d2cdfc0dd3426dab7d091fd561bc21580271d2003c5f0ef62ead63bd",
+      "hashC": "62f91b73d2cdfc0dd3426dab7d091fd561bc21580271d2003c5f0ef62ead63bd"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\PRD.md",
+      "sizeD": 1545,
+      "sizeC": 1545,
+      "exactMatch": true,
+      "hashD": "b432b632608d938708ee32476366e6241ce2d77bde14481304bab99e248df4a4",
+      "hashC": "b432b632608d938708ee32476366e6241ce2d77bde14481304bab99e248df4a4"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\README.md",
+      "sizeD": 924,
+      "sizeC": 924,
+      "exactMatch": true,
+      "hashD": "9d79498a20c96833fae176fcb467ecc28e867d12468721d9b19ad9180520597a",
+      "hashC": "9d79498a20c96833fae176fcb467ecc28e867d12468721d9b19ad9180520597a"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\schema.json",
+      "sizeD": 2531,
+      "sizeC": 2531,
+      "exactMatch": true,
+      "hashD": "933193bc105ff745e7752abb4bb3dacf339415b3168fb3e3e5bd73a12b123af6",
+      "hashC": "933193bc105ff745e7752abb4bb3dacf339415b3168fb3e3e5bd73a12b123af6"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup.gs",
+      "sizeD": 26173,
+      "sizeC": 26173,
+      "exactMatch": true,
+      "hashD": "cf81b53faf7217b0536a9c733eca19c8ed236ab1416a7e5bc2d3574a28a398a0",
+      "hashC": "cf81b53faf7217b0536a9c733eca19c8ed236ab1416a7e5bc2d3574a28a398a0"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup_basic.gs",
+      "sizeD": 24439,
+      "sizeC": 24439,
+      "exactMatch": true,
+      "hashD": "b15fc92cfb7e433ef8cab7772b9e5506d28137dc5af62432cce78c234db50d01",
+      "hashC": "b15fc92cfb7e433ef8cab7772b9e5506d28137dc5af62432cce78c234db50d01"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup_business.gs",
+      "sizeD": 28392,
+      "sizeC": 28392,
+      "exactMatch": true,
+      "hashD": "a5ac37b543e6c648c692bf41f4fa46c61fe5a79243698a783811bbd44f2c0608",
+      "hashC": "a5ac37b543e6c648c692bf41f4fa46c61fe5a79243698a783811bbd44f2c0608"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 22081,
+      "sizeC": 22081,
+      "exactMatch": true,
+      "hashD": "54bce6dc1a8b13c56fce915bab9c5e7a3d70b9a93a3499c5c9b20f87ac0d9061",
+      "hashC": "54bce6dc1a8b13c56fce915bab9c5e7a3d70b9a93a3499c5c9b20f87ac0d9061"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 22077,
+      "sizeC": 22077,
+      "exactMatch": true,
+      "hashD": "b6061f84cdfb4d894529162cce9e6d165d82f63da923eb35986c493ff58bac65",
+      "hashC": "b6061f84cdfb4d894529162cce9e6d165d82f63da923eb35986c493ff58bac65"
+    },
+    {
+      "relPath": "releases\\F19\\1.0.0\\setup_pro.gs",
+      "sizeD": 26173,
+      "sizeC": 26173,
+      "exactMatch": true,
+      "hashD": "cf81b53faf7217b0536a9c733eca19c8ed236ab1416a7e5bc2d3574a28a398a0",
+      "hashC": "cf81b53faf7217b0536a9c733eca19c8ed236ab1416a7e5bc2d3574a28a398a0"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 880,
+      "sizeC": 880,
+      "exactMatch": true,
+      "hashD": "892729ba7722d29e19959f98c0faf7606aef9b11520a883bf4be35eb7e3275ca",
+      "hashC": "892729ba7722d29e19959f98c0faf7606aef9b11520a883bf4be35eb7e3275ca"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\manifest.json",
+      "sizeD": 1074,
+      "sizeC": 1074,
+      "exactMatch": true,
+      "hashD": "4ee44c96b1fbea1284f73fac438413fd8ed741283028e23f006166c00cdf135e",
+      "hashC": "4ee44c96b1fbea1284f73fac438413fd8ed741283028e23f006166c00cdf135e"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\PRD.md",
+      "sizeD": 1693,
+      "sizeC": 1693,
+      "exactMatch": true,
+      "hashD": "b52d26bee048aad54ec871982252121e62d07924f53eee106cb8c8cf3e5e495f",
+      "hashC": "b52d26bee048aad54ec871982252121e62d07924f53eee106cb8c8cf3e5e495f"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\README.md",
+      "sizeD": 913,
+      "sizeC": 913,
+      "exactMatch": true,
+      "hashD": "de413f1da237a0e30487d3b71ccc722cb2ce6342432d438de18317cd98e77fa3",
+      "hashC": "de413f1da237a0e30487d3b71ccc722cb2ce6342432d438de18317cd98e77fa3"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\schema.json",
+      "sizeD": 2028,
+      "sizeC": 2028,
+      "exactMatch": true,
+      "hashD": "5ae1c77b12bf720ee5480e4fb7e57509c4516e83f84c2a1c44965f9f30957b6e",
+      "hashC": "5ae1c77b12bf720ee5480e4fb7e57509c4516e83f84c2a1c44965f9f30957b6e"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup.gs",
+      "sizeD": 22869,
+      "sizeC": 22869,
+      "exactMatch": true,
+      "hashD": "aed7781893c97fc5de3deb08f697a2b4bc50b4fc98af1764714e564f3199c846",
+      "hashC": "aed7781893c97fc5de3deb08f697a2b4bc50b4fc98af1764714e564f3199c846"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup_basic.gs",
+      "sizeD": 21027,
+      "sizeC": 21027,
+      "exactMatch": true,
+      "hashD": "c977abbc5a541bae6683cf00ba026edda1a448431587230c0195358f5396d36c",
+      "hashC": "c977abbc5a541bae6683cf00ba026edda1a448431587230c0195358f5396d36c"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup_business.gs",
+      "sizeD": 25088,
+      "sizeC": 25088,
+      "exactMatch": true,
+      "hashD": "c77678a04ae5b5f227f608381892ca377b4e83494cce2abebe73866e2118ce93",
+      "hashC": "c77678a04ae5b5f227f608381892ca377b4e83494cce2abebe73866e2118ce93"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 18704,
+      "sizeC": 18704,
+      "exactMatch": true,
+      "hashD": "fdf44239c8186abc17f008dcdd87d8e4f27559f143b1b94dc408f38530289e93",
+      "hashC": "fdf44239c8186abc17f008dcdd87d8e4f27559f143b1b94dc408f38530289e93"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 18700,
+      "sizeC": 18700,
+      "exactMatch": true,
+      "hashD": "f40d6c90ecff9c9db24664070748ee4d5b812e0952e62e992c9a60c7d68ab3ac",
+      "hashC": "f40d6c90ecff9c9db24664070748ee4d5b812e0952e62e992c9a60c7d68ab3ac"
+    },
+    {
+      "relPath": "releases\\F20\\1.0.0\\setup_pro.gs",
+      "sizeD": 22869,
+      "sizeC": 22869,
+      "exactMatch": true,
+      "hashD": "aed7781893c97fc5de3deb08f697a2b4bc50b4fc98af1764714e564f3199c846",
+      "hashC": "aed7781893c97fc5de3deb08f697a2b4bc50b4fc98af1764714e564f3199c846"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 968,
+      "sizeC": 968,
+      "exactMatch": true,
+      "hashD": "f04ac097b9318fa2b3ecb41f81878ebf8bfbb506e668341673f7e4d5786c9471",
+      "hashC": "f04ac097b9318fa2b3ecb41f81878ebf8bfbb506e668341673f7e4d5786c9471"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\manifest.json",
+      "sizeD": 1307,
+      "sizeC": 1307,
+      "exactMatch": true,
+      "hashD": "6afe8e5f7de3ad977fcdef4fa51ce52a795595fb8e491494737c25fc36e80f1c",
+      "hashC": "6afe8e5f7de3ad977fcdef4fa51ce52a795595fb8e491494737c25fc36e80f1c"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\PRD.md",
+      "sizeD": 1835,
+      "sizeC": 1835,
+      "exactMatch": true,
+      "hashD": "a61fe5d9c8e78c8798240b77b419000c04b814552cc31188ce7048079fc034f4",
+      "hashC": "a61fe5d9c8e78c8798240b77b419000c04b814552cc31188ce7048079fc034f4"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\README.md",
+      "sizeD": 935,
+      "sizeC": 935,
+      "exactMatch": true,
+      "hashD": "831ffffb991a83313adf612ba2e3b92ebfb994efda86e9fab18534d4341631bf",
+      "hashC": "831ffffb991a83313adf612ba2e3b92ebfb994efda86e9fab18534d4341631bf"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\schema.json",
+      "sizeD": 2716,
+      "sizeC": 2716,
+      "exactMatch": true,
+      "hashD": "06db9cdcc7f05d4d6708fee66ad4fb318781b0c4e81178e1f8b73b1465556d61",
+      "hashC": "06db9cdcc7f05d4d6708fee66ad4fb318781b0c4e81178e1f8b73b1465556d61"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup.gs",
+      "sizeD": 27010,
+      "sizeC": 27010,
+      "exactMatch": true,
+      "hashD": "a9f3783aa974db50e2c623e7e715b2ed9f650484db9140dfb99b1578b63c3e74",
+      "hashC": "a9f3783aa974db50e2c623e7e715b2ed9f650484db9140dfb99b1578b63c3e74"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup_basic.gs",
+      "sizeD": 25320,
+      "sizeC": 25320,
+      "exactMatch": true,
+      "hashD": "0a2025507860ba6d2527db7de85dff0980e071cb8f1e2156bbd5048b83878802",
+      "hashC": "0a2025507860ba6d2527db7de85dff0980e071cb8f1e2156bbd5048b83878802"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup_business.gs",
+      "sizeD": 29229,
+      "sizeC": 29229,
+      "exactMatch": true,
+      "hashD": "15c85fe362f675bc5830090e22cf1202dc3fec9cd8b3b99a70a600d4259529a0",
+      "hashC": "15c85fe362f675bc5830090e22cf1202dc3fec9cd8b3b99a70a600d4259529a0"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 23132,
+      "sizeC": 23132,
+      "exactMatch": true,
+      "hashD": "ae2552a4205dd1dac9f773cac7dbda5ce819edf79af9c733d135d92cf13c472c",
+      "hashC": "ae2552a4205dd1dac9f773cac7dbda5ce819edf79af9c733d135d92cf13c472c"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 23128,
+      "sizeC": 23128,
+      "exactMatch": true,
+      "hashD": "124b42518dc67c76a177c5cff1b5e38c146e4a77e8f3233b01e1b1b4b53cdf65",
+      "hashC": "124b42518dc67c76a177c5cff1b5e38c146e4a77e8f3233b01e1b1b4b53cdf65"
+    },
+    {
+      "relPath": "releases\\F21\\1.0.0\\setup_pro.gs",
+      "sizeD": 27010,
+      "sizeC": 27010,
+      "exactMatch": true,
+      "hashD": "a9f3783aa974db50e2c623e7e715b2ed9f650484db9140dfb99b1578b63c3e74",
+      "hashC": "a9f3783aa974db50e2c623e7e715b2ed9f650484db9140dfb99b1578b63c3e74"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 918,
+      "sizeC": 918,
+      "exactMatch": true,
+      "hashD": "2d60d9e17fe7b90e74b7ef760e7613d956db69b28fd39aa8dac6778a6b6f865d",
+      "hashC": "2d60d9e17fe7b90e74b7ef760e7613d956db69b28fd39aa8dac6778a6b6f865d"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\manifest.json",
+      "sizeD": 1108,
+      "sizeC": 1108,
+      "exactMatch": true,
+      "hashD": "e7c6ea0d195f9d8e21c965586095e70d7db07b671e9b93696cd5ac77b9f0e774",
+      "hashC": "e7c6ea0d195f9d8e21c965586095e70d7db07b671e9b93696cd5ac77b9f0e774"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\PRD.md",
+      "sizeD": 1538,
+      "sizeC": 1538,
+      "exactMatch": true,
+      "hashD": "15a812fa25c132e0dd30dbef0eb942346baf60a35653fe7784a9a17546c2c025",
+      "hashC": "15a812fa25c132e0dd30dbef0eb942346baf60a35653fe7784a9a17546c2c025"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\README.md",
+      "sizeD": 916,
+      "sizeC": 916,
+      "exactMatch": true,
+      "hashD": "369de46644b37551dd2dafb040324355427d2a793114398491da7a85c1bb3f8c",
+      "hashC": "369de46644b37551dd2dafb040324355427d2a793114398491da7a85c1bb3f8c"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\schema.json",
+      "sizeD": 2452,
+      "sizeC": 2452,
+      "exactMatch": true,
+      "hashD": "0134579f29d3ca0eea095114a27bfa7003c69f69aa4df3a79403b2ff8a9678a5",
+      "hashC": "0134579f29d3ca0eea095114a27bfa7003c69f69aa4df3a79403b2ff8a9678a5"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup.gs",
+      "sizeD": 29918,
+      "sizeC": 29918,
+      "exactMatch": true,
+      "hashD": "3083a3bae7d5aa8d9ae1575c5989921f8cdfebd1f80c3321efb95a32cbafdf56",
+      "hashC": "3083a3bae7d5aa8d9ae1575c5989921f8cdfebd1f80c3321efb95a32cbafdf56"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup_basic.gs",
+      "sizeD": 27102,
+      "sizeC": 27102,
+      "exactMatch": true,
+      "hashD": "cc46b25c1a0d1c082a36d401f554798fea5e65636c04f1b602fbf6bf540d2194",
+      "hashC": "cc46b25c1a0d1c082a36d401f554798fea5e65636c04f1b602fbf6bf540d2194"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup_business.gs",
+      "sizeD": 32137,
+      "sizeC": 32137,
+      "exactMatch": true,
+      "hashD": "70b03d1e1950e294ad3c0ccf9a0362e0dee6e0e80a8e2107b8ae1bb967041ad3",
+      "hashC": "70b03d1e1950e294ad3c0ccf9a0362e0dee6e0e80a8e2107b8ae1bb967041ad3"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 24139,
+      "sizeC": 24139,
+      "exactMatch": true,
+      "hashD": "f9a09b0e39f3efb9f14ac2b79b997066403379cb3a599ce0084ead02b4df9f48",
+      "hashC": "f9a09b0e39f3efb9f14ac2b79b997066403379cb3a599ce0084ead02b4df9f48"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 24135,
+      "sizeC": 24135,
+      "exactMatch": true,
+      "hashD": "1f9984dc289f3db98e9361d339d62a029f67dd54f351386ffafc371fe175b62d",
+      "hashC": "1f9984dc289f3db98e9361d339d62a029f67dd54f351386ffafc371fe175b62d"
+    },
+    {
+      "relPath": "releases\\F24\\1.0.0\\setup_pro.gs",
+      "sizeD": 29918,
+      "sizeC": 29918,
+      "exactMatch": true,
+      "hashD": "3083a3bae7d5aa8d9ae1575c5989921f8cdfebd1f80c3321efb95a32cbafdf56",
+      "hashC": "3083a3bae7d5aa8d9ae1575c5989921f8cdfebd1f80c3321efb95a32cbafdf56"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 934,
+      "sizeC": 934,
+      "exactMatch": true,
+      "hashD": "108443e54a5a564ba761b7fa41d96c2b8d80a68ada1a6f9b3f74cdadd9a92c5b",
+      "hashC": "108443e54a5a564ba761b7fa41d96c2b8d80a68ada1a6f9b3f74cdadd9a92c5b"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\manifest.json",
+      "sizeD": 1103,
+      "sizeC": 1103,
+      "exactMatch": true,
+      "hashD": "3133a67e3975f0af9b0648e9e8522a61c8a05e6dfcbacf8b7d47289c87f4f49a",
+      "hashC": "3133a67e3975f0af9b0648e9e8522a61c8a05e6dfcbacf8b7d47289c87f4f49a"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\PRD.md",
+      "sizeD": 1511,
+      "sizeC": 1511,
+      "exactMatch": true,
+      "hashD": "50a4e022951622e6cf42e6149ee8109e1d98f646f0b254cebe3fe47fc7822cb8",
+      "hashC": "50a4e022951622e6cf42e6149ee8109e1d98f646f0b254cebe3fe47fc7822cb8"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\README.md",
+      "sizeD": 938,
+      "sizeC": 938,
+      "exactMatch": true,
+      "hashD": "3a3dbe6b277512eaa1d1976d9e3bdd4edcd8a65a57a86b7a7cc63b89ceabf847",
+      "hashC": "3a3dbe6b277512eaa1d1976d9e3bdd4edcd8a65a57a86b7a7cc63b89ceabf847"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\schema.json",
+      "sizeD": 2637,
+      "sizeC": 2637,
+      "exactMatch": true,
+      "hashD": "2ce2f2b531fa3ddfbb6539492366035ca9ee7a5670b2225303af011ffb684235",
+      "hashC": "2ce2f2b531fa3ddfbb6539492366035ca9ee7a5670b2225303af011ffb684235"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup.gs",
+      "sizeD": 24456,
+      "sizeC": 24456,
+      "exactMatch": true,
+      "hashD": "55925c3b58eddb0cbf255bde7194bfbe49251f44b6e38815e18512ed298ff597",
+      "hashC": "55925c3b58eddb0cbf255bde7194bfbe49251f44b6e38815e18512ed298ff597"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup_basic.gs",
+      "sizeD": 23435,
+      "sizeC": 23435,
+      "exactMatch": true,
+      "hashD": "caa84a36ce44e16353cf5a1da50f389ff87140247d3f205ee5a3b5c36e390b7a",
+      "hashC": "caa84a36ce44e16353cf5a1da50f389ff87140247d3f205ee5a3b5c36e390b7a"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup_business.gs",
+      "sizeD": 26675,
+      "sizeC": 26675,
+      "exactMatch": true,
+      "hashD": "a2025d5a56159840406c5e8bef5dc0efb12814f70d90b8cb5e2fed8f567d884e",
+      "hashC": "a2025d5a56159840406c5e8bef5dc0efb12814f70d90b8cb5e2fed8f567d884e"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 21560,
+      "sizeC": 21560,
+      "exactMatch": true,
+      "hashD": "184026c7e501aad1bc00fc1591a870db7a475997a712e77b6a39b8dafb7fd528",
+      "hashC": "184026c7e501aad1bc00fc1591a870db7a475997a712e77b6a39b8dafb7fd528"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 21556,
+      "sizeC": 21556,
+      "exactMatch": true,
+      "hashD": "6f302b38b0be4e58852c229e279316b0550f3117eac458ba5b1e097ebcf1aa25",
+      "hashC": "6f302b38b0be4e58852c229e279316b0550f3117eac458ba5b1e097ebcf1aa25"
+    },
+    {
+      "relPath": "releases\\F30\\1.0.0\\setup_pro.gs",
+      "sizeD": 24456,
+      "sizeC": 24456,
+      "exactMatch": true,
+      "hashD": "55925c3b58eddb0cbf255bde7194bfbe49251f44b6e38815e18512ed298ff597",
+      "hashC": "55925c3b58eddb0cbf255bde7194bfbe49251f44b6e38815e18512ed298ff597"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 920,
+      "sizeC": 920,
+      "exactMatch": true,
+      "hashD": "7fcaf452b516632002e95cc64643eab7f6a8523910dff08039a586ca5604d762",
+      "hashC": "7fcaf452b516632002e95cc64643eab7f6a8523910dff08039a586ca5604d762"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\manifest.json",
+      "sizeD": 1103,
+      "sizeC": 1103,
+      "exactMatch": true,
+      "hashD": "f5724a070a5aec2b07b1824e8d7a2bcf44a0c863420a059f2960533a1b9bfd5e",
+      "hashC": "f5724a070a5aec2b07b1824e8d7a2bcf44a0c863420a059f2960533a1b9bfd5e"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\PRD.md",
+      "sizeD": 1502,
+      "sizeC": 1502,
+      "exactMatch": true,
+      "hashD": "a84abeb8aea83db27cab23906a3be5e02cc00d6fd7a6457692e918434f20a2be",
+      "hashC": "a84abeb8aea83db27cab23906a3be5e02cc00d6fd7a6457692e918434f20a2be"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\README.md",
+      "sizeD": 933,
+      "sizeC": 933,
+      "exactMatch": true,
+      "hashD": "b731fe3e24b3c662781a7402e294b904507be3ee19b002b6021d8c9b45ddc19e",
+      "hashC": "b731fe3e24b3c662781a7402e294b904507be3ee19b002b6021d8c9b45ddc19e"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\schema.json",
+      "sizeD": 2289,
+      "sizeC": 2289,
+      "exactMatch": true,
+      "hashD": "075fbabcc10272a4f8da75acce75f11bf768e71af5450dd7200bfadad73232b6",
+      "hashC": "075fbabcc10272a4f8da75acce75f11bf768e71af5450dd7200bfadad73232b6"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup.gs",
+      "sizeD": 21407,
+      "sizeC": 21407,
+      "exactMatch": true,
+      "hashD": "dbe717f54ab296bfc12d3c1d96a5b4a235848c92eb87b99cedc237cf8f4fd4c6",
+      "hashC": "dbe717f54ab296bfc12d3c1d96a5b4a235848c92eb87b99cedc237cf8f4fd4c6"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup_basic.gs",
+      "sizeD": 20434,
+      "sizeC": 20434,
+      "exactMatch": true,
+      "hashD": "2da03eee3708dfe628ddc90fa6b662b30be87180892b293bd8d528aad9983b75",
+      "hashC": "2da03eee3708dfe628ddc90fa6b662b30be87180892b293bd8d528aad9983b75"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup_business.gs",
+      "sizeD": 23626,
+      "sizeC": 23626,
+      "exactMatch": true,
+      "hashD": "dfe01f63b68a015d533ccc91029a683484d1545be6fdde1ec4acc8c5dec55581",
+      "hashC": "dfe01f63b68a015d533ccc91029a683484d1545be6fdde1ec4acc8c5dec55581"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 18747,
+      "sizeC": 18747,
+      "exactMatch": true,
+      "hashD": "49e9c3c78fbc237e534ef58d6e4a81e190311125439b7213c0d49f8675158a4e",
+      "hashC": "49e9c3c78fbc237e534ef58d6e4a81e190311125439b7213c0d49f8675158a4e"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 18743,
+      "sizeC": 18743,
+      "exactMatch": true,
+      "hashD": "8a5c5cf7dbc598f13d8cc17df431644f1f370f90cc6ac65d4876a0105a63f682",
+      "hashC": "8a5c5cf7dbc598f13d8cc17df431644f1f370f90cc6ac65d4876a0105a63f682"
+    },
+    {
+      "relPath": "releases\\F34\\1.0.0\\setup_pro.gs",
+      "sizeD": 21407,
+      "sizeC": 21407,
+      "exactMatch": true,
+      "hashD": "dbe717f54ab296bfc12d3c1d96a5b4a235848c92eb87b99cedc237cf8f4fd4c6",
+      "hashC": "dbe717f54ab296bfc12d3c1d96a5b4a235848c92eb87b99cedc237cf8f4fd4c6"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\FORMULA_CONTRACTS.md",
+      "sizeD": 976,
+      "sizeC": 976,
+      "exactMatch": true,
+      "hashD": "625f2d5ad51dac5355d9ff3d25b0192a1bba69756107a6a38c2b07679cc81da8",
+      "hashC": "625f2d5ad51dac5355d9ff3d25b0192a1bba69756107a6a38c2b07679cc81da8"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\manifest.json",
+      "sizeD": 1180,
+      "sizeC": 1180,
+      "exactMatch": true,
+      "hashD": "852ec4f9be9e54a48838fa55cf8b4767c972855c003082797489be2549ddff1c",
+      "hashC": "852ec4f9be9e54a48838fa55cf8b4767c972855c003082797489be2549ddff1c"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\PRD.md",
+      "sizeD": 1512,
+      "sizeC": 1512,
+      "exactMatch": true,
+      "hashD": "7e694f4f7c1402879b6d233c57c1bdd331937d39ccb0f08022896c25909c6260",
+      "hashC": "7e694f4f7c1402879b6d233c57c1bdd331937d39ccb0f08022896c25909c6260"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\README.md",
+      "sizeD": 941,
+      "sizeC": 941,
+      "exactMatch": true,
+      "hashD": "11d85e0050d976620ef1946937ba5ef68f26833440d0485f7636340b451caa03",
+      "hashC": "11d85e0050d976620ef1946937ba5ef68f26833440d0485f7636340b451caa03"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\schema.json",
+      "sizeD": 1788,
+      "sizeC": 1788,
+      "exactMatch": true,
+      "hashD": "fedc974bca70ff9434df86bd6bef86b6f264ba09f3e0097fa4d69c778a15dbed",
+      "hashC": "fedc974bca70ff9434df86bd6bef86b6f264ba09f3e0097fa4d69c778a15dbed"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup.gs",
+      "sizeD": 19281,
+      "sizeC": 19281,
+      "exactMatch": true,
+      "hashD": "0423d5d579aa75ed82993cb9c7202e41c2ef608269e705a4e3eaf0e529891bdd",
+      "hashC": "0423d5d579aa75ed82993cb9c7202e41c2ef608269e705a4e3eaf0e529891bdd"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup_basic.gs",
+      "sizeD": 18073,
+      "sizeC": 18073,
+      "exactMatch": true,
+      "hashD": "1bb960a9725181a7784e9e49b416fd4e3bae8c0bdf2526d3e16a20ec308d5a7b",
+      "hashC": "1bb960a9725181a7784e9e49b416fd4e3bae8c0bdf2526d3e16a20ec308d5a7b"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup_business.gs",
+      "sizeD": 21500,
+      "sizeC": 21500,
+      "exactMatch": true,
+      "hashD": "c25b04fe31a599a8ecf8e19d96bdcd99709988bdad936d1e1ac7a04e722d2741",
+      "hashC": "c25b04fe31a599a8ecf8e19d96bdcd99709988bdad936d1e1ac7a04e722d2741"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup_free_clean.gs",
+      "sizeD": 16273,
+      "sizeC": 16273,
+      "exactMatch": true,
+      "hashD": "9f5d8982df3331ae5e7116683ef2c9521a2c70724e1d7721a1e514f64ce28143",
+      "hashC": "9f5d8982df3331ae5e7116683ef2c9521a2c70724e1d7721a1e514f64ce28143"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup_free_demo.gs",
+      "sizeD": 16269,
+      "sizeC": 16269,
+      "exactMatch": true,
+      "hashD": "c7e5d343e88c8231110d61b158ef0a6d20322bfa6ea878bf7b181572b83a611e",
+      "hashC": "c7e5d343e88c8231110d61b158ef0a6d20322bfa6ea878bf7b181572b83a611e"
+    },
+    {
+      "relPath": "releases\\F48\\1.0.0\\setup_pro.gs",
+      "sizeD": 19281,
+      "sizeC": 19281,
+      "exactMatch": true,
+      "hashD": "0423d5d579aa75ed82993cb9c7202e41c2ef608269e705a4e3eaf0e529891bdd",
+      "hashC": "0423d5d579aa75ed82993cb9c7202e41c2ef608269e705a4e3eaf0e529891bdd"
+    },
+    {
+      "relPath": "run_generator_all.bat",
+      "sizeD": 768,
+      "sizeC": 587,
+      "exactMatch": false,
+      "hashD": "f4bda7b2992e92795771e89be0915d97db7f55a676029463a4085718ef7d9672",
+      "hashC": "887cd8bbd41301b834382a43551f360d149d8dce38cdab8e8aeafcf750ecc4b7"
+    },
+    {
+      "relPath": "run_generator_batch1.bat",
+      "sizeD": 780,
+      "sizeC": 599,
+      "exactMatch": false,
+      "hashD": "5b4b616580d4bd8d3397516c7cbb46d51ab1ab897c45d1ae7cd6df65efc30127",
+      "hashC": "27f4a8f237d9e410f1ceeb4c2e21e364ddf99b54fcb117b45df588f1b063c131"
+    },
+    {
+      "relPath": "run_generator_batch2.bat",
+      "sizeD": 780,
+      "sizeC": 599,
+      "exactMatch": false,
+      "hashD": "38233c61de55574f7040c3539d28a9c013b031bc4cbd54909ef51718811e832d",
+      "hashC": "1d3698741daaeda059a48255fca394b93098e1936cd14876818d2ab2ee7cefac"
+    },
+    {
+      "relPath": "SOURCE_MAP.csv",
+      "sizeD": 45214,
+      "sizeC": 45214,
+      "exactMatch": true,
+      "hashD": "a7125d863774d559788a965c09b359900873f2cfb8ba9e1fa6e43ddf0dec7325",
+      "hashC": "a7125d863774d559788a965c09b359900873f2cfb8ba9e1fa6e43ddf0dec7325"
+    },
+    {
+      "relPath": "tests\\batch1_formulas.test.mjs",
+      "sizeD": 9337,
+      "sizeC": 9337,
+      "exactMatch": true,
+      "hashD": "c6bc0cb6c50c3eb4efff0ac60cca0050678e5ecf53639fbfc356e151519cf7ac",
+      "hashC": "c6bc0cb6c50c3eb4efff0ac60cca0050678e5ecf53639fbfc356e151519cf7ac"
+    },
+    {
+      "relPath": "tests\\batch2_formulas.test.mjs",
+      "sizeD": 11508,
+      "sizeC": 11508,
+      "exactMatch": true,
+      "hashD": "5a2a477343423ced7872ab46f141054b95c8ae15d8dda321f5103876570e6280",
+      "hashC": "5a2a477343423ced7872ab46f141054b95c8ae15d8dda321f5103876570e6280"
+    },
+    {
+      "relPath": "tests\\batch3_formulas.test.mjs",
+      "sizeD": 13760,
+      "sizeC": 13760,
+      "exactMatch": true,
+      "hashD": "674f39f4bc453c3a745039caddd4540eb89ea8fba1e9036395a3baba16d13152",
+      "hashC": "674f39f4bc453c3a745039caddd4540eb89ea8fba1e9036395a3baba16d13152"
+    },
+    {
+      "relPath": "tests\\core_engine.test.mjs",
+      "sizeD": 9775,
+      "sizeC": 9709,
+      "exactMatch": false,
+      "hashD": "cb885114f695c01f1f088f9328ca6217a344b3cb541f86e2f4a1c8de3a50f70b",
+      "hashC": "bab37d8ff1aa1d48e4800958506a4d845bb1ee64ff48d3a91e87ef9e1b3902d0"
+    },
+    {
+      "relPath": "TEST_REPORT.md",
+      "sizeD": 6408,
+      "sizeC": 6408,
+      "exactMatch": true,
+      "hashD": "f7c041ff360397aa6f2fff2d1a3cb3304be1b412cad5813b7d2874bee80c82d3",
+      "hashC": "f7c041ff360397aa6f2fff2d1a3cb3304be1b412cad5813b7d2874bee80c82d3"
+    },
+    {
+      "relPath": "tools\\generator.js",
+      "sizeD": 10294,
+      "sizeC": 10319,
+      "exactMatch": false,
+      "hashD": "f2839cb45f70d6789896c1b5e62729124b0af2a2723b848e846ef1566706fc2b",
+      "hashC": "657965b2821382ea89374b2c00cb9701a851d997c1054e61b14996fa01354da1"
+    },
+    {
+      "relPath": "utilities\\README.md",
+      "sizeD": 631,
+      "sizeC": 631,
+      "exactMatch": true,
+      "hashD": "2cc3763870ca711197161971a141a010db39ca76ac39ac735362d7a8abe553d1",
+      "hashC": "2cc3763870ca711197161971a141a010db39ca76ac39ac735362d7a8abe553d1"
+    },
+    {
+      "relPath": "verify_workspace.js",
+      "sizeD": 2657,
+      "sizeC": 2657,
+      "exactMatch": true,
+      "hashD": "b8e5381e4c933b1d38b4b5cba171a2cba90fc71e3c5a489ab0f499734da9d6dd",
+      "hashC": "b8e5381e4c933b1d38b4b5cba171a2cba90fc71e3c5a489ab0f499734da9d6dd"
+    },
+    {
+      "relPath": "WORKSPACE_AUDIT.md",
+      "sizeD": 6007,
+      "sizeC": 6007,
+      "exactMatch": true,
+      "hashD": "f5d221f6b0c5c14dab9300b87b96001ec20725f10456a8b8bf77b281e26ef72a",
+      "hashC": "f5d221f6b0c5c14dab9300b87b96001ec20725f10456a8b8bf77b281e26ef72a"
+    }
+  ],
+  "onlyInD": [
+    "reports\\BUILD_MANIFEST.json",
+    "reports\\BUILD_REPORT.md",
+    "reports\\CLEANUP_PLAN.md",
+    "reports\\PROGRESS.md",
+    "reports\\TEST_REPORT.md",
+    "reports\\WORKSPACE_AUDIT.md",
+    "run_generator_batch3.bat"
+  ],
+  "onlyInC": [
+    ".keep",
+    "tools\\scan_dupes.js"
+  ]
+}

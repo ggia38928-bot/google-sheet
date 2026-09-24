@@ -1,0 +1,40 @@
+{
+  "sku": "F34",
+  "name": "Lập ngân sách doanh nghiệp",
+  "version": "1.0.0",
+  "category": "Kế hoạch tài chính & Ngân sách",
+  "codexRef": "F34 (Dòng 1320–1347)",
+  "sourceMapIds": [
+    "G052",
+    "G054"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Budget 100 triệu, actual 30, committed chưa giải ngân 20: khả dụng 50 triệu. Khi 20 được giải ngân, giảm committed và tăng actual, không trừ kép.",
+  "generatedAt": "2026-09-11T05:50:41.268Z"
+}

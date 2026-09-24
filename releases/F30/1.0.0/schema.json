@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F30",
+  "name": "Công nợ và phân bổ thanh toán",
+  "version": "1.0.0",
+  "description": "Quản lý toàn diện công nợ phải thu, phải trả, phân bổ thanh toán nhiều đợt, xử lý chiết khấu giảm trừ (Credit Notes) và báo cáo tuổi nợ Aging Dashboard",
+  "tables": [
+    {
+      "name": "PARTIES",
+      "headers": [
+        "Mã đối tác",
+        "Tên khách hàng / Nhà cung cấp",
+        "Phân loại",
+        "Người liên hệ",
+        "Số điện thoại",
+        "Email",
+        "Mã số thuế",
+        "Hạn mức nợ (VND)",
+        "Thời hạn nợ (ngày)",
+        "Địa chỉ",
+        "Trạng thái"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "INVOICES",
+      "headers": [
+        "Mã hóa đơn/CT",
+        "Mã đối tác",
+        "Tên đối tác",
+        "Hướng công nợ",
+        "Ngày phát hành",
+        "Hạn thanh toán",
+        "Tổng tiền HĐ (VND)",
+        "Nguồn phát sinh",
+        "Mã nguồn tham chiếu",
+        "Đã phân bổ (VND)",
+        "Giảm trừ Credit (VND)",
+        "Còn phải thu/trả (VND)",
+        "Trạng thái",
+        "Ghi chú"
+      ],
+      "colCount": 14,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "PAYMENTS",
+      "headers": [
+        "Mã thanh toán",
+        "Mã đối tác",
+        "Chiều giao dịch",
+        "Ngày thanh toán",
+        "Số tiền TT (VND)",
+        "Đã phân bổ (VND)",
+        "Chưa phân bổ (VND)",
+        "Hình thức / Tham chiếu",
+        "Trạng thái",
+        "Ghi chú"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "ALLOCATIONS",
+      "headers": [
+        "Mã phân bổ",
+        "Mã thanh toán",
+        "Mã hóa đơn",
+        "Số tiền phân bổ (VND)",
+        "Ngày phân bổ",
+        "Ghi chú"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "CREDIT_NOTES",
+      "headers": [
+        "Mã giảm trừ",
+        "Mã hóa đơn",
+        "Số tiền giảm trừ (VND)",
+        "Ngày lập",
+        "Lý do giảm trừ",
+        "Trạng thái"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "OPENING_BALANCES",
+      "headers": [
+        "Mã số dư",
+        "Mã đối tác",
+        "Hướng công nợ",
+        "Ngày chốt số dư",
+        "Số dư ban đầu (VND)",
+        "Ghi chú"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 2
+    }
+  ]
+}

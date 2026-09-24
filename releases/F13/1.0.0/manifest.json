@@ -1,0 +1,41 @@
+{
+  "sku": "F13",
+  "name": "Tuyển dụng & lịch phỏng vấn ứng viên",
+  "version": "1.0.0",
+  "category": "Nhân sự & Tuyển dụng",
+  "codexRef": "F13 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "G018",
+    "G019",
+    "G046"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Một ứng viên nộp 2 vị trí được tính là 1 ứng viên và 2 hồ sơ ứng tuyển riêng biệt. Tỷ lệ nhận việc tính bằng IFERROR(COUNTIFS(Offers[Status], \"ACCEPTED\") / COUNTIFS(Offers[Status], \"<>DRAFT\"), 0).",
+  "generatedAt": "2026-09-12T03:33:39.976Z"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@minh-templates/core-engine",
+  "version": "1.0.0",
+  "description": "Core Generator Engine for MINH TEMPLATES FACTORY — Automated Google Sheets / Apps Script Commercial Generation",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test ../../tests/core_engine.test.mjs"
+  },
+  "keywords": [
+    "google-sheets",
+    "apps-script",
+    "template-generator",
+    "commercial-engine"
+  ],
+  "author": "Minh Templates",
+  "license": "UNLICENSED"
+}

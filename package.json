@@ -1,0 +1,20 @@
+{
+  "name": "minh-templates-factory",
+  "version": "1.0.0",
+  "description": "MINH TEMPLATES FACTORY — 79 Bestselling Google Sheets, Apps Script & AppSheet Templates Commercial Ecosystem",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:engine": "node --test tests/core_engine.test.mjs",
+    "generate:batch1": "node tools/generator.js --batch 1",
+    "generate:all": "node tools/generator.js --all"
+  },
+  "keywords": [
+    "google-sheets",
+    "apps-script",
+    "appsheet",
+    "minh-templates"
+  ],
+  "author": "Minh Templates",
+  "license": "UNLICENSED"
+}

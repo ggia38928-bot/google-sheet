@@ -1,0 +1,48 @@
+{
+  "sku": "F17",
+  "name": "Thu chi doanh nghiệp và dòng tiền startup",
+  "version": "1.0.0",
+  "category": "Tài chính & Dòng tiền",
+  "codexRef": "F17 (Dòng 867–892)",
+  "sourceMapIds": [
+    "T002",
+    "T003",
+    "T004",
+    "T005",
+    "G002",
+    "G003",
+    "G010",
+    "G014",
+    "G022",
+    "G024"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Số dư = Opening + Thu - Chi (chỉ tính POSTED). Chuyển khoản nội bộ bảo toàn tổng tiền hệ thống, không sinh doanh thu/chi phí ảo.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

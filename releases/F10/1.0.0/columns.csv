@@ -1,0 +1,14 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+Bookings,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Bookings,BookingCode,Text,Y,N,Y,,,,TRUE,
+Bookings,PropertyID,Ref,Y,N,N,,,,TRUE,Properties
+Bookings,RoomID,Ref,Y,N,N,,,,TRUE,Rooms
+Bookings,GuestID,Ref,Y,N,N,,,,TRUE,Guests
+Bookings,CheckInDate,Date,Y,N,N,TODAY(),,,TRUE,
+Bookings,CheckOutDate,Date,Y,N,N,TODAY() + 1,,,TRUE,
+Bookings,Nights,Number,Y,N,N,1,,,TRUE,
+Bookings,PricePerNight,Price,Y,N,N,0,,,TRUE,
+Bookings,RoomSubtotal,Price,Y,N,N,0,,,TRUE,
+Bookings,DepositAmount,Price,N,N,N,0,,,TRUE,
+Bookings,RemainingAmount,Price,N,N,N,0,,,TRUE,
+Bookings,Status,Enum,Y,N,N,"PENDING",,LIST("PENDING", "CONFIRMED", "CHECKED_IN", "CHECKED_OUT", "CANCELLED"),TRUE,

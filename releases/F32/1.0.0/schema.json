@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F32",
+  "name": "Chấm công & tổng hợp ca làm việc",
+  "version": "1.0.0",
+  "description": "Theo dõi ca làm việc, hỗ trợ ca đêm xuyên ngày (Cross-Midnight), tính công chuẩn trừ giờ nghỉ, quản lý đơn điều chỉnh và bảng tổng hợp công tháng",
+  "tables": [
+    {
+      "name": "Shifts",
+      "headers": [
+        "ID",
+        "ShiftCode",
+        "Name",
+        "StartTime",
+        "EndTime",
+        "BreakMinutes",
+        "CrossesMidnight",
+        "StandardHours",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "ShiftAssignments",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "WorkDate",
+        "ShiftID",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "TimeEntries",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "WorkDate",
+        "CheckInAt",
+        "CheckOutAt",
+        "WorkHours",
+        "LateMinutes",
+        "EarlyMinutes",
+        "Source",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 15,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "AttendanceAdjustments",
+      "headers": [
+        "ID",
+        "EntryID",
+        "RequestedCheckIn",
+        "RequestedCheckOut",
+        "Reason",
+        "State",
+        "ApprovedBy",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "Holidays",
+      "headers": [
+        "ID",
+        "Date",
+        "Name",
+        "Type",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 9,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "AttendanceSummary",
+      "headers": [
+        "ID",
+        "EmployeeID",
+        "Period",
+        "RegularHours",
+        "OvertimeHours",
+        "LeaveDays",
+        "WorkingDays",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 3
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "sku": "F21",
+  "name": "Form nhập liệu và phân quyền cấu hình",
+  "version": "1.0.0",
+  "category": "Nền tảng & Cấu hình dữ liệu",
+  "codexRef": "F21 (Dòng 973–998)",
+  "sourceMapIds": [
+    "G007",
+    "G030",
+    "G033",
+    "G037",
+    "G038",
+    "G050",
+    "G084",
+    "G085",
+    "G086",
+    "G089",
+    "G090",
+    "G171",
+    "G198"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Client sửa payload để ghi bảng ngoài quyền phải bị từ chối. Đổi parent dropdown xóa/đánh lỗi child không hợp lệ. Formula lặp tham chiếu bị chặn. Schema upgrade giữ được dữ liệu cũ.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

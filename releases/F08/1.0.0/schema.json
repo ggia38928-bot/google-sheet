@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F08",
+  "name": "Văn bản, hồ sơ và chỉ đạo",
+  "version": "1.0.0",
+  "description": "Quản lý sổ văn bản đến/đi, phân cấp bảo mật văn thư, theo dõi ý kiến chỉ đạo, hạn xử lý và phân công công việc",
+  "tables": [
+    {
+      "name": "Documents",
+      "headers": [
+        "ID",
+        "Direction",
+        "BookCode",
+        "DocNumber",
+        "IssuedDate",
+        "ReceivedDate",
+        "Subject",
+        "Issuer",
+        "Recipient",
+        "CategoryID",
+        "Confidentiality",
+        "Urgency",
+        "OwnerEmail",
+        "DueDate",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 20,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Directives",
+      "headers": [
+        "ID",
+        "DocumentID",
+        "Content",
+        "AssigneeEmail",
+        "DueDate",
+        "Status",
+        "Feedback",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "DocumentVersions",
+      "headers": [
+        "ID",
+        "DocumentID",
+        "Version",
+        "FileName",
+        "FileUrl",
+        "UploadedAt",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Dispatches",
+      "headers": [
+        "ID",
+        "DocumentID",
+        "Recipient",
+        "SentAt",
+        "Method",
+        "TrackingCode",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "Categories",
+      "headers": [
+        "ID",
+        "Name",
+        "AllowedRole",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    }
+  ]
+}

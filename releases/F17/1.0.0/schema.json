@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F17",
+  "name": "Sổ thu chi & Dòng tiền Startup",
+  "version": "1.0.0",
+  "description": "Quản lý thu chi đa tài khoản (Tiền mặt, Ngân hàng, Ví điện tử), tự động tính số dư và phân tích Burn Rate/Runway",
+  "tables": [
+    {
+      "name": "CASHBOOK",
+      "headers": [
+        "Mã GD",
+        "Ngày ghi sổ",
+        "Loại giao dịch",
+        "TK Nguồn (Chi/Chuyển)",
+        "TK Đích (Thu/Chuyển)",
+        "Hạng mục",
+        "Đối tác / Người nhận",
+        "Số tiền (VND)",
+        "Diễn giải chi tiết",
+        "Trạng thái",
+        "Mã chứng từ gốc"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 12
+    },
+    {
+      "name": "ACCOUNTS",
+      "headers": [
+        "Mã tài khoản",
+        "Tên tài khoản",
+        "Loại tài khoản",
+        "Số dư đầu kỳ (VND)",
+        "Số dư hiện tại (VND)",
+        "Tiền tệ",
+        "Trạng thái"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "CATEGORIES",
+      "headers": [
+        "Mã hạng mục",
+        "Tên hạng mục",
+        "Phân loại",
+        "Nhóm ngân sách",
+        "Ngân sách tháng (VND)"
+      ],
+      "colCount": 5,
+      "demoRowsCount": 8
+    }
+  ]
+}

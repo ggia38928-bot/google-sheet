@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F02",
+  "name": "Quản lý Dự án, Đội nhóm & KPI",
+  "version": "1.0.0",
+  "description": "Quản lý tiến độ dự án theo trọng số thực tế (Weighted Progress), phân bổ công việc đội nhóm, ghi nhận giờ công (Timesheets) và đo lường hiệu suất KPI nhân sự",
+  "tables": [
+    {
+      "name": "PROJECTS",
+      "headers": [
+        "Mã dự án",
+        "Tên dự án",
+        "Trưởng dự án (PM)",
+        "Ngày bắt đầu",
+        "Hạn hoàn thành",
+        "Ngân sách (VND)",
+        "Chi phí thực tế (VND)",
+        "Tiến độ trọng số (%)",
+        "Trạng thái",
+        "Ghi chú mục tiêu"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "TASKS",
+      "headers": [
+        "Mã việc",
+        "Mã dự án",
+        "Tiêu đề đầu việc",
+        "Người phụ trách",
+        "Ngày bắt đầu",
+        "Hạn hoàn thành",
+        "Trọng số (1-5)",
+        "Tiến độ cá nhân (%)",
+        "Trạng thái",
+        "Mức ưu tiên",
+        "Ngày hoàn thành thực tế",
+        "Đánh giá hạn"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "TIMESHEETS",
+      "headers": [
+        "Mã log",
+        "Mã việc",
+        "Nhân sự",
+        "Ngày làm việc",
+        "Số giờ làm (h)",
+        "Nội dung công việc chi tiết"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "KPI_PLANS",
+      "headers": [
+        "Mã chỉ tiêu",
+        "Nhân viên",
+        "Kỳ đánh giá",
+        "Tiêu chí KPI",
+        "ĐVT",
+        "Mục tiêu (Target)",
+        "Trọng số (%)",
+        "Chiều đo lường",
+        "Thực tế đạt (Actual)",
+        "Tỷ lệ hoàn thành (%)",
+        "Điểm KPI quy đổi"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "MEMBERS",
+      "headers": [
+        "Mã nhân sự",
+        "Họ và tên",
+        "Email",
+        "Vai trò / Phòng ban",
+        "Số việc đang giữ",
+        "Điểm KPI trung bình"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 3
+    }
+  ]
+}

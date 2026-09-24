@@ -1,0 +1,3 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Complete Directive,Directives,SetValues,"[Status] <> "COMPLETED"",Status,""COMPLETED"",
+Archive Document,Documents,SetValues,"[Status] = "COMPLETED"",Status,""ARCHIVED"",

@@ -1,0 +1,44 @@
+{
+  "sku": "F18",
+  "name": "Nhập xuất tồn và kiểm kê",
+  "version": "1.0.0",
+  "category": "Kho vận & Tồn kho",
+  "codexRef": "F18 (Dòng 894–917)",
+  "sourceMapIds": [
+    "T015",
+    "G006",
+    "G009",
+    "G013",
+    "G015",
+    "G023"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Tồn cuối kỳ = Tồn đầu + Nhập - Xuất ± Điều chỉnh. Chuyển kho nội bộ bảo toàn tổng lượng hàng tồn. Phân loại chuẩn HẾT HÀNG / CẦN NHẬP / ĐỦ TỒN.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

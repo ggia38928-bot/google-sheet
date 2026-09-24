@@ -1,0 +1,40 @@
+{
+  "sku": "F20",
+  "name": "Bán hàng và đơn hàng",
+  "version": "1.0.0",
+  "category": "Vận hành & Đơn hàng",
+  "codexRef": "F20 (Dòng 944–971)",
+  "sourceMapIds": [
+    "G019",
+    "G021"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Đơn 10 sản phẩm, giao 6 rồi 4: tồn chỉ giảm 10. Thu 500.000 trên đơn 800.000 cho công nợ 300.000. Hủy đơn chưa giao không sinh xuất kho.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

@@ -1,0 +1,2 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Check Out,ATTENDANCE_LOGS,SetValues,"ISBLANK([CheckOutTime])",CheckOutTime,"NOW()",

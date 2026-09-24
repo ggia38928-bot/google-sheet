@@ -1,0 +1,12 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+Contracts,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Contracts,ContractNumber,Text,Y,N,Y,,,,TRUE,
+Contracts,Title,Text,Y,N,N,,,,TRUE,
+Contracts,Counterparty,Text,Y,N,N,,,,TRUE,
+Contracts,SignedDate,Date,Y,N,N,TODAY(),,,TRUE,
+Contracts,StartDate,Date,Y,N,N,TODAY(),,,TRUE,
+Contracts,EndDate,Date,Y,N,N,,,,TRUE,
+Contracts,BaseAmount,Price,Y,N,N,0,,,TRUE,
+Contracts,ApprovedVariations,Price,N,N,N,0,,,FALSE,
+Contracts,CurrentAmount,Price,N,N,N,0,[BaseAmount] + [ApprovedVariations],,FALSE,
+Contracts,Status,Enum,Y,N,N,"ACTIVE",,LIST("DRAFT", "ACTIVE", "COMPLETED", "TERMINATED", "EXPIRED"),TRUE,

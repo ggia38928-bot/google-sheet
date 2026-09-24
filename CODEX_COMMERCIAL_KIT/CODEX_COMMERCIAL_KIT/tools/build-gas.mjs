@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+let domain=fs.readFileSync(path.join(root,'reference/domain.mjs'),'utf8').replaceAll('export ','');
+const domainNames=['DomainError','safeInteger','calculateLine','allocateFunds','remainingDebt','overlap','localDate','normalizeActor','canReadContact','canEditContact','transitionOpportunity','winRate','safeCsvCell'];
+fs.writeFileSync(path.join(root,'gas/Domain.gs'),'// Generated from reference/domain.mjs. Rebuild after edits.\nvar Domain=(function(){\n'+domain+'\nreturn {'+domainNames.join(',')+'};\n})();\n');
+let inventory=fs.readFileSync(path.join(root,'reference/inventory.mjs'),'utf8').split('// Test adapter only.')[0].replace(/^import[^\n]+\n/,'').replaceAll('export ','');
+fs.writeFileSync(path.join(root,'gas/Inventory.gs'),'// Generated from reference/inventory.mjs.\nvar Inventory=(function(){\nvar DomainError=Domain.DomainError, normalizeActor=Domain.normalizeActor, safeInteger=Domain.safeInteger;\n'+inventory+'\nreturn {stockBalance,prepareStockEvent};\n})();\n');
+console.log('Generated gas/Domain.gs and gas/Inventory.gs');

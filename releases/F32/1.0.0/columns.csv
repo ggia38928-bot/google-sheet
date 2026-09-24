@@ -1,0 +1,8 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+ATTENDANCE_LOGS,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+ATTENDANCE_LOGS,EmployeeID,Text,Y,N,N,USEREMAIL(),,,FALSE,
+ATTENDANCE_LOGS,LogDate,Date,Y,N,N,TODAY(),,,TRUE,
+ATTENDANCE_LOGS,CheckInTime,DateTime,Y,N,Y,NOW(),,,FALSE,
+ATTENDANCE_LOGS,CheckOutTime,DateTime,N,N,N,,,,TRUE,
+TIMESHEETS,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+TIMESHEETS,WorkHours,Decimal,Y,N,Y,0,,,TRUE,

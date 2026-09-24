@@ -1,0 +1,7 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Contracts,Contracts,ID,ContractNumber,ADDS_AND_UPDATES,
+Amendments,Amendments,ID,AmendmentNumber,ADDS_AND_UPDATES,
+Milestones,Milestones,ID,MilestoneName,ADDS_AND_UPDATES,
+ContractPayments,ContractPayments,ID,Amount,ADDS_ONLY,
+ContractFiles,ContractFiles,ID,FileName,ADDS_ONLY,
+Settings,Settings,Key,Key,READ_ONLY,

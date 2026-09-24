@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F48",
+  "name": "Báo cáo chi phí, P&L và dòng tiền",
+  "version": "1.0.0",
+  "description": "Hệ thống kế toán quản trị chuyên sâu: lập báo cáo kết quả kinh doanh P&L theo nguyên tắc dồn tích, phân tích dòng tiền Cash Flow trực tiếp và phân bổ chi phí đa chiều",
+  "tables": [
+    {
+      "name": "FINANCE_FACTS",
+      "headers": [
+        "Mã bút toán",
+        "Ngày chứng từ",
+        "Kỳ kế toán",
+        "Mã tài khoản",
+        "Tên khoản mục",
+        "Phòng ban",
+        "Mã dự án",
+        "Số tiền (VND)",
+        "Phân loại P&L",
+        "Phân loại CashFlow",
+        "Mã nguồn tham chiếu",
+        "Diễn giải"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "REPORT_MAPPINGS",
+      "headers": [
+        "Mã mapping",
+        "Mã tài khoản/Khoản mục",
+        "Tên hiển thị báo cáo",
+        "Báo cáo áp dụng",
+        "Nhóm chỉ tiêu",
+        "Dấu ghi nhận (+/-)"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "REPORTING_PERIODS",
+      "headers": [
+        "Mã kỳ kế toán",
+        "Tên kỳ báo cáo",
+        "Ngày bắt đầu",
+        "Ngày kết thúc",
+        "Khóa sổ",
+        "Người thực hiện"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "REPORT_ADJUSTMENTS",
+      "headers": [
+        "Mã điều chỉnh",
+        "Kỳ kế toán",
+        "Mã tài khoản",
+        "Số tiền điều chỉnh (VND)",
+        "Lý do điều chỉnh",
+        "Trạng thái"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 1
+    }
+  ]
+}

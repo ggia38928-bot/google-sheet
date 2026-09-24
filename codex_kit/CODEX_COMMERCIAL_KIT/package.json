@@ -1,0 +1,15 @@
+{
+  "name": "minh-commercial-template-reference-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "cost": "node tools/cost-model.mjs",
+    "check:kit": "node tools/check-kit.mjs",
+    "build:gas": "node tools/build-gas.mjs",
+    "prompt:list": "node tools/list-prompts.mjs",
+    "release:check": "node tools/release-gate.mjs config/release-evidence.example.json ."
+  }
+}

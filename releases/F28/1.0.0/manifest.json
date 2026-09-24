@@ -1,0 +1,39 @@
+{
+  "sku": "F28",
+  "name": "Lịch dịch vụ spa và phòng khám",
+  "version": "1.0.0",
+  "category": "Dịch vụ khách hàng & Đặt lịch hẹn",
+  "codexRef": "F28 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "G024"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Hai lịch cùng provider giao nhau không cùng được xác nhận. Lễ tân xem lịch nhưng không xem RestrictedRecords. Hủy lịch không tăng doanh thu dịch vụ.",
+  "generatedAt": "2026-09-12T04:03:45.093Z"
+}

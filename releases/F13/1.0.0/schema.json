@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F13",
+  "name": "Tuyển dụng & lịch phỏng vấn ứng viên",
+  "version": "1.0.0",
+  "description": "Quy trình tuyển dụng khép kín từ đăng tuyển, thu thập hồ sơ ứng viên, điều phối lịch phỏng vấn, biểu mẫu chấm điểm năng lực (Scorecard) đến phát hành thư mời nhận việc (Offer)",
+  "tables": [
+    {
+      "name": "Vacancies",
+      "headers": [
+        "ID",
+        "Title",
+        "TeamID",
+        "HiringManager",
+        "TargetCount",
+        "OpenDate",
+        "CloseDate",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Candidates",
+      "headers": [
+        "ID",
+        "CandidateCode",
+        "Name",
+        "Email",
+        "Phone",
+        "CVFileID",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Applications",
+      "headers": [
+        "ID",
+        "CandidateID",
+        "VacancyID",
+        "Stage",
+        "Source",
+        "AppliedAt",
+        "OwnerEmail",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "Interviews",
+      "headers": [
+        "ID",
+        "ApplicationID",
+        "StartAt",
+        "EndAt",
+        "InterviewerEmail",
+        "Round",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Scorecards",
+      "headers": [
+        "ID",
+        "InterviewID",
+        "Criterion",
+        "Score",
+        "Comment",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Offers",
+      "headers": [
+        "ID",
+        "ApplicationID",
+        "OfferedSalary",
+        "SentAt",
+        "StartDate",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 2
+    }
+  ]
+}

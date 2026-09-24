@@ -1,0 +1,3 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Terminate Employee,EMPLOYEES,SetValues,"[EmploymentStatus] <> "TERMINATED"",EmploymentStatus,""TERMINATED"",
+Renew Contract,CONTRACTS,SetValues,"[Status] = "ACTIVE"",Status,""ACTIVE"",

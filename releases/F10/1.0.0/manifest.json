@@ -1,0 +1,42 @@
+{
+  "sku": "F10",
+  "name": "Khách sạn, homestay và đặt phòng",
+  "version": "1.0.0",
+  "category": "Dịch vụ khách hàng & Đặt lịch hẹn",
+  "codexRef": "F10 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "T014",
+    "G032",
+    "G046",
+    "G076"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Khoảng [check-in, check-out) không tính đêm trả phòng; booking hủy không giữ phòng; hai request đồng thời cho phòng cuối chỉ một được duyệt. Deposit không bị cộng lần hai vào tổng thu.",
+  "generatedAt": "2026-09-12T04:03:45.090Z"
+}

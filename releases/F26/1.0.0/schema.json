@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F26",
+  "name": "Lớp học, điểm danh và học phí",
+  "version": "1.0.0",
+  "description": "Quản lý khóa học, lớp học, điểm danh trừ buổi thực học, tính ngày kết thúc gói học chính xác theo lịch nghỉ lễ, thu học phí và công nợ",
+  "tables": [
+    {
+      "name": "Students",
+      "headers": [
+        "ID",
+        "StudentCode",
+        "FullName",
+        "GuardianName",
+        "GuardianPhone",
+        "Email",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Classes",
+      "headers": [
+        "ID",
+        "ClassCode",
+        "Name",
+        "TeacherEmail",
+        "StartDate",
+        "EndDate",
+        "FeePerSession",
+        "ScheduleDays",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 14,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Enrollments",
+      "headers": [
+        "ID",
+        "StudentID",
+        "ClassID",
+        "EnrolledAt",
+        "Status",
+        "TotalCreditSessions",
+        "UsedSessions",
+        "RemainingSessions",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Sessions",
+      "headers": [
+        "ID",
+        "ClassID",
+        "SessionDate",
+        "StartTime",
+        "EndTime",
+        "Topic",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Attendance",
+      "headers": [
+        "ID",
+        "SessionID",
+        "EnrollmentID",
+        "StudentID",
+        "Result",
+        "ConsumedCredit",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "TuitionInvoices",
+      "headers": [
+        "ID",
+        "InvoiceCode",
+        "EnrollmentID",
+        "StudentID",
+        "Amount",
+        "DueDate",
+        "PaidAmount",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "HolidayCalendar",
+      "headers": [
+        "ID",
+        "HolidayDate",
+        "Reason",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    }
+  ]
+}

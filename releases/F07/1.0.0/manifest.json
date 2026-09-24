@@ -1,0 +1,39 @@
+{
+  "sku": "F07",
+  "name": "Hợp đồng, phụ lục và phát sinh",
+  "version": "1.0.0",
+  "category": "Hợp đồng, Văn bản & Đào tạo",
+  "codexRef": "F07 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "T004"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Gốc 100 triệu, tăng đã duyệt 20 triệu, giảm chưa duyệt 5 triệu: giá trị hiện hành 120 triệu. Thu 50 triệu không tự coi là nghiệm thu 50 triệu (mốc nghiệm thu và thanh toán độc lập).",
+  "generatedAt": "2026-09-12T07:56:25.751Z"
+}

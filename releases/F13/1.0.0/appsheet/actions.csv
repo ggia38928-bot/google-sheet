@@ -1,0 +1,3 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Accept Offer,OFFERS,SetValues,"[Status] = "SENT"",Status,""ACCEPTED"",
+Reject Offer,OFFERS,SetValues,"[Status] = "SENT"",Status,""REJECTED"",

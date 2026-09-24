@@ -1,0 +1,8 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Events,Events,ID,Title,ADDS_AND_UPDATES,
+Attendees,Attendees,ID,UserEmail,ADDS_AND_UPDATES,
+MeetingResources,MeetingResources,ID,Name,READ_ONLY,
+Reservations,Reservations,ID,ResourceID,ADDS_AND_UPDATES,
+Trips,Trips,ID,Destination,ADDS_AND_UPDATES,
+ActionItems,ActionItems,ID,TaskTitle,ADDS_AND_UPDATES,
+Settings,Settings,Key,Key,READ_ONLY,

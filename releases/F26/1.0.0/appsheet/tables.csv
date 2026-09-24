@@ -1,0 +1,9 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Students,Students,ID,FullName,ADDS_AND_UPDATES,
+Classes,Classes,ID,Name,READ_ONLY,
+Enrollments,Enrollments,ID,StudentID,ADDS_AND_UPDATES,
+Sessions,Sessions,ID,Topic,ADDS_AND_UPDATES,
+Attendance,Attendance,ID,Result,ADDS_ONLY,
+TuitionInvoices,TuitionInvoices,ID,InvoiceCode,ADDS_AND_UPDATES,
+HolidayCalendar,HolidayCalendar,ID,HolidayDate,READ_ONLY,
+Settings,Settings,Key,Key,READ_ONLY,

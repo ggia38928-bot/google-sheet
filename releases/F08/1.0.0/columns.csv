@@ -1,0 +1,13 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+Documents,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Documents,Direction,Enum,Y,N,N,"INCOMING",,LIST("INCOMING", "OUTGOING", "INTERNAL"),TRUE,
+Documents,BookCode,Text,Y,N,N,"SO-DEN-2026",,,TRUE,
+Documents,DocNumber,Text,Y,N,Y,,,,TRUE,
+Documents,Subject,Text,Y,N,N,,,,TRUE,
+Documents,Issuer,Text,Y,N,N,,,,TRUE,
+Documents,Recipient,Text,Y,N,N,,,,TRUE,
+Documents,Confidentiality,Enum,Y,N,N,"INTERNAL",,LIST("PUBLIC", "INTERNAL", "CONFIDENTIAL", "SECRET"),TRUE,
+Documents,Urgency,Enum,Y,N,N,"NORMAL",,LIST("NORMAL", "URGENT", "TOP_URGENT"),TRUE,
+Documents,OwnerEmail,Email,Y,N,N,USEREMAIL(),,,TRUE,
+Documents,DueDate,Date,N,N,N,,,,TRUE,
+Documents,Status,Enum,Y,N,N,"PROCESSING",,LIST("DRAFT", "PROCESSING", "COMPLETED", "OVERDUE", "ARCHIVED"),TRUE,

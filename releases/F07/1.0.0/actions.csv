@@ -1,0 +1,4 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Approve Amendment,Amendments,SetValues,"[Status] = "SUBMITTED"",Status,""APPROVED"",
+Accept Milestone,Milestones,SetValues,"[Status] = "PENDING"",Status,""ACCEPTED"",
+Terminate Contract,Contracts,SetValues,"[Status] = "ACTIVE"",Status,""TERMINATED"",

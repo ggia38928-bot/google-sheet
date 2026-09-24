@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F05",
+  "name": "CRM Chăm sóc khách hàng & Pipeline bán hàng",
+  "version": "1.0.0",
+  "description": "Quản lý cơ hội bán hàng theo phễu chuyển đổi, tính giá trị trọng số, đo lường Win Rate và theo dõi lịch hẹn",
+  "tables": [
+    {
+      "name": "DEALS",
+      "headers": [
+        "Mã Deal",
+        "Tiêu đề cơ hội",
+        "Mã KH",
+        "Tên khách hàng",
+        "Phụ trách",
+        "Giai đoạn (Stage)",
+        "Giá trị kỳ vọng (VND)",
+        "Xác suất",
+        "Giá trị trọng số (VND)",
+        "Dự kiến ngày chốt",
+        "Ngày chốt thực tế",
+        "Lý do Thắng/Thua"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "CUSTOMERS",
+      "headers": [
+        "Mã KH",
+        "Tên khách hàng",
+        "Số điện thoại",
+        "Email liên hệ",
+        "Công ty / Doanh nghiệp",
+        "Nguồn khách",
+        "Phân loại",
+        "Người phụ trách"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "ACTIVITIES",
+      "headers": [
+        "Mã HĐ",
+        "Ngày thực hiện",
+        "Mã KH",
+        "Tên khách hàng",
+        "Hình thức",
+        "Nội dung trao đổi chi tiết",
+        "Ngày hẹn tiếp theo",
+        "Trạng thái xử lý"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 5
+    }
+  ]
+}

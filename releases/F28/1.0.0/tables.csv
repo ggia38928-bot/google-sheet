@@ -1,0 +1,8 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Clients,Clients,ID,FullName,ADDS_AND_UPDATES,
+Providers,Providers,ID,FullName,READ_ONLY,
+Services,Services,ID,Name,READ_ONLY,
+Appointments,Appointments,ID,AppointmentCode,ADDS_AND_UPDATES,
+ServiceVisits,ServiceVisits,ID,Notes,ADDS_ONLY,
+Payments,Payments,ID,Amount,ADDS_ONLY,
+Settings,Settings,Key,Key,READ_ONLY,

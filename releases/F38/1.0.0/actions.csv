@@ -1,0 +1,3 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Approve Leave,LEAVE_REQUESTS,SetValues,"[Status] = "SUBMITTED"",Status,""APPROVED"",
+Reject Leave,LEAVE_REQUESTS,SetValues,"[Status] = "SUBMITTED"",Status,""REJECTED"",

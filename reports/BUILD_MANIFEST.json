@@ -1,0 +1,709 @@
+{
+  "manifestVersion": "1.2.0",
+  "brand": "MINH TEMPLATES FACTORY",
+  "lastUpdated": "2026-09-11T06:01:00.227Z",
+  "environment": {
+    "primaryRoot": "D:\\google sheet",
+    "replicaRoot": "DISABLED (Single Root Policy on D:\\google sheet)",
+    "nodeVersion": "v24.14.0"
+  },
+  "statistics": {
+    "totalCatalogItems": 79,
+    "implementedLocalCount": 12,
+    "plannedCount": 38,
+    "blockedMissingSpecCount": 29,
+    "verifiedGoogleCount": 0,
+    "readyToSellCount": 0,
+    "totalAutomatedTests": 74,
+    "testPassRate": "100%"
+  },
+  "implementedSkus": [
+    {
+      "sku": "F01",
+      "name": "Việc cá nhân và ưu tiên",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 17,
+      "installerScript": "install_F01_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F02",
+      "name": "Dự án, công việc đội nhóm và KPI",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F02_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F05",
+      "name": "CRM khách hàng và pipeline",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F05_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F17",
+      "name": "Thu chi doanh nghiệp và dòng tiền startup",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F17_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F18",
+      "name": "Nhập xuất tồn và kiểm kê",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F18_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F19",
+      "name": "Báo giá và phiên bản chào bán",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F19_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F20",
+      "name": "Bán hàng và đơn hàng",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F20_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F21",
+      "name": "Form nhập liệu và phân quyền cấu hình",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F21_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F24",
+      "name": "Mini ERP cho đơn vị nhỏ",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F24_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F30",
+      "name": "Công nợ và phân bổ thanh toán",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F30_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F34",
+      "name": "Lập ngân sách doanh nghiệp",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F34_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    },
+    {
+      "sku": "F48",
+      "name": "Báo cáo chi phí, P&L và dòng tiền",
+      "category": "family",
+      "status": "implemented_local",
+      "version": "1.0.0",
+      "tiers": [
+        "FREE_DEMO",
+        "FREE_CLEAN",
+        "BASIC",
+        "PRO",
+        "BUSINESS"
+      ],
+      "releaseFilesCount": 11,
+      "installerScript": "install_F48_SHEET()",
+      "hasFormulaContracts": true,
+      "hasPRD": true,
+      "hasSchemaJson": true,
+      "hasReadme": true,
+      "hasManifestJson": true
+    }
+  ],
+  "plannedSkus": [
+    {
+      "sku": "F03",
+      "name": "Công trình và tiến độ thi công",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F04",
+      "name": "Lịch nội dung và hiệu quả đa kênh",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F06",
+      "name": "CRM đại lý ô tô",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F07",
+      "name": "Hợp đồng, phụ lục và phát sinh",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F08",
+      "name": "Văn bản, hồ sơ và chỉ đạo",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F09",
+      "name": "Lịch lãnh đạo, cuộc họp và công tác",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F10",
+      "name": "Khách sạn, homestay và đặt phòng",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F11",
+      "name": "Ngân sách cưới và tiền mừng",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F12",
+      "name": "Hồ sơ nhân sự",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F13",
+      "name": "Tuyển dụng và lịch phỏng vấn",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F14",
+      "name": "Thuê trang phục và phụ kiện",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F15",
+      "name": "Thuê xe và bảo dưỡng",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F16",
+      "name": "Định mức nguyên liệu spa và nail",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F22",
+      "name": "Bất động sản: giỏ hàng, tra cứu và tính giá",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F23",
+      "name": "Tiệm sửa xe và dịch vụ hộ kinh doanh",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F25",
+      "name": "Quán ăn, nhà hàng và cà phê",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F26",
+      "name": "Lớp học, điểm danh và học phí",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F27",
+      "name": "Cổng ứng dụng và báo cáo tập trung",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F28",
+      "name": "Lịch dịch vụ spa và phòng khám",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F29",
+      "name": "Bốc thăm và chia giải sự kiện",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F31",
+      "name": "Ghi chú và nhật trình cá nhân",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F32",
+      "name": "Chấm công và tổng hợp ca",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F33",
+      "name": "Tài chính cá nhân và gia đình",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F35",
+      "name": "Khảo sát và đánh giá phòng ban",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F36",
+      "name": "Học tiếng Anh và ôn từ vựng",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F37",
+      "name": "Phân bổ chi tiêu theo các quỹ",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F38",
+      "name": "Nghỉ phép và số dư phép",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F39",
+      "name": "Đề nghị chi và phê duyệt thanh toán",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F40",
+      "name": "Dashboard bán hàng và doanh thu",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F41",
+      "name": "Theo dõi thói quen",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F42",
+      "name": "Thời khóa biểu và kế hoạch tuần",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F43",
+      "name": "Theo dõi lượt xe qua cửa khẩu",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F44",
+      "name": "Tài sản và khấu hao đường thẳng",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F45",
+      "name": "Đặt cơm văn phòng và chia tiền",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F46",
+      "name": "Dashboard biến động nhân sự",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F47",
+      "name": "Báo cáo quảng cáo và chiến dịch",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F49",
+      "name": "Trung tâm báo cáo đơn giản",
+      "type": "family",
+      "status": "planned"
+    },
+    {
+      "sku": "F50",
+      "name": "Bộ kế hoạch cuộc sống tổng hợp (bổ sung ngoài shop)",
+      "type": "family",
+      "status": "planned"
+    }
+  ],
+  "blockedSkus": [
+    {
+      "sku": "U01",
+      "name": "Gộp dữ liệu nhiều file và nhiều tab",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U02",
+      "name": "Xuất vùng chọn, tab, PDF và ảnh",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U03",
+      "name": "Làm sạch văn bản, liên hệ và thư viện Regex",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U04",
+      "name": "Sinh mã ổn định và chống trùng",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U05",
+      "name": "Lịch năm và công thức ngày",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U06",
+      "name": "Thẻ liên hệ và ảnh từ văn bản",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U07",
+      "name": "Dịch văn bản và phát giọng đọc",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U08",
+      "name": "Đánh số thứ tự theo điều kiện và bộ lọc",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U09",
+      "name": "Đọc số và số tiền thành chữ",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U10",
+      "name": "Lọc số điện thoại theo mẫu số",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U11",
+      "name": "Trộn thư và gửi mail cá nhân hóa",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U12",
+      "name": "Bộ biểu đồ nhỏ và bong bóng",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U13",
+      "name": "Tổng ngang, cộng dồn và trả về tiêu đề",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U14",
+      "name": "Pivot chuỗi và chuyển bảng rộng/dài",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U15",
+      "name": "Đảo chuỗi và minh họa ký tự hướng chữ",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U16",
+      "name": "Hiển thị ảnh Drive theo quyền",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U17",
+      "name": "Chia nhóm ngẫu nhiên hoặc cân bằng",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U18",
+      "name": "Dropdown phụ thuộc nhiều cấp",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U19",
+      "name": "Quản lý quyền file và khóa vùng dữ liệu",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U20",
+      "name": "Sao lưu dữ liệu nhiều file",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U21",
+      "name": "Tìm kiếm, QUERY và phân trang dữ liệu",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U22",
+      "name": "Dòng cuối và lấp ô trống",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U23",
+      "name": "Chuyển đổi lịch âm và dương",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U24",
+      "name": "Chốt giá trị công thức biến động",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U25",
+      "name": "Sao chép bộ thư mục và template Drive",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U26",
+      "name": "Nén và đổi kích thước ảnh",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U27",
+      "name": "Tra cứu thông tin theo mã số thuế",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U28",
+      "name": "Đồng bộ Google Calendar với Sheets",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    },
+    {
+      "sku": "U29",
+      "name": "Bảng phối màu và theme cho Sheets",
+      "type": "utility",
+      "status": "blocked_missing_spec",
+      "reason": "Chưa có đặc tả bảng dữ liệu, khóa chính/ngoại và KPIs chi tiết trong CODEX (tiện ích hàm/macro)"
+    }
+  ]
+}

@@ -1,0 +1,3204 @@
+{
+  "catalogVersion": "1.0.0",
+  "generatedDate": "2026-09-07T04:55:38.101Z",
+  "brand": "Minh Templates",
+  "totalItems": 79,
+  "familiesCount": 50,
+  "utilitiesCount": 29,
+  "items": [
+    {
+      "familyId": "F01",
+      "name": "Việc cá nhân và ưu tiên",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F01-SHEET",
+        "F01-WEB",
+        "F01-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T006",
+        "T013",
+        "G075",
+        "G094",
+        "G114",
+        "G131",
+        "G169",
+        "G173",
+        "G195",
+        "G199",
+        "G216"
+      ],
+      "tables": [
+        {
+          "name": "Tasks",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true,
+              "immutable": true
+            },
+            {
+              "name": "Title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "OwnerEmail",
+              "type": "email",
+              "required": false
+            },
+            {
+              "name": "Priority",
+              "type": "enum",
+              "values": [
+                "THẤP",
+                "TRUNG BÌNH",
+                "CAO",
+                "KHẨN CẤP"
+              ]
+            },
+            {
+              "name": "StartDate",
+              "type": "date",
+              "required": false
+            },
+            {
+              "name": "DueDate",
+              "type": "date",
+              "required": false
+            },
+            {
+              "name": "Status",
+              "type": "enum",
+              "values": [
+                "TODO",
+                "DOING",
+                "DONE",
+                "CANCELLED"
+              ]
+            },
+            {
+              "name": "Progress",
+              "type": "percent",
+              "required": false
+            },
+            {
+              "name": "CompletedAt",
+              "type": "datetime",
+              "required": false
+            },
+            {
+              "name": "DaysLate",
+              "type": "formula",
+              "formula": "=IF(OR(A2=\"\",F2=\"\",G2=\"CANCELLED\"),\"\",IF(G2=\"DONE\",IF(I2=\"\",\"\",MAX(0,INT(I2)-F2)),MAX(0,TODAY()-F2)))"
+            },
+            {
+              "name": "CategoryID",
+              "type": "ref",
+              "targetTable": "Categories"
+            },
+            {
+              "name": "Important",
+              "type": "yesno",
+              "required": false
+            },
+            {
+              "name": "Urgent",
+              "type": "yesno",
+              "required": false
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true,
+              "immutable": true
+            },
+            {
+              "name": "UpdatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "CreatedBy",
+              "type": "email",
+              "required": true
+            },
+            {
+              "name": "RowVersion",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "Archived",
+              "type": "yesno",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "Categories",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true,
+              "immutable": true
+            },
+            {
+              "name": "Name",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "Color",
+              "type": "text",
+              "required": false
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "UpdatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "CreatedBy",
+              "type": "email",
+              "required": true
+            },
+            {
+              "name": "RowVersion",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "Archived",
+              "type": "yesno",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "TaskEvents",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "TaskID",
+              "type": "ref",
+              "targetTable": "Tasks",
+              "required": true
+            },
+            {
+              "name": "EventType",
+              "type": "enum",
+              "values": [
+                "CREATE",
+                "START",
+                "COMPLETE",
+                "CANCEL",
+                "REOPEN",
+                "UPDATE"
+              ],
+              "required": true
+            },
+            {
+              "name": "EventAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "ActorEmail",
+              "type": "email",
+              "required": true
+            },
+            {
+              "name": "Notes",
+              "type": "text",
+              "required": false
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "TaskChecklist",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "TaskID",
+              "type": "ref",
+              "targetTable": "Tasks",
+              "required": true
+            },
+            {
+              "name": "Title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "Done",
+              "type": "yesno",
+              "required": true
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "UpdatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "RowVersion",
+              "type": "number",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "RecurrenceRules",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "TaskTemplateID",
+              "type": "ref",
+              "targetTable": "Tasks",
+              "required": true
+            },
+            {
+              "name": "Frequency",
+              "type": "enum",
+              "values": [
+                "DAILY",
+                "WEEKLY",
+                "MONTHLY"
+              ],
+              "required": true
+            },
+            {
+              "name": "Interval",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "Weekdays",
+              "type": "text",
+              "required": false
+            },
+            {
+              "name": "MonthDay",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "TimeZone",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "Active",
+              "type": "yesno",
+              "required": true
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true
+            },
+            {
+              "name": "UpdatedAt",
+              "type": "datetime",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "GeneratedOccurrences",
+          "primaryKey": "ID",
+          "columns": [
+            {
+              "name": "ID",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "RuleID",
+              "type": "ref",
+              "targetTable": "RecurrenceRules",
+              "required": true
+            },
+            {
+              "name": "ScheduledDate",
+              "type": "date",
+              "required": true
+            },
+            {
+              "name": "TaskID",
+              "type": "ref",
+              "targetTable": "Tasks",
+              "required": true
+            },
+            {
+              "name": "CreatedAt",
+              "type": "datetime",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "kpis": [
+        "Việc mở",
+        "việc quá hạn",
+        "tỷ lệ hoàn thành loại việc hủy",
+        "số ngày trễ",
+        "tải việc theo ngày."
+      ],
+      "dataSpec": [
+        "Tasks: Title, OwnerEmail, Priority, StartDate, DueDate, Status, Progress, CompletedAt, CategoryID.",
+        "Categories: Name, Color.",
+        "TaskEvents: TaskID, EventType, EventAt, ActorEmail.",
+        "TaskChecklist: TaskID, Title, Done.",
+        "RecurrenceRules: TaskTemplateID, Frequency, Interval, Weekdays, MonthDay, TimeZone, Active.",
+        "GeneratedOccurrences: RuleID, ScheduledDate, TaskID.",
+        "Tasks thêm Important, Urgent."
+      ],
+      "acceptanceCriteria": "Fixture ngày cố định có 3 việc: một DONE đúng hạn, một TODO quá hạn, một CANCELLED; tỷ lệ hoàn thành bằng 50%, việc đang quá hạn bằng 1. Việc không hạn không bị đếm trễ.",
+      "presets": [
+        "F01-LITE",
+        "F01-PRO",
+        "F01-BILINGUAL"
+      ]
+    },
+    {
+      "familyId": "F02",
+      "name": "Dự án, công việc đội nhóm và KPI",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F02-SHEET",
+        "F02-WEB",
+        "F02-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T008",
+        "T010",
+        "T011",
+        "T016",
+        "G004",
+        "G018",
+        "G026",
+        "G027",
+        "G029",
+        "G035",
+        "G039",
+        "G048",
+        "G066",
+        "G067",
+        "G069",
+        "G075",
+        "G077",
+        "G087",
+        "G094",
+        "G114",
+        "G169",
+        "G173",
+        "G195",
+        "G199",
+        "G200",
+        "G216",
+        "G226"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tiến độ có trọng số = tổng Progress×Weight / tổng Weight",
+        "đúng hạn dựa mốc hoàn thành được duyệt",
+        "giờ thực tế",
+        "tải việc",
+        "KPI thực tế/mục tiêu có quy tắc chiều tốt/xấu."
+      ],
+      "dataSpec": [
+        "Projects: Name, ManagerEmail, StartDate, EndDate, Budget, Status.",
+        "ProjectMembers: ProjectID, UserEmail, Permission.",
+        "Tasks: ProjectID, Title, AssigneeEmail, StartDate, DueDate, Status, Progress, Weight, ApprovedAt.",
+        "Dependencies: TaskID, PredecessorID.",
+        "TaskCollaborators: TaskID, UserEmail.",
+        "KPIPlans: UserEmail, Period, Metric, Target, Weight.",
+        "KPIActuals: KPIPlanID, Actual, ApproverEmail.",
+        "Timesheets: TaskID, UserEmail, WorkDate, Hours.",
+        "TaskChecklist: TaskID, Title, Done.",
+        "RecurrenceRules: TaskTemplateID, Frequency, MonthDay, Weekdays, TimeZone, Active.",
+        "GeneratedOccurrences: RuleID, ScheduledDate, TaskID."
+      ],
+      "acceptanceCriteria": "Hai việc có trọng số 1 và 3, tiến độ 100% và 0% cho tiến độ dự án 25%. Đổi nhân sự không mất lịch sử. Gantt qua giao thừa đúng vị trí; chu trình phụ thuộc A→B→A bị từ chối."
+    },
+    {
+      "familyId": "F03",
+      "name": "Công trình và tiến độ thi công",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F03-SHEET",
+        "F03-WEB",
+        "F03-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T007"
+      ],
+      "tables": [],
+      "kpis": [
+        "Khối lượng nghiệm thu/kế hoạch",
+        "chi phí/budget",
+        "số vấn đề chưa xử lý",
+        "tiến độ hạng mục."
+      ],
+      "dataSpec": [
+        "Sites: Name, Address, SupervisorEmail.",
+        "WorkPackages: SiteID, Code, Name, Unit, PlannedQty, Budget.",
+        "DailyLogs: SiteID, LogDate, Weather, Summary.",
+        "ProgressEntries: PackageID, LogID, ExecutedQty, AcceptedQty.",
+        "SiteCosts: SiteID, CostDate, CostType, Amount.",
+        "Inspections: PackageID, Result, InspectorEmail, EvidenceFileID."
+      ],
+      "acceptanceCriteria": "Kế hoạch 100 m², thi công 60 m² và nghiệm thu 45 m²: hai tỷ lệ 60% và 45% tách riêng. Nhật ký bị hủy không cộng thêm khối lượng."
+    },
+    {
+      "familyId": "F04",
+      "name": "Lịch nội dung và hiệu quả đa kênh",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F04-SHEET",
+        "F04-WEB",
+        "F04-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T001"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tần suất đăng",
+        "bài trễ",
+        "CTR = clicks/impressions",
+        "engagement theo định nghĩa cấu hình",
+        "lead theo chiến dịch."
+      ],
+      "dataSpec": [
+        "Channels: Name, Platform.",
+        "Campaigns: Name, StartDate, EndDate, Objective.",
+        "Contents: CampaignID, Title, Pillar, OwnerEmail, Status, AssetURL.",
+        "Publications: ContentID, ChannelID, ScheduledAt, PublishedAt, URL.",
+        "ContentMetrics: PublicationID, Date, Impressions, Clicks, Engagements, Leads, Revenue."
+      ],
+      "acceptanceCriteria": "Một nội dung đăng 3 kênh phải hiện 3 lịch đăng nhưng vẫn 1 nội dung gốc. Impressions bằng 0 cho chỉ số hợp lệ, không lỗi chia 0."
+    },
+    {
+      "familyId": "F05",
+      "name": "CRM khách hàng và pipeline",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F05-SHEET",
+        "F05-WEB",
+        "F05-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G012",
+        "G031",
+        "G036",
+        "G041",
+        "G055",
+        "G063",
+        "G064",
+        "G065",
+        "G098",
+        "G107",
+        "G128",
+        "G129"
+      ],
+      "tables": [],
+      "kpis": [
+        "Pipeline có trọng số",
+        "tỷ lệ thắng trên deal đã đóng",
+        "khách mới",
+        "hoạt động/nhân viên",
+        "follow-up quá hạn."
+      ],
+      "dataSpec": [
+        "Contacts: Name, Phone, Email, Source, OwnerEmail.",
+        "Companies: Name, Industry.",
+        "Opportunities: ContactID, CompanyID, Stage, ExpectedValue, Probability, ExpectedCloseDate, ActualCloseDate, Outcome.",
+        "Activities: ContactID, OpportunityID, Type, OccurredAt, Summary, NextFollowupAt.",
+        "PipelineStages: Name, Order, DefaultProbability.",
+        "ContactOwners: ContactID, UserEmail, Permission.",
+        "CRMTargets: Period, UserEmail, TeamID, Metric, Target.",
+        "ContactStatusEvents: ContactID, FromStatus, ToStatus, ChangedAt."
+      ],
+      "acceptanceCriteria": "Deal thắng 2, thua 1, mở 2: win rate = 2/3, không lấy 2/5. Email/điện thoại trùng báo gợi ý, không xóa tự động."
+    },
+    {
+      "familyId": "F06",
+      "name": "CRM đại lý ô tô",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F06-SHEET",
+        "F06-WEB",
+        "F06-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T002"
+      ],
+      "tables": [],
+      "kpis": [
+        "Lead theo mẫu/phân khúc",
+        "tỷ lệ lái thử/chốt",
+        "pipeline theo tư vấn viên",
+        "lịch bàn giao."
+      ],
+      "dataSpec": [
+        "Kế thừa F05.",
+        "VehicleModels: Brand, Model, Trim, BasePrice.",
+        "VehicleInterests: ContactID, ModelID, BudgetMin, BudgetMax, PurchaseTimeframe.",
+        "TestDrives: ContactID, VehicleID, StartAt, EndAt, SalesEmail, Status.",
+        "Deliveries: OpportunityID, VehicleID, ScheduledDate, ActualDate.",
+        "CustomerCare: ContactID, EventType, DueDate, Status.",
+        "DemoVehicles: ModelID, PlateOrInternalCode, Active (TestDrives.VehicleID và Deliveries.VehicleID tham chiếu bảng này hoặc Vehicles dùng chung đã chọn)."
+      ],
+      "acceptanceCriteria": "Một khách quan tâm hai mẫu vẫn tính một khách. Hai buổi lái thử trùng xe/khung giờ phải chặn xác nhận trùng theo quy tắc request."
+    },
+    {
+      "familyId": "F07",
+      "name": "Hợp đồng, phụ lục và phát sinh",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F07-SHEET",
+        "F07-WEB",
+        "F07-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T004"
+      ],
+      "tables": [],
+      "kpis": [
+        "Giá trị cập nhật = gốc + phát sinh đã duyệt",
+        "phải thu đến hạn",
+        "đã thu",
+        "chênh lệch thực hiện",
+        "hợp đồng sắp hết hạn."
+      ],
+      "dataSpec": [
+        "Contracts: CounterpartyID, Number, SignedDate, StartDate, EndDate, BaseAmount, Currency, Status.",
+        "Amendments: ContractID, SignedDate, ValueChange, Status.",
+        "Milestones: ContractID, Description, DueDate, Amount, AcceptedAt.",
+        "ContractPayments: MilestoneID, PaidAt, Amount, Reference.",
+        "ContractFiles: ContractID, FileID, Version."
+      ],
+      "acceptanceCriteria": "Gốc 100 triệu, tăng đã duyệt 20 triệu, giảm chưa duyệt 5 triệu: giá trị hiện hành 120 triệu. Thu 50 triệu không tự coi là nghiệm thu 50 triệu."
+    },
+    {
+      "familyId": "F08",
+      "name": "Văn bản, hồ sơ và chỉ đạo",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F08-SHEET",
+        "F08-WEB",
+        "F08-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T005",
+        "T012",
+        "T019",
+        "G044"
+      ],
+      "tables": [],
+      "kpis": [
+        "Văn bản đến/đi",
+        "chỉ đạo chưa xong",
+        "thời gian xử lý",
+        "tỷ lệ quá hạn theo đơn vị."
+      ],
+      "dataSpec": [
+        "Documents: Direction, Number, IssuedDate, ReceivedDate, Subject, Issuer, Recipient, CategoryID, Confidentiality, Urgency, OwnerEmail, DueDate, Status.",
+        "DocumentVersions: DocumentID, Version, FileID.",
+        "Directives: DocumentID, Content, AssigneeEmail, DueDate, Status.",
+        "Dispatches: DocumentID, Recipient, SentAt, Method.",
+        "Categories: Name, AllowedRole.",
+        "liên kết Tasks F02 và danh mục Employees tối thiểu F12."
+      ],
+      "acceptanceCriteria": "Staff được giao một văn bản không thấy file mật của văn bản khác qua URL/export. Số văn bản trùng trong cùng sổ/năm bị cảnh báo, cùng số ở sổ khác được phép."
+    },
+    {
+      "familyId": "F09",
+      "name": "Lịch lãnh đạo, cuộc họp và công tác",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F09-SHEET",
+        "F09-WEB",
+        "F09-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T009",
+        "G061"
+      ],
+      "tables": [],
+      "kpis": [
+        "Lịch theo ngày/tuần",
+        "xung đột",
+        "công tác sắp tới",
+        "action item quá hạn."
+      ],
+      "dataSpec": [
+        "Events: Title, Type, StartAt, EndAt, Location, OrganizerEmail, Status.",
+        "Attendees: EventID, UserEmail, Response.",
+        "Resources: Name, Type.",
+        "Reservations: EventID, ResourceID.",
+        "Trips: EventID, Destination, Transport, Budget, Notes.",
+        "Minutes: EventID, Summary, FileID.",
+        "ActionItems: EventID, AssigneeEmail, DueDate, Status.",
+        "ExternalAttendees: EventID, ContactName, ContactEmail, Phone."
+      ],
+      "acceptanceCriteria": "Hai cuộc họp giao nhau chặn đặt cùng phòng. Cuộc họp kết thúc 10:00 cho phép cuộc sau bắt đầu 10:00 khi buffer=0."
+    },
+    {
+      "familyId": "F10",
+      "name": "Khách sạn, homestay và đặt phòng",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F10-SHEET",
+        "F10-WEB",
+        "F10-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T014",
+        "G032",
+        "G046",
+        "G076"
+      ],
+      "tables": [],
+      "kpis": [
+        "Công suất theo phòng-đêm khả dụng",
+        "doanh thu phòng",
+        "ADR theo đêm đã bán",
+        "công nợ",
+        "trạng thái phòng",
+        "đặt theo giờ thống kê riêng."
+      ],
+      "dataSpec": [
+        "Properties: Name, Address.",
+        "Rooms: PropertyID, Number, Type, Capacity, Active.",
+        "RatePlans: RoomType, StartDate, EndDate, BillingUnit, Price.",
+        "Guests: Name, Phone.",
+        "BookingRequests: RoomID, StartAt, EndAt, GuestID, State.",
+        "Bookings: RequestID, RoomID, GuestID, CheckInAt, CheckOutAt, Status, Total, Deposit.",
+        "Stays: BookingID, ActualIn, ActualOut.",
+        "Housekeeping: RoomID, Date, Status, StaffEmail.",
+        "Charges: BookingID, Type, Amount.",
+        "Payments: BookingID, Amount, PaidAt.",
+        "OperatingCosts: PropertyID, RoomID, Date, Category, Amount.",
+        "PropertyGrants: UserEmail, PropertyID, Role."
+      ],
+      "acceptanceCriteria": "Khoảng [check-in,check-out) không tính đêm trả phòng; booking hủy không giữ phòng; hai request đồng thời cho phòng cuối chỉ một được duyệt. Deposit không bị cộng lần hai vào tổng thu."
+    },
+    {
+      "familyId": "F11",
+      "name": "Ngân sách cưới và tiền mừng",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F11-SHEET",
+        "F11-WEB",
+        "F11-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T015"
+      ],
+      "tables": [],
+      "kpis": [
+        "Dự toán/thực chi",
+        "khoản còn phải trả",
+        "tiền mừng theo bên",
+        "số khách xác nhận",
+        "chênh lệch thu chi."
+      ],
+      "dataSpec": [
+        "Events: Name, Date, Budget.",
+        "GuestGroups: Name, Side.",
+        "Guests: GroupID, Name, Phone, RSVP, TableNo.",
+        "Gifts: GuestID, ReceivedAt, Type, Amount, Note.",
+        "ExpensePlans: Category, Vendor, Budget.",
+        "WeddingPayments: PlanID, PaidAt, Amount.",
+        "Vendors: Name, Contact, Service."
+      ],
+      "acceptanceCriteria": "Phong bì 2 triệu của nhóm 4 khách vẫn cộng 2 triệu. Chi dự kiến 10 triệu và đã thanh toán 3 triệu cho số còn phải trả 7 triệu."
+    },
+    {
+      "familyId": "F12",
+      "name": "Hồ sơ nhân sự",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F12-SHEET",
+        "F12-WEB",
+        "F12-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T017",
+        "T019",
+        "G074",
+        "G102",
+        "G120"
+      ],
+      "tables": [],
+      "kpis": [
+        "Nhân sự đang làm theo ngày hiệu lực",
+        "hợp đồng sắp hết hạn",
+        "sinh nhật sắp tới",
+        "hồ sơ thiếu."
+      ],
+      "dataSpec": [
+        "Employees: EmployeeCode, FullName, WorkEmail, TeamID, JobTitle, HireDate, ExitDate, EmploymentStatus.",
+        "EmploymentContracts: EmployeeID, Type, StartDate, EndDate.",
+        "EmployeeFiles: EmployeeID, Category, FileID.",
+        "EmergencyContacts: EmployeeID, Name, Relationship, Phone.",
+        "EmploymentEvents: EmployeeID, Type, EffectiveDate, FromTeamID, ToTeamID.",
+        "Compensation: EmployeeID, EffectiveFrom, Amount, AccessGroup."
+      ],
+      "acceptanceCriteria": "Người nghỉ từ trước ngày báo cáo không nằm trong active headcount; đổi phòng ban giữ được lịch sử. Staff không truy cập Compensation qua bảng tham chiếu."
+    },
+    {
+      "familyId": "F13",
+      "name": "Tuyển dụng và lịch phỏng vấn",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F13-SHEET",
+        "F13-WEB",
+        "F13-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T017",
+        "G043",
+        "G070",
+        "G186",
+        "G202"
+      ],
+      "tables": [],
+      "kpis": [
+        "Time-to-fill theo định nghĩa ngày mở đến nhận offer",
+        "nguồn ứng viên",
+        "tỷ lệ qua vòng",
+        "offer acceptance."
+      ],
+      "dataSpec": [
+        "Vacancies: Title, TeamID, HiringManager, TargetCount, OpenDate, CloseDate.",
+        "Candidates: Name, Email, Phone, CVFileID.",
+        "Applications: CandidateID, VacancyID, Stage, Source, AppliedAt, OwnerEmail.",
+        "Interviews: ApplicationID, StartAt, EndAt, InterviewerEmail.",
+        "Scorecards: InterviewID, Criterion, Score, Comment.",
+        "Offers: ApplicationID, SentAt, Status, StartDate."
+      ],
+      "acceptanceCriteria": "Một ứng viên nộp 2 vị trí tính 1 candidate và 2 applications. Người phỏng vấn chỉ thấy hồ sơ được giao, không mặc định thấy lương đề xuất."
+    },
+    {
+      "familyId": "F14",
+      "name": "Thuê trang phục và phụ kiện",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F14-SHEET",
+        "F14-WEB",
+        "F14-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T018"
+      ],
+      "tables": [],
+      "kpis": [
+        "Hàng sẵn sàng theo khoảng thời gian",
+        "đơn đến hạn",
+        "tỷ lệ sử dụng",
+        "phí hỏng/trễ",
+        "cọc đang giữ."
+      ],
+      "dataSpec": [
+        "RentalItems: Code, Name, Size, Color, UnitType, Quantity, ReplacementValue.",
+        "RentalOrders: CustomerID, StartAt, EndAt, Status, Deposit.",
+        "RentalLines: OrderID, ItemID, Quantity, UnitRate, Discount.",
+        "HandoverLines: LineID, OutCondition, ReturnCondition, ReturnedQty.",
+        "RentalCharges: OrderID, Type, Amount.",
+        "ItemBlocks: ItemID, StartAt, EndAt, Quantity, Reason."
+      ],
+      "acceptanceCriteria": "Kho 3 áo, 2 chiếc đang thuê: đơn xin 2 chiếc cùng thời gian bị từ chối xác nhận. Cọc hoàn trả không giảm doanh thu thuê."
+    },
+    {
+      "familyId": "F15",
+      "name": "Thuê xe và bảo dưỡng",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F15-SHEET",
+        "F15-WEB",
+        "F15-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T020"
+      ],
+      "tables": [],
+      "kpis": [
+        "Ngày sử dụng",
+        "doanh thu từng xe",
+        "chi phí bảo dưỡng",
+        "xe đến hạn bảo dưỡng",
+        "cọc phải trả."
+      ],
+      "dataSpec": [
+        "Vehicles: Plate, Type, Model, Odometer, Status.",
+        "RentalBookings: VehicleID, CustomerID, StartAt, EndAt, Status, Deposit, AgreedRate.",
+        "VehicleHandovers: BookingID, Type, At, Odometer, FuelLevel, DamageNotes, FileID.",
+        "MaintenancePlans: VehicleID, DueDate, DueOdometer, Type.",
+        "MaintenanceJobs: VehicleID, StartAt, EndAt, Cost, Odometer.",
+        "RentalSettlements: BookingID, Rent, Extras, DepositApplied, Refund.",
+        "Branches: Name, Address.",
+        "VehicleDocuments: VehicleID, Type, ExpiryDate, FileID.",
+        "RentalBookings thêm BranchID, ContractID (F07), CustomerID (Contacts dùng chung)."
+      ],
+      "acceptanceCriteria": "Odometer trả thấp hơn giao bị từ chối. Thuê chồng lịch bảo dưỡng không được duyệt. Phụ phí km theo mức thỏa thuận, không làm tròn tùy ý."
+    },
+    {
+      "familyId": "F16",
+      "name": "Định mức nguyên liệu spa và nail",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F16-SHEET",
+        "F16-WEB",
+        "F16-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "T003"
+      ],
+      "tables": [],
+      "kpis": [
+        "Giá vốn định mức/dịch vụ",
+        "thực dùng so định mức",
+        "hao hụt",
+        "tồn vật tư."
+      ],
+      "dataSpec": [
+        "Materials: Name, BaseUnit, PurchaseUnit, ConversionFactor, UnitCost.",
+        "Services: Name, Price.",
+        "Recipes: ServiceID, MaterialID, StandardQty, WasteRate, EffectiveFrom.",
+        "ServiceRuns: ServiceID, Date, Quantity, StaffEmail.",
+        "ActualUsage: RunID, MaterialID, Quantity.",
+        "MaterialMovements: MaterialID, Date, SignedQty, SourceID."
+      ],
+      "acceptanceCriteria": "Một chai 500 ml giá 100.000, dùng 10 ml cho 3 lượt: tiêu hao 30 ml, chi phí 6.000 trước hao hụt. Không cộng đơn vị chai với ml."
+    },
+    {
+      "familyId": "F17",
+      "name": "Thu chi doanh nghiệp và dòng tiền startup",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F17-SHEET",
+        "F17-WEB",
+        "F17-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G002",
+        "G017",
+        "G022",
+        "G023",
+        "G028",
+        "G060",
+        "G072",
+        "G122",
+        "G123",
+        "G124"
+      ],
+      "tables": [],
+      "kpis": [
+        "Số dư tài khoản",
+        "thu/chi theo loại",
+        "dự báo dòng tiền",
+        "net burn trên cửa sổ tháng đã chọn",
+        "runway=cash/net burn khi burn>0",
+        "ngược lại hiển thị không áp dụng. Hòa vốn=định phí/tỷ lệ lãi góp khi tỷ lệ>0."
+      ],
+      "dataSpec": [
+        "Accounts: Name, Type, OpeningBalance, Currency, OverdraftLimit.",
+        "Transactions: Date, Type, AccountID, CounterAccountID, CategoryID, PartyID, ProjectID, Amount, State.",
+        "Categories: Name, FlowClass, FixedVariable.",
+        "Forecasts: Date, CategoryID, ExpectedAmount, Confidence.",
+        "Loans: Lender, Principal, StartDate, DueDate, InterestMethod.",
+        "LoanSchedules: LoanID, DueDate, PrincipalDue, InterestDue, Paid.",
+        "PeriodClosures: Period, ClosedAt.",
+        "liên kết F30."
+      ],
+      "acceptanceCriteria": "Chuyển 5 triệu giữa hai tài khoản: tổng tiền không đổi và doanh thu không tăng. Cash 120 triệu, burn 20 triệu/tháng cho runway 6 tháng. Burn âm không cho runway âm. Giao dịch trùng RequestID chỉ ghi một lần."
+    },
+    {
+      "familyId": "F18",
+      "name": "Nhập xuất tồn và kiểm kê",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F18-SHEET",
+        "F18-WEB",
+        "F18-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G003",
+        "G051",
+        "G057",
+        "G181",
+        "G182",
+        "G217"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tồn cuối = đầu + nhập − xuất ± điều chỉnh",
+        "giá trị tồn",
+        "dưới mức đặt hàng",
+        "chênh lệch kiểm kê",
+        "lô hết hạn."
+      ],
+      "dataSpec": [
+        "Products: SKU, Name, BaseUnit, Barcode, ReorderPoint.",
+        "Warehouses: Name.",
+        "StockDocuments: Type, Date, FromWarehouseID, ToWarehouseID, State.",
+        "StockLines: DocumentID, ProductID, Quantity, UnitCost, LotID.",
+        "StockLedger: ProductID, WarehouseID, Date, SignedQty, Value, SourceLineID, CommitID.",
+        "StockCounts: WarehouseID, CountDate, ProductID, CountedQty.",
+        "Lots: ProductID, LotCode, ExpiryDate."
+      ],
+      "acceptanceCriteria": "Đầu 10, nhập 5, xuất 4 cho tồn 11; chuyển kho 3 giữ tổng hệ thống 11. Hai yêu cầu xuất tổng vượt tồn: processor chỉ duyệt phần hợp lệ, không cho tồn âm ngoài cấu hình."
+    },
+    {
+      "familyId": "F19",
+      "name": "Báo giá và phiên bản chào bán",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F19-SHEET",
+        "F19-WEB",
+        "F19-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G005"
+      ],
+      "tables": [],
+      "kpis": [
+        "Giá trị báo giá",
+        "đã chấp nhận",
+        "sắp hết hiệu lực",
+        "tỷ lệ chuyển đơn."
+      ],
+      "dataSpec": [
+        "Quotes: Number, CustomerID, IssuedAt, ValidUntil, Currency, Version, Status.",
+        "QuoteLines: QuoteID, ProductID, Description, Quantity, UnitPrice, DiscountType, DiscountValue, TaxRate.",
+        "QuoteTerms: QuoteID, PaymentTerms, DeliveryTerms.",
+        "QuoteEvents: QuoteID, EventType, At.",
+        "Products và Contacts dùng chung F18/F05 khi bật tích hợp."
+      ],
+      "acceptanceCriteria": "2×100.000, giảm dòng 10%, thuế cấu hình 8% trên sau giảm cho tổng 194.400. Revision cũ giữ nguyên số tiền sau khi sửa bản mới."
+    },
+    {
+      "familyId": "F20",
+      "name": "Bán hàng và đơn hàng",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F20-SHEET",
+        "F20-WEB",
+        "F20-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G019",
+        "G021"
+      ],
+      "tables": [],
+      "kpis": [
+        "Doanh số trước/sau giảm",
+        "hàng trả",
+        "thực thu",
+        "công nợ",
+        "giao thiếu",
+        "giá vốn và lợi nhuận gộp nếu có costing."
+      ],
+      "dataSpec": [
+        "SalesOrders: Number, CustomerID, OrderDate, Status.",
+        "SalesLines: OrderID, ProductID, Qty, UnitPrice, Discount, TaxRate.",
+        "Fulfillments: OrderID, WarehouseID, State, ShippedAt.",
+        "FulfillmentLines: FulfillmentID, SalesLineID, ShippedQty.",
+        "SalesPayments: OrderID, Date, Amount.",
+        "Returns: OrderID, ReturnDate, State.",
+        "ReturnLines: ReturnID, ProductID, Qty, RefundAmount.",
+        "LoyaltyRules: EffectiveFrom, SpendPerPoint, PointValue, Enabled.",
+        "LoyaltyLedger: CustomerID, OrderID, SignedPoints, Reason.",
+        "PurchaseReceipts liên kết F18 và SupplierInvoices liên kết F30."
+      ],
+      "acceptanceCriteria": "Đơn 10 sản phẩm, giao 6 rồi 4: tồn chỉ giảm 10. Thu 500.000 trên đơn 800.000 cho công nợ 300.000. Hủy đơn chưa giao không sinh xuất kho."
+    },
+    {
+      "familyId": "F21",
+      "name": "Form nhập liệu và phân quyền cấu hình",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F21-SHEET",
+        "F21-WEB",
+        "F21-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G007",
+        "G030",
+        "G033",
+        "G037",
+        "G038",
+        "G050",
+        "G084",
+        "G085",
+        "G086",
+        "G089",
+        "G090",
+        "G171",
+        "G198"
+      ],
+      "tables": [],
+      "kpis": [
+        "Bản ghi theo biểu mẫu",
+        "lỗi validation",
+        "lượt nhập",
+        "thay đổi chờ duyệt",
+        "chart qua cấu hình được kiểm chứng."
+      ],
+      "dataSpec": [
+        "TableDefinitions: Name, Description, Group, SortOrder.",
+        "ColumnDefinitions: TableID, Name, Type, Required, ValidationSpec, ReferenceTableID, ParentColumnID.",
+        "FormDefinitions: TableID, Title, LayoutSpec.",
+        "Permissions: UserEmail, TableID, Operation, Scope.",
+        "ViewDefinitions: TableID, Type, FilterSpec, SortSpec.",
+        "Records theo bảng có schema đã validate.",
+        "LockedRows: TableID, RecordID, LockedBy."
+      ],
+      "acceptanceCriteria": "Client sửa payload để ghi bảng ngoài quyền phải bị từ chối. Đổi parent dropdown xóa/đánh lỗi child không hợp lệ. Formula lặp tham chiếu bị chặn. Schema upgrade giữ được dữ liệu cũ."
+    },
+    {
+      "familyId": "F22",
+      "name": "Bất động sản: giỏ hàng, tra cứu và tính giá",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F22-SHEET",
+        "F22-WEB",
+        "F22-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G008",
+        "G170",
+        "G194",
+        "G196"
+      ],
+      "tables": [],
+      "kpis": [
+        "Giỏ hàng theo trạng thái/khu vực",
+        "giá/m²",
+        "số căn phù hợp",
+        "giá sau ưu đãi và lịch thanh toán."
+      ],
+      "dataSpec": [
+        "Developments: Name, Location.",
+        "Units: DevelopmentID, Block, UnitCode, Floor, Area, ListPrice, Status.",
+        "PricePolicies: DevelopmentID, EffectiveFrom, DiscountRule, PaymentPlan.",
+        "UnitQuotes: UnitID, QuoteDate, PolicyID, NetPrice, Fees.",
+        "PropertyLeads: ContactID, Need, Budget, Location.",
+        "Listings: OwnerContactID, UnitID, AskingPrice, SourceURL, VerifiedAt."
+      ],
+      "acceptanceCriteria": "Căn 50 m² giá 2 tỷ cho 40 triệu/m². Chính sách mới không đổi quote cũ. Hai mã căn giống nhau ở hai dự án phân biệt bằng khóa."
+    },
+    {
+      "familyId": "F23",
+      "name": "Tiệm sửa xe và dịch vụ hộ kinh doanh",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F23-SHEET",
+        "F23-WEB",
+        "F23-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G009",
+        "G011"
+      ],
+      "tables": [],
+      "kpis": [
+        "Doanh thu công/phụ tùng",
+        "chi phí",
+        "đơn đang sửa",
+        "công nợ",
+        "khách quay lại."
+      ],
+      "dataSpec": [
+        "RepairCustomers: Name, Phone.",
+        "CustomerVehicles: CustomerID, Plate, Model.",
+        "RepairJobs: VehicleID, ReceivedAt, Odometer, Complaint, MechanicEmail, Status.",
+        "JobServices: JobID, Service, LaborAmount.",
+        "JobParts: JobID, ProductID, Quantity, UnitPrice.",
+        "RepairPayments: JobID, Date, Amount.",
+        "Expenses: Date, Category, Amount."
+      ],
+      "acceptanceCriteria": "Công 200.000 + phụ tùng 300.000, thu 400.000: còn 100.000; phụ tùng xuất đúng số lượng và không giảm lần hai khi đánh dấu bàn giao."
+    },
+    {
+      "familyId": "F24",
+      "name": "Mini ERP cho đơn vị nhỏ",
+      "type": "family",
+      "wave": 5,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F24-SHEET",
+        "F24-WEB",
+        "F24-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G010"
+      ],
+      "tables": [],
+      "kpis": [
+        "Doanh số",
+        "tồn",
+        "phải thu/phải trả",
+        "dòng tiền",
+        "lỗi QC",
+        "backlog vận hành."
+      ],
+      "dataSpec": [
+        "Dùng master Contacts/Products/Employees/Projects/Accounts dùng chung.",
+        "BusinessEvents: EventType, SourceEntity, SourceID, State, IdempotencyKey.",
+        "PurchaseOrders: SupplierID, Date, State.",
+        "PurchaseLines: OrderID, ProductID, Qty, UnitPrice.",
+        "QCPlans: ProductID, Criterion, Min, Max.",
+        "QCResults: BatchID, CriterionID, Value, Result.",
+        "Batches: ProductID, Date, Qty.",
+        "DeviceAccessRequests: UserEmail, DeviceLabel, Status (tùy chọn quản trị, không phải hardware fingerprint)."
+      ],
+      "acceptanceCriteria": "Retry event nhận hàng không nhân đôi tồn hoặc công nợ. Một batch QC vượt max bị giữ, chưa vào tồn bán được. Module tắt không làm hỏng module khác."
+    },
+    {
+      "familyId": "F25",
+      "name": "Quán ăn, nhà hàng và cà phê",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F25-SHEET",
+        "F25-WEB",
+        "F25-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G013",
+        "G049",
+        "G080"
+      ],
+      "tables": [],
+      "kpis": [
+        "Doanh thu theo ca/món",
+        "bill trung bình",
+        "tiền theo phương thức",
+        "món đang chờ",
+        "lệch tiền quầy."
+      ],
+      "dataSpec": [
+        "DiningTables: Code, Zone, Seats.",
+        "MenuItems: Name, Category, Price, Active.",
+        "Tickets: TableID, OpenedAt, Status, ServerEmail.",
+        "TicketLines: TicketID, MenuItemID, Qty, UnitPrice, Notes, KitchenState.",
+        "TicketPayments: TicketID, Method, Amount, PaidAt.",
+        "Shifts: OpenedAt, ClosedAt, OpeningCash, CountedCash.",
+        "Recipes liên kết F16/F18 khi bật nguyên liệu.",
+        "Tickets thêm ServiceMode, OrderDiscount, TaxRate, Surcharge.",
+        "TicketLines thêm LineDiscount.",
+        "PaymentDisplayConfig: BankID, AccountNumber, AccountName, QRProvider."
+      ],
+      "acceptanceCriteria": "Tách bill không mất/nhân đôi món; món hủy trước thanh toán không tính doanh số. Hai thiết bị gọi thêm phải giữ cả hai dòng hoặc báo xung đột rõ."
+    },
+    {
+      "familyId": "F26",
+      "name": "Lớp học, điểm danh và học phí",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F26-SHEET",
+        "F26-WEB",
+        "F26-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G014",
+        "G020",
+        "G092",
+        "G167",
+        "G177",
+        "G218"
+      ],
+      "tables": [],
+      "kpis": [
+        "Sĩ số",
+        "chuyên cần",
+        "buổi còn lại",
+        "học phí đến hạn",
+        "công nợ theo lớp."
+      ],
+      "dataSpec": [
+        "Students: Name, GuardianName, GuardianContact.",
+        "Classes: Name, TeacherEmail, StartDate, EndDate, FeeModel.",
+        "Enrollments: StudentID, ClassID, EnrolledAt, Status, PaidSessionCount.",
+        "Sessions: ClassID, StartAt, EndAt, Status.",
+        "Attendance: SessionID, EnrollmentID, Result, ConsumedCredit.",
+        "TuitionInvoices: EnrollmentID, Amount, DueDate.",
+        "TuitionPayments: InvoiceID, Amount, PaidAt.",
+        "HolidayCalendar: Date, Reason.",
+        "GradeLevels: Name.",
+        "Rooms: Name, Capacity.",
+        "Assessments: ClassID, Title, Date, MaxScore, Weight.",
+        "Scores: AssessmentID, EnrollmentID, Score.",
+        "LearningNotes: SessionID, EnrollmentID, Homework, Conduct, Notebook, Comment.",
+        "Enrollments thêm DiscountPolicy.",
+        "Sessions thêm RoomID."
+      ],
+      "acceptanceCriteria": "Học thứ 2/4, có 1 ngày nghỉ trong kỳ: ngày hết 4 buổi phải bỏ qua ngày nghỉ. Điểm danh trùng cùng học sinh/buổi bị chặn. Buổi hủy không trừ credit."
+    },
+    {
+      "familyId": "F27",
+      "name": "Cổng ứng dụng và báo cáo tập trung",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F27-SHEET",
+        "F27-WEB",
+        "F27-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G015",
+        "G016"
+      ],
+      "tables": [],
+      "kpis": [
+        "Số app đang hoạt động",
+        "link cần cập nhật",
+        "mục yêu thích",
+        "chỉ thu thống kê truy cập đã công bố."
+      ],
+      "dataSpec": [
+        "AppLinks: Name, CategoryID, URL, IconKey, Description, OwnerEmail, Active.",
+        "Categories: Name, Order.",
+        "AppGrants: AppLinkID, UserEmail, Role.",
+        "Favorites: UserEmail, AppLinkID.",
+        "Announcements: Title, Body, StartAt, EndAt."
+      ],
+      "acceptanceCriteria": "Người không có grant không nhận metadata app riêng. Biết URL trực tiếp không tự có quyền vào app đích. Chặn URL javascript/data nguy hiểm."
+    },
+    {
+      "familyId": "F28",
+      "name": "Lịch dịch vụ spa và phòng khám",
+      "type": "family",
+      "wave": 3,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F28-SHEET",
+        "F28-WEB",
+        "F28-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G024"
+      ],
+      "tables": [],
+      "kpis": [
+        "Lịch hẹn",
+        "no-show",
+        "doanh thu theo người thực hiện",
+        "công nợ",
+        "thời gian sử dụng lịch."
+      ],
+      "dataSpec": [
+        "Clients: Name, Phone, BirthDate.",
+        "Providers: Name, Specialty, WorkSchedule.",
+        "ServiceCatalog: ParentCategoryID, Name, DurationMinutes, Price.",
+        "Appointments: ClientID, ProviderID, ServiceID, StartAt, EndAt, State.",
+        "ServiceVisits: AppointmentID, PerformedAt, ProviderEmail, OperationalNotes.",
+        "Charges: VisitID, Amount.",
+        "Payments: VisitID, Amount, PaidAt.",
+        "RestrictedRecords: VisitID, FileID, AuthorizedGroup (module riêng nếu được yêu cầu)."
+      ],
+      "acceptanceCriteria": "Hai lịch cùng provider giao nhau không cùng được xác nhận. Lễ tân xem lịch nhưng không xem RestrictedRecords. Hủy lịch không tăng doanh thu dịch vụ."
+    },
+    {
+      "familyId": "F29",
+      "name": "Bốc thăm và chia giải sự kiện",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F29-SHEET",
+        "F29-WEB",
+        "F29-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G025",
+        "G034"
+      ],
+      "tables": [],
+      "kpis": [
+        "Người hợp lệ",
+        "giải còn lại",
+        "người đã trúng",
+        "danh sách kết quả có timestamp."
+      ],
+      "dataSpec": [
+        "Campaigns: Name, StartAt, RuleVersion.",
+        "Participants: CampaignID, Code, DisplayName, Eligible.",
+        "Prizes: CampaignID, Name, Quantity.",
+        "Draws: CampaignID, PrizeID, DrawnAt, OperatorEmail, AlgorithmVersion.",
+        "Winners: DrawID, ParticipantID, State."
+      ],
+      "acceptanceCriteria": "N người hợp lệ, bốc N giải không lặp và không chọn người ngoài danh sách. Bấm lại cùng RequestID trả lại cùng kết quả đã ghi. Random test dùng seed giả chỉ trong test."
+    },
+    {
+      "familyId": "F30",
+      "name": "Công nợ và phân bổ thanh toán",
+      "type": "family",
+      "wave": 1,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F30-SHEET",
+        "F30-WEB",
+        "F30-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G040",
+        "G225"
+      ],
+      "tables": [],
+      "kpis": [
+        "Nợ còn lại",
+        "quá hạn theo 0/1–30/31–60/61–90/>90 ngày tại ngày chọn",
+        "trả trước",
+        "chưa phân bổ."
+      ],
+      "dataSpec": [
+        "Parties: Name, Type, Contact.",
+        "Invoices: PartyID, Direction, IssueDate, DueDate, Amount, SourceEntity, SourceID, State.",
+        "Payments: PartyID, Direction, PaidAt, Amount, Reference.",
+        "Allocations: PaymentID, InvoiceID, Amount.",
+        "CreditNotes: InvoiceID, Amount, IssuedAt, State.",
+        "OpeningBalances: PartyID, Direction, AsOfDate, Amount."
+      ],
+      "acceptanceCriteria": "Hóa đơn 1 triệu, phân bổ 400.000 và credit 100.000: còn 500.000. Không phân bổ vượt payment hay dư nợ; thanh toán nhiều kỳ không nhân đôi khoản gốc."
+    },
+    {
+      "familyId": "F31",
+      "name": "Ghi chú và nhật trình cá nhân",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F31-SHEET",
+        "F31-WEB",
+        "F31-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G042",
+        "G190"
+      ],
+      "tables": [],
+      "kpis": [
+        "Ghi chú theo nhãn",
+        "nhắc sắp tới",
+        "mục chưa xử lý."
+      ],
+      "dataSpec": [
+        "Notes: Title, Body, CategoryID, OwnerEmail, Pinned, ReminderAt.",
+        "Tags: Name.",
+        "NoteTags: NoteID, TagID.",
+        "NoteAttachments: NoteID, FileID.",
+        "JournalEntries: Date, TimeSlot, NoteID."
+      ],
+      "acceptanceCriteria": "Lưu tiếng Việt, xuống dòng, dấu nháy và chuỗi HTML không chạy script. Ghi chú private không xuất hiện trong search/export của người khác."
+    },
+    {
+      "familyId": "F32",
+      "name": "Chấm công và tổng hợp ca",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F32-SHEET",
+        "F32-WEB",
+        "F32-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G045",
+        "G058",
+        "G059",
+        "G126",
+        "G172",
+        "G183",
+        "G185"
+      ],
+      "tables": [],
+      "kpis": [
+        "Giờ làm hợp lệ sau trừ nghỉ",
+        "đi muộn/về sớm theo rule",
+        "thiếu công",
+        "OT đã duyệt."
+      ],
+      "dataSpec": [
+        "Shifts: Name, StartTime, EndTime, BreakMinutes, CrossesMidnight.",
+        "ShiftAssignments: EmployeeID, WorkDate, ShiftID.",
+        "TimeEntries: EmployeeID, CheckInAt, CheckOutAt, Source.",
+        "AttendanceAdjustments: EntryID, NewValue, Reason, State.",
+        "Holidays: Date, Type.",
+        "AttendanceSummary: EmployeeID, Period, RegularHours, OvertimeHours, LeaveDays.",
+        "ManualAttendance: EmployeeID, WorkDate, AttendanceCode, DayFraction, OvertimeHours, ApprovedBy."
+      ],
+      "acceptanceCriteria": "Ca 22:00–06:00 hôm sau trừ nghỉ 60 phút cho 7 giờ. Một check-in lặp không tạo 2 ngày công. Ca thiếu check-out được đánh lỗi, không cho giờ âm."
+    },
+    {
+      "familyId": "F33",
+      "name": "Tài chính cá nhân và gia đình",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F33-SHEET",
+        "F33-WEB",
+        "F33-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G001",
+        "G047",
+        "G053",
+        "G079",
+        "G219"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tổng số dư",
+        "chi theo danh mục",
+        "tỷ lệ tiết kiệm trên thu khi thu>0",
+        "tiến độ mục tiêu",
+        "khoản đến hạn."
+      ],
+      "dataSpec": [
+        "Wallets: Name, OpeningBalance, Currency.",
+        "PersonalTransactions: Date, Type, WalletID, TargetWalletID, CategoryID, Amount, MemberEmail.",
+        "PersonalBudgets: Period, CategoryID, Amount.",
+        "SavingsGoals: Name, TargetAmount, TargetDate.",
+        "GoalContributions: GoalID, Date, Amount.",
+        "Debts: Party, Direction, Principal, DueDate.",
+        "RecurringRules: Type, CategoryID, Amount, Schedule."
+      ],
+      "acceptanceCriteria": "Chuyển tiền sang ví tiết kiệm không tăng tổng tài sản tiền mặt và không tính chi sinh hoạt. Tháng không có thu không sinh tỷ lệ tiết kiệm vô nghĩa."
+    },
+    {
+      "familyId": "F34",
+      "name": "Lập ngân sách doanh nghiệp",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F34-SHEET",
+        "F34-WEB",
+        "F34-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G052",
+        "G054"
+      ],
+      "tables": [],
+      "kpis": [
+        "Chênh lệch actual-budget",
+        "% sử dụng",
+        "ngân sách khả dụng sau cam kết",
+        "dự báo cuối kỳ."
+      ],
+      "dataSpec": [
+        "BudgetVersions: Name, FiscalYear, Scenario, State.",
+        "BudgetLines: VersionID, Period, DepartmentID, ProjectID, CategoryID, Amount.",
+        "BudgetActuals: Date, DepartmentID, ProjectID, CategoryID, Amount, SourceID.",
+        "BudgetRequests: LineID, RequestedChange, Reason, State.",
+        "BudgetCommitments: LineID, Amount, SourceID, State."
+      ],
+      "acceptanceCriteria": "Budget 100 triệu, actual 30, committed chưa giải ngân 20: khả dụng 50 triệu. Khi 20 được giải ngân, giảm committed và tăng actual, không trừ kép."
+    },
+    {
+      "familyId": "F35",
+      "name": "Khảo sát và đánh giá phòng ban",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F35-SHEET",
+        "F35-WEB",
+        "F35-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G068",
+        "G121"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tỷ lệ phản hồi khi biết mẫu mời",
+        "điểm theo câu/đơn vị",
+        "phân phối lựa chọn",
+        "câu không trả lời không quy về 0."
+      ],
+      "dataSpec": [
+        "Surveys: Title, Description, Anonymous, OpenAt, CloseAt, Version.",
+        "Questions: SurveyID, Section, Type, Label, Required, Order, Options, ParentQuestionID.",
+        "Responses: SurveyID, RespondentToken, SubmittedAt.",
+        "Answers: ResponseID, QuestionID, Value.",
+        "SurveyAudience: SurveyID, GroupID.",
+        "SurveyFiles: ResponseID, QuestionID, FileID."
+      ],
+      "acceptanceCriteria": "Sửa survey đã có phản hồi tạo version; không làm lệch meaning câu cũ. Required bị kiểm tra ở server. Báo cáo nhóm quá nhỏ có ngưỡng ẩn để tránh suy ra người trả lời."
+    },
+    {
+      "familyId": "F36",
+      "name": "Học tiếng Anh và ôn từ vựng",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F36-SHEET",
+        "F36-WEB",
+        "F36-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G073",
+        "G113"
+      ],
+      "tables": [],
+      "kpis": [
+        "Từ đến hạn",
+        "lượt ôn",
+        "tỷ lệ đúng theo phiên",
+        "lịch sử học",
+        "không đồng nhất lượt click với đã thành thạo."
+      ],
+      "dataSpec": [
+        "Vocabulary: Term, MeaningVi, Example, PronunciationText, Topic, AudioRef.",
+        "StudyCards: UserEmail, VocabID, NextReviewAt, IntervalDays, Ease, Repetitions.",
+        "StudySessions: UserEmail, StartedAt, EndedAt.",
+        "ReviewAnswers: SessionID, CardID, Score, AnsweredAt.",
+        "Quizzes: Topic, Question, Choices, CorrectChoice, Explanation."
+      ],
+      "acceptanceCriteria": "Trả lời sai đặt lịch ôn gần hơn theo thuật toán được nêu; cùng input/clock cho lịch nhất quán. Đổi timezone không mất thẻ đến hạn."
+    },
+    {
+      "familyId": "F37",
+      "name": "Phân bổ chi tiêu theo các quỹ",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F37-SHEET",
+        "F37-WEB",
+        "F37-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G078",
+        "G187",
+        "G188"
+      ],
+      "tables": [],
+      "kpis": [
+        "Số dư từng quỹ",
+        "thực chi",
+        "lệch tỷ lệ kế hoạch",
+        "tổng tiền chưa phân bổ."
+      ],
+      "dataSpec": [
+        "Funds: Name, AllocationRatio, OpeningBalance.",
+        "IncomeAllocations: IncomeID, FundID, Amount.",
+        "FundTransactions: FundID, Date, Type, Amount.",
+        "AllocationProfiles: EffectiveFrom, Ratios.",
+        "Incomes: Date, Amount, Source."
+      ],
+      "acceptanceCriteria": "Tổng tỷ lệ phải bằng 100%; thu 1.000.001 VND phân bổ số nguyên và gán phần dư theo rule để tổng không thiếu 1 đồng. Chuyển quỹ không tăng thu nhập."
+    },
+    {
+      "familyId": "F38",
+      "name": "Nghỉ phép và số dư phép",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F38-SHEET",
+        "F38-WEB",
+        "F38-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G081",
+        "G091"
+      ],
+      "tables": [],
+      "kpis": [
+        "Phép còn",
+        "phép chờ",
+        "nghỉ theo đội",
+        "lịch vắng nhân sự."
+      ],
+      "dataSpec": [
+        "LeaveTypes: Name, DeductBalance.",
+        "LeavePolicies: EffectiveFrom, EntitlementRule, CarryoverRule.",
+        "LeaveBalances: EmployeeID, Year, TypeID, Opening, Accrued, Used.",
+        "LeaveRequests: EmployeeID, TypeID, StartDate, EndDate, StartHalf, EndHalf, Reason, State.",
+        "WorkCalendar: Date, IsWorkingDay.",
+        "LeaveApprovals: RequestID, ApproverEmail, Decision, At."
+      ],
+      "acceptanceCriteria": "Nghỉ thứ 6 đến thứ 2 trong lịch làm T2–T6 là 2 ngày khi không có lễ. Hai nửa ngày là 1 ngày. Duyệt lại cùng request không trừ phép lần hai."
+    },
+    {
+      "familyId": "F39",
+      "name": "Đề nghị chi và phê duyệt thanh toán",
+      "type": "family",
+      "wave": 2,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F39-SHEET",
+        "F39-WEB",
+        "F39-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G082"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tiền chờ duyệt",
+        "được duyệt chưa chi",
+        "thời gian duyệt",
+        "quá hạn giải ngân."
+      ],
+      "dataSpec": [
+        "ExpenseRequests: RequesterEmail, DepartmentID, Amount, Currency, Purpose, NeededBy, State.",
+        "ExpenseRequestLines: RequestID, CategoryID, Amount.",
+        "ApprovalRules: MinAmount, MaxAmount, DepartmentID, Step, ApproverRole.",
+        "ApprovalDecisions: RequestID, Step, ApproverEmail, Decision, At.",
+        "Disbursements: RequestID, AccountID, PaidAt, Amount, Reference.",
+        "ExpenseFiles: RequestID, FileID."
+      ],
+      "acceptanceCriteria": "Người đề nghị không tự duyệt khi rule cấm. Sửa số tiền sau duyệt phải mở vòng duyệt mới. Callback thanh toán lặp không chi lần hai."
+    },
+    {
+      "familyId": "F40",
+      "name": "Dashboard bán hàng và doanh thu",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB"
+      ],
+      "skus": [
+        "F40-SHEET",
+        "F40-WEB",
+        "F40-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G088",
+        "G097",
+        "G117",
+        "G118",
+        "G184",
+        "G214",
+        "G215",
+        "G227"
+      ],
+      "tables": [],
+      "kpis": [
+        "Net revenue",
+        "đơn duy nhất",
+        "AOV=net revenue/đơn hợp lệ",
+        "giá vốn",
+        "gross margin",
+        "so target",
+        "tăng trưởng khi kỳ trước khác 0."
+      ],
+      "dataSpec": [
+        "SalesFacts: Date, OrderID, ProductID, CustomerID, ChannelID, SalespersonEmail, Quantity, Gross, Discount, Returns, NetRevenue, Cost.",
+        "Targets: Period, Dimension, DimensionID, TargetAmount.",
+        "Dimensions: Type, ID, Name.",
+        "ReportFilters: StartDate, EndDate, Channel, Owner."
+      ],
+      "acceptanceCriteria": "Đơn có 3 dòng vẫn đếm 1 order. Gross 1 triệu, discount 100.000, return 200.000 cho net 700.000. Top sản phẩm thay theo filter."
+    },
+    {
+      "familyId": "F41",
+      "name": "Theo dõi thói quen",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F41-SHEET",
+        "F41-WEB",
+        "F41-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G115",
+        "G119",
+        "G189"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tỷ lệ hoàn thành trên ngày phải thực hiện",
+        "streak theo lịch",
+        "tổng số buổi/lượng."
+      ],
+      "dataSpec": [
+        "Habits: UserEmail, Name, Unit, TargetValue, ScheduleType, ScheduledWeekdays, StartDate, EndDate.",
+        "HabitLogs: HabitID, Date, Value, Note.",
+        "HabitGoals: HabitID, Period, TargetCount."
+      ],
+      "acceptanceCriteria": "Habit chỉ T2/T4/T6, tuần hoàn thành đủ 3 ngày cho 100%, không 3/7. Tháng 2 năm nhuận có ngày 29. Mỗi habit/date chỉ một log hiện hành."
+    },
+    {
+      "familyId": "F42",
+      "name": "Thời khóa biểu và kế hoạch tuần",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F42-SHEET",
+        "F42-WEB",
+        "F42-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G130",
+        "G191"
+      ],
+      "tables": [],
+      "kpis": [
+        "Số tiết/giờ từng môn",
+        "giờ trống",
+        "xung đột phòng/người."
+      ],
+      "dataSpec": [
+        "Terms: Name, StartDate, EndDate.",
+        "Subjects: Name, Color.",
+        "ScheduleSlots: TermID, SubjectID, Weekday, StartTime, EndTime, Room, Teacher.",
+        "ScheduleExceptions: SlotID, Date, NewStartAt, NewEndAt, Cancelled.",
+        "WeeklyPlans: Date, TimeSlot, Activity."
+      ],
+      "acceptanceCriteria": "Hai tiết liền nhau cùng ranh giới giờ không trùng; tiết bị hủy ngày cụ thể không xóa lịch cả kỳ. Xuất bản in ngang không cắt ngày cuối tuần."
+    },
+    {
+      "familyId": "F43",
+      "name": "Theo dõi lượt xe qua cửa khẩu",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F43-SHEET",
+        "F43-WEB",
+        "F43-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G132"
+      ],
+      "tables": [],
+      "kpis": [
+        "Lượt đến/qua",
+        "đang chờ",
+        "thời gian chờ trung vị/trung bình",
+        "số xe duy nhất."
+      ],
+      "dataSpec": [
+        "Gateways: Name, Location.",
+        "Vehicles: Plate, Carrier.",
+        "Crossings: VehicleID, GatewayID, Direction, ArrivedAt, ClearedAt, Status, CargoCategory, Reference.",
+        "CrossingFiles: CrossingID, FileID."
+      ],
+      "acceptanceCriteria": "Một xe đi hai lượt cùng ngày có 2 crossings nhưng 1 vehicle. Chưa có ClearedAt không tính thời gian hoàn tất âm hay bằng 0 giả."
+    },
+    {
+      "familyId": "F44",
+      "name": "Tài sản và khấu hao đường thẳng",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F44-SHEET",
+        "F44-WEB",
+        "F44-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G144"
+      ],
+      "tables": [],
+      "kpis": [
+        "Khấu hao kỳ",
+        "lũy kế",
+        "giá trị còn lại",
+        "tài sản hết kỳ khấu hao."
+      ],
+      "dataSpec": [
+        "Assets: Code, Name, Cost, ResidualValue, InServiceDate, UsefulLifeMonths, DepartmentID, Status.",
+        "DepreciationPolicies: Name, PartialMonthConvention.",
+        "DepreciationEntries: AssetID, Period, Expense, Accumulated, BookValue.",
+        "AssetEvents: AssetID, Date, Type, Amount."
+      ],
+      "acceptanceCriteria": "Nguyên giá 120 triệu, còn lại 0, 60 tháng đủ kỳ cho 2 triệu/tháng; tháng cuối bù sai số và không xuống dưới residual. Thanh lý dừng từ ngày/quy ước đã chọn."
+    },
+    {
+      "familyId": "F45",
+      "name": "Đặt cơm văn phòng và chia tiền",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F45-SHEET",
+        "F45-WEB",
+        "F45-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G174"
+      ],
+      "tables": [],
+      "kpis": [
+        "Suất theo món/ngày",
+        "tiền nhà cung cấp",
+        "trợ cấp",
+        "nhân viên còn phải trả."
+      ],
+      "dataSpec": [
+        "LunchMenus: Date, VendorID, Item, UnitPrice, CutoffAt.",
+        "LunchOrders: MenuID, EmployeeEmail, Quantity, State.",
+        "LunchDeliveries: Date, ReceivedQty, Notes.",
+        "SubsidyRules: EffectiveFrom, AmountPerMeal.",
+        "LunchPayments: EmployeeEmail, Period, Amount, PaidAt.",
+        "Vendors: Name, Contact."
+      ],
+      "acceptanceCriteria": "10 suất×35.000, trợ cấp 10.000/suất: vendor 350.000, doanh nghiệp 100.000, nhân viên 250.000. Hủy sau cutoff cần người có quyền duyệt."
+    },
+    {
+      "familyId": "F46",
+      "name": "Dashboard biến động nhân sự",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB"
+      ],
+      "skus": [
+        "F46-SHEET",
+        "F46-WEB",
+        "F46-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G095",
+        "G096",
+        "G201",
+        "G213"
+      ],
+      "tables": [],
+      "kpis": [
+        "Đầu kỳ + tuyển mới − nghỉ = cuối kỳ toàn công ty",
+        "turnover theo mẫu số headcount trung bình được ghi rõ",
+        "phân bố thâm niên."
+      ],
+      "dataSpec": [
+        "EmployeeSnapshots: EmployeeID, SnapshotDate, TeamID, Role, EmploymentStatus.",
+        "WorkforceEvents: EmployeeID, EffectiveDate, Type, FromTeamID, ToTeamID.",
+        "WorkforceTargets: Period, TeamID, PlannedHeadcount.",
+        "dùng hồ sơ F12 làm nguồn khi tích hợp."
+      ],
+      "acceptanceCriteria": "Đầu 20, vào 3, ra 2, chuyển team 4 cho tổng cuối 21. Thay filter phòng ban cập nhật cả inbound và outbound transfer."
+    },
+    {
+      "familyId": "F47",
+      "name": "Báo cáo quảng cáo và chiến dịch",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB"
+      ],
+      "skus": [
+        "F47-SHEET",
+        "F47-WEB",
+        "F47-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G125",
+        "G220"
+      ],
+      "tables": [],
+      "kpis": [
+        "CPM",
+        "CPC",
+        "CTR",
+        "CPL",
+        "CPA",
+        "ROAS",
+        "tính từ tổng tử/mẫu chứ không trung bình tỷ lệ từng dòng",
+        "ghi rõ cửa sổ attribution."
+      ],
+      "dataSpec": [
+        "AdAccounts: Platform, Name, Currency.",
+        "AdCampaigns: AccountID, Name, Objective.",
+        "AdDailyFacts: CampaignID, Date, Spend, Impressions, Clicks, Leads, Purchases, AttributedRevenue, AttributionWindow.",
+        "AdTargets: CampaignID, Period, TargetMetric, TargetValue."
+      ],
+      "acceptanceCriteria": "Hai dòng 10/100 và 10/900 clicks/impressions cho CTR tổng 2%, không 5,56%. Purchases=0 cho CPA không áp dụng. Khác currency chưa quy đổi thì không cộng."
+    },
+    {
+      "familyId": "F48",
+      "name": "Báo cáo chi phí, P&L và dòng tiền",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB"
+      ],
+      "skus": [
+        "F48-SHEET",
+        "F48-WEB",
+        "F48-APPSHEET"
+      ],
+      "status": "implemented_local",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G099",
+        "G100",
+        "G212"
+      ],
+      "tables": [],
+      "kpis": [
+        "Doanh thu",
+        "giá vốn",
+        "lợi nhuận gộp",
+        "chi phí vận hành",
+        "tiền đầu + dòng tiền thuần = tiền cuối",
+        "phân bổ chi phí theo chiều quản trị."
+      ],
+      "dataSpec": [
+        "FinanceFacts: Date, Period, AccountCode, DepartmentID, ProjectID, Amount, RecognitionType, CashFlowClass, SourceID.",
+        "ReportMappings: AccountCode, ReportType, Section, Sign.",
+        "ReportingPeriods: StartDate, EndDate, Closed.",
+        "ReportAdjustments: Period, MappingID, Amount, Reason, State."
+      ],
+      "acceptanceCriteria": "Bán chịu 1 triệu và chưa thu: doanh thu có thể ghi nhận theo input, cash inflow=0. Tiền vay tăng cash financing nhưng không thành doanh thu. Bảng mapping thiếu hiện lỗi thay vì bỏ âm thầm."
+    },
+    {
+      "familyId": "F49",
+      "name": "Trung tâm báo cáo đơn giản",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB"
+      ],
+      "skus": [
+        "F49-SHEET",
+        "F49-WEB",
+        "F49-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G083"
+      ],
+      "tables": [],
+      "kpis": [
+        "Báo cáo đến hạn refresh",
+        "lần refresh thành công",
+        "lỗi nguồn",
+        "dữ liệu tính đến thời điểm nào."
+      ],
+      "dataSpec": [
+        "Reports: Title, Description, OwnerEmail, SourceType, SourceRef, RefreshRule.",
+        "ReportWidgets: ReportID, Type, MetricKey, DimensionKey, Position.",
+        "ReportAccess: ReportID, UserEmail, Permission.",
+        "RefreshRuns: ReportID, StartedAt, EndedAt, Status, Error."
+      ],
+      "acceptanceCriteria": "Nguồn lỗi giữ kết quả trước có nhãn stale, không hiển thị zero như dữ liệu mới. Người xem không sửa cấu hình nguồn hoặc truy cập report ngoài grant."
+    },
+    {
+      "familyId": "F50",
+      "name": "Bộ kế hoạch cuộc sống tổng hợp (bổ sung ngoài shop)",
+      "type": "family",
+      "wave": 4,
+      "variants": [
+        "SHEET",
+        "WEB",
+        "APPSHEET"
+      ],
+      "skus": [
+        "F50-SHEET",
+        "F50-WEB",
+        "F50-APPSHEET"
+      ],
+      "status": "planned",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "X001"
+      ],
+      "tables": [],
+      "kpis": [
+        "Tiến độ mục tiêu",
+        "thói quen theo lịch",
+        "khoản dành dụm",
+        "lịch thi/chuyến đi",
+        "checklist chưa xong."
+      ],
+      "dataSpec": [
+        "Kế thừa F01/F31/F33/F36/F41/F42.",
+        "LifeGoals: Area, Title, TargetDate, Progress.",
+        "WellnessLogs: Date, Type, Value, Unit.",
+        "WorkoutPlans: Date, Activity, DurationMinutes, Notes.",
+        "ReadingList: Title, Author, Status.",
+        "Trips: Name, StartDate, EndDate, Budget.",
+        "Itinerary: TripID, Date, StartAt, Location, Activity.",
+        "PackingItems: TripID, Item, Packed.",
+        "Exams: SubjectID, Date, Topic.",
+        "MealPlans: Date, Meal, Description."
+      ],
+      "acceptanceCriteria": "Từ dashboard nhấp vào mục tiêu mở đúng bản ghi; dữ liệu thu chi chỉ lưu một nguồn F33; đổi năm giữ lịch sử cũ. Chuyến đi có nhiều ngày/khác múi giờ không lẫn ngày vận chuyển."
+    },
+    {
+      "familyId": "U01",
+      "name": "Gộp dữ liệu nhiều file và nhiều tab",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U01-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G062",
+        "G093",
+        "G146",
+        "G162",
+        "G165",
+        "G176",
+        "G178",
+        "G179",
+        "G224"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U02",
+      "name": "Xuất vùng chọn, tab, PDF và ảnh",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U02-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G006",
+        "G108",
+        "G210"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U03",
+      "name": "Làm sạch văn bản, liên hệ và thư viện Regex",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U03-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G101",
+        "G103",
+        "G139",
+        "G150",
+        "G155",
+        "G156",
+        "G158",
+        "G205"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U04",
+      "name": "Sinh mã ổn định và chống trùng",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U04-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G105",
+        "G134"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U05",
+      "name": "Lịch năm và công thức ngày",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U05-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G106",
+        "G133",
+        "G135",
+        "G136"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U06",
+      "name": "Thẻ liên hệ và ảnh từ văn bản",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U06-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G109",
+        "G193"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U07",
+      "name": "Dịch văn bản và phát giọng đọc",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U07-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G110",
+        "G116",
+        "G160"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U08",
+      "name": "Đánh số thứ tự theo điều kiện và bộ lọc",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U08-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G111",
+        "G157"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U09",
+      "name": "Đọc số và số tiền thành chữ",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U09-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G112",
+        "G142",
+        "G164"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U10",
+      "name": "Lọc số điện thoại theo mẫu số",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U10-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G137",
+        "G180"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U11",
+      "name": "Trộn thư và gửi mail cá nhân hóa",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U11-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G138",
+        "G148",
+        "G192"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U12",
+      "name": "Bộ biểu đồ nhỏ và bong bóng",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U12-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G127",
+        "G140"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U13",
+      "name": "Tổng ngang, cộng dồn và trả về tiêu đề",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U13-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G143",
+        "G153",
+        "G208"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U14",
+      "name": "Pivot chuỗi và chuyển bảng rộng/dài",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U14-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G151",
+        "G152"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U15",
+      "name": "Đảo chuỗi và minh họa ký tự hướng chữ",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U15-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G145"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U16",
+      "name": "Hiển thị ảnh Drive theo quyền",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U16-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G147"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U17",
+      "name": "Chia nhóm ngẫu nhiên hoặc cân bằng",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U17-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G149"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U18",
+      "name": "Dropdown phụ thuộc nhiều cấp",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U18-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G163",
+        "G221",
+        "G222",
+        "G223"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U19",
+      "name": "Quản lý quyền file và khóa vùng dữ liệu",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U19-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G166",
+        "G209"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U20",
+      "name": "Sao lưu dữ liệu nhiều file",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U20-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G168"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U21",
+      "name": "Tìm kiếm, QUERY và phân trang dữ liệu",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U21-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G104",
+        "G141",
+        "G161",
+        "G204"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U22",
+      "name": "Dòng cuối và lấp ô trống",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U22-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G154",
+        "G159"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U23",
+      "name": "Chuyển đổi lịch âm và dương",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U23-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G206"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U24",
+      "name": "Chốt giá trị công thức biến động",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U24-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G207"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U25",
+      "name": "Sao chép bộ thư mục và template Drive",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U25-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G056",
+        "G211"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U26",
+      "name": "Nén và đổi kích thước ảnh",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U26-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G071"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U27",
+      "name": "Tra cứu thông tin theo mã số thuế",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U27-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G197"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U28",
+      "name": "Đồng bộ Google Calendar với Sheets",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U28-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G175"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    },
+    {
+      "familyId": "U29",
+      "name": "Bảng phối màu và theme cho Sheets",
+      "type": "utility",
+      "wave": 4,
+      "variants": [
+        "UTILITY"
+      ],
+      "skus": [
+        "U29-UTIL"
+      ],
+      "status": "blocked_missing_spec",
+      "locale": "vi-VN",
+      "timeZone": "Asia/Ho_Chi_Minh",
+      "currency": "VND",
+      "sourceMapIds": [
+        "G203"
+      ],
+      "tables": [],
+      "kpis": [],
+      "dataSpec": [],
+      "acceptanceCriteria": ""
+    }
+  ]
+}

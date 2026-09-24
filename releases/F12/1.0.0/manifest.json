@@ -1,0 +1,41 @@
+{
+  "sku": "F12",
+  "name": "Quản lý hồ sơ nhân sự & hợp đồng lao động",
+  "version": "1.0.0",
+  "category": "Nhân sự & Tuyển dụng",
+  "codexRef": "F12 (BUILD_ALL_TEMPLATES_CODEX.md)",
+  "sourceMapIds": [
+    "G016",
+    "G017",
+    "G045"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Nhân sự có ExitDate trước ReportDate hoặc EmploymentStatus là TERMINATED không được tính vào active headcount. Lịch sử luân chuyển phòng ban/vị trí được lưu vết trong EmploymentEvents. Nhân viên bình thường không xem được bảng Compensation.",
+  "generatedAt": "2026-09-12T03:33:39.970Z"
+}

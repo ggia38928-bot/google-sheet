@@ -1,0 +1,41 @@
+{
+  "sku": "F48",
+  "name": "Báo cáo chi phí, P&L và dòng tiền",
+  "version": "1.0.0",
+  "category": "Kế toán quản trị & Báo cáo tài chính",
+  "codexRef": "F48 (Dòng 1680–1710)",
+  "sourceMapIds": [
+    "G099",
+    "G100",
+    "G212"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Bán chịu 1 triệu và chưa thu: doanh thu có thể ghi nhận theo input, cash inflow=0. Tiền vay tăng cash financing nhưng không thành doanh thu. Bảng mapping thiếu hiện lỗi thay vì bỏ âm thầm.",
+  "generatedAt": "2026-09-11T05:50:41.272Z"
+}

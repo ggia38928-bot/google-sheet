@@ -1,0 +1,39 @@
+{
+  "sku": "F24",
+  "name": "Mini ERP cho đơn vị nhỏ",
+  "version": "1.0.0",
+  "category": "ERP & Quản trị tổng thể",
+  "codexRef": "F24 (Dòng 1050–1076)",
+  "sourceMapIds": [
+    "G012"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Công nợ phải thu và phải trả giảm trừ chính xác, không âm. Lợi nhuận gộp ước tính = Doanh số - COGS. Luồng dữ liệu khép kín (SO -> Thu tiền -> Số dư quỹ).",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

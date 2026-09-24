@@ -1,0 +1,3 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Mark Present,Attendance,SetValues,"[Result] <> "PRESENT"",Result,""PRESENT"",
+Cancel Class Session,Sessions,SetValues,"[Status] = "SCHEDULED"",Status,""CANCELLED"",

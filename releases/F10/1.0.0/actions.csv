@@ -1,0 +1,4 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Check In Guest,Bookings,SetValues,"[Status] = "CONFIRMED"",Status,""CHECKED_IN"",
+Check Out Guest,Bookings,SetValues,"[Status] = "CHECKED_IN"",Status,""CHECKED_OUT"",
+Cancel Booking,Bookings,SetValues,"[Status] = "PENDING" OR [Status] = "CONFIRMED"",Status,""CANCELLED"",

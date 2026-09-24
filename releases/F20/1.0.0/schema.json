@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F20",
+  "name": "Bán hàng & Quản lý Đơn hàng Đa kênh",
+  "version": "1.0.0",
+  "description": "Quản lý tập trung đơn hàng từ Shopee, TikTok Shop, Lazada, Website và Cửa hàng. Theo dõi dòng trạng thái vận chuyển, đối soát tiền thu hộ COD và phí sàn",
+  "tables": [
+    {
+      "name": "ORDERS",
+      "headers": [
+        "Mã đơn hàng",
+        "Ngày đặt",
+        "Kênh bán",
+        "Mã KH",
+        "Tên người nhận",
+        "SĐT",
+        "Đơn vị VC",
+        "Mã vận đơn",
+        "Tiền hàng (VND)",
+        "Phí ship báo khách (VND)",
+        "Giảm giá/Voucher (VND)",
+        "Tổng thu khách (VND)",
+        "Phí sàn & VC thực tế (VND)",
+        "Doanh thu thuần (VND)",
+        "Hình thức TT",
+        "Trạng thái TT",
+        "Trạng thái đơn",
+        "Ghi chú"
+      ],
+      "colCount": 18,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "ORDER_ITEMS",
+      "headers": [
+        "Mã dòng",
+        "Mã đơn hàng",
+        "Mã SKU",
+        "Tên sản phẩm",
+        "ĐVT",
+        "Số lượng đặt",
+        "Số lượng đã giao",
+        "Đơn giá bán (VND)",
+        "Thành tiền (VND)",
+        "Giá vốn xuất kho (VND)",
+        "Lợi nhuận gộp (VND)"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "CHANNELS",
+      "headers": [
+        "Mã kênh",
+        "Tên kênh bán hàng",
+        "Tỷ lệ phí sàn (%)",
+        "Phí cố định/đơn (VND)",
+        "Trạng thái"
+      ],
+      "colCount": 5,
+      "demoRowsCount": 6
+    },
+    {
+      "name": "PAYMENTS",
+      "headers": [
+        "Mã GD",
+        "Mã đơn hàng",
+        "Ngày thanh toán",
+        "Hình thức / Kênh",
+        "Số tiền (VND)",
+        "Trạng thái đối soát",
+        "Mã tham chiếu"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 3
+    }
+  ]
+}

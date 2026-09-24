@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F10",
+  "name": "Khách sạn, homestay và đặt phòng",
+  "version": "1.0.0",
+  "description": "Quản lý đặt phòng homestay, khách sạn, tính đêm lưu trú chính xác theo [check-in, check-out), chống overbooking, theo dõi cọc và dọn phòng",
+  "tables": [
+    {
+      "name": "Properties",
+      "headers": [
+        "ID",
+        "PropertyCode",
+        "Name",
+        "Address",
+        "Phone",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Rooms",
+      "headers": [
+        "ID",
+        "PropertyID",
+        "RoomNumber",
+        "RoomType",
+        "Capacity",
+        "PricePerNight",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Guests",
+      "headers": [
+        "ID",
+        "GuestCode",
+        "FullName",
+        "Phone",
+        "Email",
+        "IdCard",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Bookings",
+      "headers": [
+        "ID",
+        "BookingCode",
+        "PropertyID",
+        "RoomID",
+        "GuestID",
+        "CheckInDate",
+        "CheckOutDate",
+        "Nights",
+        "PricePerNight",
+        "RoomSubtotal",
+        "DepositAmount",
+        "RemainingAmount",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 18,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Payments",
+      "headers": [
+        "ID",
+        "BookingID",
+        "PaymentType",
+        "Amount",
+        "PaymentMethod",
+        "PaidAt",
+        "Note",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "Housekeeping",
+      "headers": [
+        "ID",
+        "PropertyID",
+        "RoomID",
+        "LogDate",
+        "Status",
+        "StaffEmail",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 2
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 2
+    }
+  ]
+}

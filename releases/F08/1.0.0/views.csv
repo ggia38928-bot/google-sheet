@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Document In/Out Register,Documents,deck,primary,IssuedDate:Descending,Direction,DocNumber;Subject;Issuer;DueDate;Status
+Directives Task List,Directives,table,primary,DueDate:Ascending,Status,DocumentID;Content;AssigneeEmail;DueDate;Status
+Document Archive,Documents,table,menu,ReceivedDate:Descending,Confidentiality,DocNumber;Subject;Issuer;ReceivedDate;Status
+Receive Document Form,Documents,form,menu,,,Direction;BookCode;DocNumber;Subject;Issuer;Recipient;Confidentiality;Urgency;DueDate
+Administrative Dashboard,Documents,dashboard,primary,,,

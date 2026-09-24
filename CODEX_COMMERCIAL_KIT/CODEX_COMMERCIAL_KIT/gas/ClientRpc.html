@@ -1,0 +1,21 @@
+<script>
+// Include only in an Apps Script HTML-service app. No real UI is supplied by this example.
+// Keep the same requestId on a retry after timeout; create a new ID for a new operation.
+function postMovement(payload) {
+  return new Promise((resolve,reject)=> {
+    google.script.run
+      .withSuccessHandler(result=>result && result.ok ? resolve(result) : reject(new Error('SAVE_FAILED')))
+      .withFailureHandler(error=>reject(new Error(error.message || 'NETWORK_OR_SERVER_ERROR')))
+      .postInventoryMovement(payload);
+  });
+}
+async function submitMovement(button,payload) {
+  if(button.disabled) return;
+  button.disabled=true;
+  try {
+    const result=await postMovement(payload);
+    // Render text with textContent. Refresh authoritative data after successful saving.
+    return result;
+  } finally {button.disabled=false;}
+}
+</script>

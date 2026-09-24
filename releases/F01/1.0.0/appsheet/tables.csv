@@ -1,0 +1,6 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Tasks,Tasks,ID,Title,ADDS_AND_UPDATES_AND_DELETES,"AND(LOOKUP(USEREMAIL(), ""Users"", ""Email"", ""Active"") = TRUE, OR(LOOKUP(USEREMAIL(), ""Users"", ""Email"", ""Role"") = ""OWNER"", [OwnerEmail] = USEREMAIL()))"
+Categories,Categories,ID,Name,READ_ONLY,
+TaskEvents,TaskEvents,ID,EventType,ADDS_ONLY,
+Users,Users,Email,DisplayName,READ_ONLY,
+Settings,SETTINGS,Key,Key,READ_ONLY,

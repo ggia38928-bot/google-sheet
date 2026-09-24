@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F18",
+  "name": "Quản lý kho cơ bản & Nhập Xuất Tồn",
+  "version": "1.0.0",
+  "description": "Quản lý kho hàng chuyên nghiệp, theo dõi Nhập Xuất Tồn và cảnh báo hàng chạm định mức an toàn",
+  "tables": [
+    {
+      "name": "STOCK_MOVEMENTS",
+      "headers": [
+        "Mã phiếu",
+        "Ngày chứng từ",
+        "Loại phiếu",
+        "Mã SKU",
+        "Tên hàng hóa",
+        "Từ kho (Xuất/Chuyển)",
+        "Đến kho (Nhập/Chuyển)",
+        "Số lượng",
+        "Đơn giá vốn",
+        "Thành tiền (VND)",
+        "Trạng thái",
+        "Ghi chú nghiệp vụ"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 10
+    },
+    {
+      "name": "PRODUCTS",
+      "headers": [
+        "Mã SKU",
+        "Tên hàng hóa",
+        "Nhóm hàng",
+        "ĐVT",
+        "Giá vốn (VND)",
+        "Giá bán (VND)",
+        "Tồn tối thiểu",
+        "Tồn đầu kỳ",
+        "Tổng Nhập",
+        "Tổng Xuất",
+        "Tồn hiện tại",
+        "Giá trị tồn (VND)",
+        "Trạng thái tồn"
+      ],
+      "colCount": 13,
+      "demoRowsCount": 8
+    },
+    {
+      "name": "WAREHOUSES",
+      "headers": [
+        "Mã kho",
+        "Tên kho hàng",
+        "Địa điểm / Địa chỉ",
+        "Thủ kho phụ trách",
+        "Trạng thái"
+      ],
+      "colCount": 5,
+      "demoRowsCount": 3
+    }
+  ]
+}

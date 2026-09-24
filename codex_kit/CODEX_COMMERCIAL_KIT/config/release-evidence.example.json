@@ -1,0 +1,22 @@
+{
+  "sku":"F05-WEB",
+  "version":"0.1.0-rc1",
+  "buildHash":null,
+  "platform":"WEB",
+  "productType":"CRM",
+  "tests":[
+    {"id":"business_rules","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"clean_install","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"docs","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"backup_restore","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"identity_live","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"permissions_live","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"persistence_live","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"idempotency_live","result":"NOT_RUN","buildHash":null,"evidencePath":null},
+    {"id":"e2e_live","result":"NOT_RUN","buildHash":null,"evidencePath":null}
+  ],
+  "openBugs":[],
+  "artifacts":[],
+  "uat":{"result":"NOT_RUN","evidencePath":null},
+  "note":"Example only. Never change NOT_RUN to PASS without running and saving evidence."
+}

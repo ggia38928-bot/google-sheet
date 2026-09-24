@@ -1,0 +1,50 @@
+{
+  "sku": "F05",
+  "name": "CRM khách hàng và pipeline",
+  "version": "1.0.0",
+  "category": "Khách hàng & Bán hàng",
+  "codexRef": "F05 (Dòng 553–578)",
+  "sourceMapIds": [
+    "T009",
+    "T014",
+    "G001",
+    "G008",
+    "G011",
+    "G020",
+    "G028",
+    "G060",
+    "G071",
+    "G111",
+    "G145",
+    "G197"
+  ],
+  "status": "implemented_local",
+  "testedLocal": true,
+  "testedOnGoogle": false,
+  "googleVerificationNote": "Chờ kết nối OAuth tài khoản Google Workspace sống theo BLOCKERS.md",
+  "tiers": {
+    "free_demo": {
+      "price": 0,
+      "file": "setup_free_demo.gs"
+    },
+    "free_clean": {
+      "price": 0,
+      "file": "setup_free_clean.gs"
+    },
+    "basic": {
+      "price": 49000,
+      "file": "setup_basic.gs"
+    },
+    "pro": {
+      "price": 119000,
+      "file": "setup_pro.gs",
+      "default": "setup.gs"
+    },
+    "business": {
+      "price": 499000,
+      "file": "setup_business.gs"
+    }
+  },
+  "acceptanceCriteria": "Mẫu số tính Win rate chỉ tính deal đã đóng (Won + Lost). Deal đang mở không làm loãng win rate. Mẫu số = 0 trả về 0% an toàn.",
+  "generatedAt": "2026-09-11T12:35:00.000Z"
+}

@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Appointments Calendar,Appointments,calendar,primary,AppointmentDate:Ascending,,AppointmentCode;ClientID;ProviderID;ServiceID;Status
+Today Schedule,Appointments,deck,primary,StartTime:Ascending,Status,AppointmentCode;ClientID;ProviderID;StartTime;EndTime;Status
+Service Catalog,Services,table,menu,Name:Ascending,Category,ServiceCode;Name;Category;DurationMinutes;Price
+Book Appointment,Appointments,form,menu,,,ClientID;ProviderID;ServiceID;AppointmentDate;StartTime;EndTime
+Clinic Dashboard,Appointments,dashboard,primary,,,

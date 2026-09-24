@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F21",
+  "name": "Form nhập liệu & Phân quyền cấu hình",
+  "version": "1.0.0",
+  "description": "Hệ thống định nghĩa bảng biểu mẫu động, cấu hình cột và kiểu dữ liệu, phân quyền truy cập người dùng (CRUD) và khóa bản ghi theo quy trình",
+  "tables": [
+    {
+      "name": "TABLE_DEFINITIONS",
+      "headers": [
+        "Mã bảng (TableID)",
+        "Tên bảng hiển thị",
+        "Mô tả nghiệp vụ",
+        "Nhóm danh mục",
+        "Thứ tự hiển thị",
+        "Trạng thái"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "COLUMN_DEFINITIONS",
+      "headers": [
+        "Mã cột (ColumnID)",
+        "Mã bảng (TableID)",
+        "Tên cột",
+        "Kiểu dữ liệu (Type)",
+        "Bắt buộc (Required)",
+        "Quy tắc xác thực (ValidationSpec)",
+        "Bảng tham chiếu (RefTable)",
+        "Cột cha phụ thuộc (ParentCol)"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 10
+    },
+    {
+      "name": "FORM_DEFINITIONS",
+      "headers": [
+        "Mã biểu mẫu (FormID)",
+        "Mã bảng (TableID)",
+        "Tiêu đề biểu mẫu",
+        "Quy cách bố cục (LayoutSpec)",
+        "Số cột giao diện",
+        "Trạng thái"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "PERMISSIONS",
+      "headers": [
+        "Mã quyền",
+        "Email người dùng (UserEmail)",
+        "Mã bảng (TableID)",
+        "Quyền thao tác (Operation)",
+        "Phạm vi (Scope)",
+        "Trạng thái"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "VIEW_DEFINITIONS",
+      "headers": [
+        "Mã View",
+        "Mã bảng (TableID)",
+        "Tên chế độ xem",
+        "Kiểu hiển thị (Type)",
+        "Bộ lọc điều kiện (FilterSpec)",
+        "Quy tắc sắp xếp (SortSpec)"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "FORM_RECORDS",
+      "headers": [
+        "Mã bản ghi (RecordID)",
+        "Mã bảng (TableID)",
+        "Dữ liệu bản ghi (Payload)",
+        "Người gửi (CreatedBy)",
+        "Thời gian tạo",
+        "Trạng thái duyệt"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "LOCKED_ROWS",
+      "headers": [
+        "Mã khóa (LockID)",
+        "Mã bảng (TableID)",
+        "Mã bản ghi (RecordID)",
+        "Khóa bởi (LockedBy)",
+        "Thời điểm khóa",
+        "Lý do khóa"
+      ],
+      "colCount": 6,
+      "demoRowsCount": 1
+    }
+  ]
+}

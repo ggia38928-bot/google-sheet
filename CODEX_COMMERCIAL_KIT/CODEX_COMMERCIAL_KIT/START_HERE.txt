@@ -1,0 +1,20 @@
+CODEX COMMERCIAL KIT - START HERE
+
+1) Mở thư mục CODEX_COMMERCIAL_KIT trong Codex.
+2) Dán prompt P00 trong PROMPTS_ALL.md (hoặc đọc config/workflow-prompts.json).
+3) Giữ nguyên quy tắc: tạo file thật, chạy test, ghi evidence; không tự publish.
+4) Chạy local:
+   npm test
+   npm run build:gas
+   npm run check:kit
+   npm run cost
+5) Sau F01-SHEET, dùng ma trận trong docs/IMPLEMENTATION_GUIDE.md:
+   CRM Web: P10 -> P11 -> P12 -> P19 -> P20 -> P21 -> P23 -> P25 -> P31 -> P32 -> P33
+   CRM AppSheet: P10 -> P13 -> P14 -> P15 -> P19 -> P24 -> P25 -> P31 -> P32 -> P33
+   ERP Web: P16 -> P17 -> P19 -> P20 -> P21 -> P23 -> P25 -> P31 -> P32 -> P33
+   ERP AppSheet: P16 -> P13 -> P18 -> P15 -> P19 -> P24 -> P25 -> P31 -> P32 -> P33
+6) Chỉ chạy P34 khi RELEASE_REPORT.md là GO, đúng SKU/version/đích và người bán đã cho phép.
+
+P00 là prompt triển khai đầu tiên, không phải lời hứa rằng mọi sản phẩm đã hoàn thành.
+AppSheet vẫn cần thao tác trong editor/tài khoản Google để kiểm thử sync, quyền, bot và licence.
+Không đặt token, mật khẩu, file .clasp.json hoặc dữ liệu khách vào gói.

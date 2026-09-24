@@ -1,0 +1,11 @@
+TableName,ColumnName,Type,Required,IsKey,IsLabel,InitialValue,AppFormula,ValidIf,EditableIf,RefTable
+Appointments,ID,Text,Y,Y,N,UNIQUEID(),,,FALSE,
+Appointments,AppointmentCode,Text,Y,N,Y,,,,TRUE,
+Appointments,ClientID,Ref,Y,N,N,,,,TRUE,Clients
+Appointments,ProviderID,Ref,Y,N,N,,,,TRUE,Providers
+Appointments,ServiceID,Ref,Y,N,N,,,,TRUE,Services
+Appointments,AppointmentDate,Date,Y,N,N,TODAY(),,,TRUE,
+Appointments,StartTime,Text,Y,N,N,"09:00",,,TRUE,
+Appointments,EndTime,Text,Y,N,N,"10:00",,,TRUE,
+Appointments,Price,Price,Y,N,N,0,,,TRUE,
+Appointments,Status,Enum,Y,N,N,"SCHEDULED",,LIST("SCHEDULED", "CONFIRMED", "COMPLETED", "CANCELLED", "NO_SHOW"),TRUE,

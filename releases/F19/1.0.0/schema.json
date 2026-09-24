@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F19",
+  "name": "Quản lý Báo giá & Phiên bản Chào hàng",
+  "version": "1.0.0",
+  "description": "Hệ thống báo giá chuyên nghiệp, tính chiết khấu nhiều cấp, tự động tính thuế VAT, quản lý phiên bản (Revisions) và theo dõi tỷ lệ chuyển đổi Win Rate",
+  "tables": [
+    {
+      "name": "QUOTES",
+      "headers": [
+        "Mã báo giá",
+        "Số báo giá",
+        "Tiêu đề chào hàng",
+        "Ngày lập",
+        "Hạn hiệu lực",
+        "Mã KH",
+        "Tên khách hàng",
+        "Phiên bản",
+        "Tiền tệ",
+        "Tổng trước thuế/CK (VND)",
+        "Chiết khấu (%)",
+        "Tiền chiết khấu (VND)",
+        "Thuế VAT (%)",
+        "Tiền thuế (VND)",
+        "Tổng thanh toán (VND)",
+        "Trạng thái",
+        "Sales phụ trách",
+        "Ghi chú điều khoản"
+      ],
+      "colCount": 18,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "QUOTE_ITEMS",
+      "headers": [
+        "Mã dòng",
+        "Mã báo giá",
+        "Mã SP/DV",
+        "Tên hàng hóa / Dịch vụ",
+        "ĐVT",
+        "Số lượng",
+        "Đơn giá niêm yết (VND)",
+        "Chiết khấu dòng (%)",
+        "Đơn giá sau CK (VND)",
+        "Thành tiền (VND)",
+        "Thuế suất (%)",
+        "Tiền thuế dòng (VND)",
+        "Tổng cộng dòng (VND)",
+        "Ghi chú thông số"
+      ],
+      "colCount": 14,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "CUSTOMERS",
+      "headers": [
+        "Mã KH",
+        "Tên công ty / Khách hàng",
+        "Người đại diện",
+        "SĐT",
+        "Email",
+        "Địa chỉ",
+        "Mã số thuế",
+        "Nhóm khách hàng",
+        "Hạn mức tín dụng (VND)"
+      ],
+      "colCount": 9,
+      "demoRowsCount": 4
+    },
+    {
+      "name": "PRODUCTS",
+      "headers": [
+        "Mã SP/DV",
+        "Tên sản phẩm / Dịch vụ",
+        "Đơn vị tính",
+        "Đơn giá niêm yết (VND)",
+        "Giá vốn ước tính (VND)",
+        "Thuế suất mặc định (%)",
+        "Trạng thái"
+      ],
+      "colCount": 7,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "TERMS",
+      "headers": [
+        "Mã điều khoản",
+        "Tiêu đề điều khoản",
+        "Nội dung chi tiết điều khoản thương mại"
+      ],
+      "colCount": 3,
+      "demoRowsCount": 3
+    }
+  ]
+}

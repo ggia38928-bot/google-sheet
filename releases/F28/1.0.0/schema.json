@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "sku": "F28",
+  "name": "Lịch dịch vụ spa và phòng khám",
+  "version": "1.0.0",
+  "description": "Quản lý lịch hẹn khám chữa bệnh và chăm sóc sắc đẹp, phân bổ chuyên viên và phòng trị liệu, chống đặt trùng lịch, theo dõi tỷ lệ no-show",
+  "tables": [
+    {
+      "name": "Clients",
+      "headers": [
+        "ID",
+        "ClientCode",
+        "FullName",
+        "Phone",
+        "Email",
+        "BirthDate",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Providers",
+      "headers": [
+        "ID",
+        "ProviderCode",
+        "FullName",
+        "Specialty",
+        "Phone",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Services",
+      "headers": [
+        "ID",
+        "ServiceCode",
+        "Name",
+        "Category",
+        "DurationMinutes",
+        "Price",
+        "Active",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 12,
+      "demoRowsCount": 3
+    },
+    {
+      "name": "Appointments",
+      "headers": [
+        "ID",
+        "AppointmentCode",
+        "ClientID",
+        "ProviderID",
+        "ServiceID",
+        "AppointmentDate",
+        "StartTime",
+        "EndTime",
+        "Price",
+        "Status",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 15,
+      "demoRowsCount": 5
+    },
+    {
+      "name": "ServiceVisits",
+      "headers": [
+        "ID",
+        "AppointmentID",
+        "PerformedAt",
+        "ActualDurationMinutes",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 10,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "Payments",
+      "headers": [
+        "ID",
+        "AppointmentID",
+        "Amount",
+        "PaymentMethod",
+        "PaidAt",
+        "Note",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 11,
+      "demoRowsCount": 1
+    },
+    {
+      "name": "Settings",
+      "headers": [
+        "Key",
+        "Value",
+        "Description",
+        "CreatedAt",
+        "UpdatedAt",
+        "CreatedBy",
+        "RowVersion",
+        "Archived"
+      ],
+      "colCount": 8,
+      "demoRowsCount": 1
+    }
+  ]
+}

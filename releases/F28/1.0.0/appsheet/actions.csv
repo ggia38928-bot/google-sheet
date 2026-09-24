@@ -1,0 +1,4 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Confirm Appointment,Appointments,SetValues,"[Status] = "SCHEDULED"",Status,""CONFIRMED"",
+Complete Service,Appointments,SetValues,"[Status] = "CONFIRMED"",Status,""COMPLETED"",
+Cancel Appointment,Appointments,SetValues,"[Status] = "SCHEDULED" OR [Status] = "CONFIRMED"",Status,""CANCELLED"",

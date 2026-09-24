@@ -1,0 +1,8 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+My Tasks,Tasks,deck,primary,DueDate:Ascending,Priority,Title;DueDate;Priority;Status;DaysLate
+Task Detail,Tasks,detail,ref,,,Title;OwnerEmail;Priority;StartDate;DueDate;Status;Progress;DaysLate;CategoryID;Important;Urgent
+New Task,Tasks,form,menu,,,Title;Priority;DueDate;CategoryID;Important;Urgent
+Calendar,Tasks,calendar,primary,DueDate,,Title;DueDate;Status
+Overdue,Tasks,table,menu,DaysLate:Descending,,Title;OwnerEmail;DueDate;DaysLate;Priority
+Dashboard,Tasks,dashboard,primary,,,
+Settings,Settings,detail,menu,,,Key;Value;Description

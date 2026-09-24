@@ -1,0 +1,8 @@
+{
+  "name": "@minh-templates/product-f01",
+  "version": "1.0.0",
+  "description": "F01 - Việc cá nhân và ưu tiên standalone product module",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Room Occupancy Calendar,Bookings,calendar,primary,CheckInDate:Ascending,,BookingCode;RoomID;CheckInDate;CheckOutDate;Status
+Today Check-ins,Bookings,deck,primary,CheckInDate:Ascending,Status,BookingCode;RoomID;GuestID;CheckInDate;Status
+Housekeeping Board,Housekeeping,table,menu,LogDate:Descending,Status,RoomID;LogDate;Status;StaffEmail
+New Reservation,Bookings,form,menu,,,PropertyID;RoomID;GuestID;CheckInDate;CheckOutDate;PricePerNight
+Hotel Dashboard,Bookings,dashboard,primary,,,

@@ -1,0 +1,8 @@
+TableName,SheetSource,PrimaryKey,LabelColumn,Permissions,SecurityFilter
+Properties,Properties,ID,Name,READ_ONLY,
+Rooms,Rooms,ID,RoomNumber,READ_ONLY,
+Guests,Guests,ID,FullName,ADDS_AND_UPDATES,
+Bookings,Bookings,ID,BookingCode,ADDS_AND_UPDATES,
+Payments,Payments,ID,Amount,ADDS_ONLY,
+Housekeeping,Housekeeping,ID,Status,ADDS_AND_UPDATES,
+Settings,Settings,Key,Key,READ_ONLY,

@@ -1,0 +1,5 @@
+ActionName,TableName,ActionType,Condition,TargetColumn,ValueFormula,Navigation
+Start Task,Tasks,SetValues,"[Status] = ""TODO""",Status,"""DOING""",
+Complete Task,Tasks,SetValues,"OR([Status] = ""TODO"", [Status] = ""DOING"")",Status,"""DONE""",
+Cancel Task,Tasks,SetValues,"OR([Status] = ""TODO"", [Status] = ""DOING"")",Status,"""CANCELLED""",
+Reopen Task,Tasks,SetValues,"OR([Status] = ""DONE"", [Status] = ""CANCELLED"")",Status,"""TODO""",

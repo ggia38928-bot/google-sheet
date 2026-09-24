@@ -1,0 +1,6 @@
+ViewName,TableOrSlice,ViewType,Position,SortBy,GroupBy,DisplayColumns
+Candidate Pipeline,APPLICATIONS,deck,primary,CreatedAt:Descending,Stage,CandidateID;VacancyID;Stage
+Open Vacancies,VACANCIES,table,primary,JobTitle:Ascending,Status,JobTitle;Department;OpenDate;Status
+Interview Schedule,INTERVIEWS,calendar,primary,ScheduledDate:Ascending,,ApplicationID;ScheduledDate;Interviewer
+New Application,APPLICATIONS,form,menu,,,CandidateID;VacancyID;Stage
+Recruitment Dashboard,APPLICATIONS,dashboard,menu,,,
