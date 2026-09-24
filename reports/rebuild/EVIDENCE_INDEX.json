@@ -1,0 +1,10 @@
+{
+  "executionMode": "single-agent implementation with native independent read-only review",
+  "branchEvidence": ".git/HEAD = refs/heads/3.0.0-vi",
+  "checks": [
+    { "id": "E-001", "command": "node --test tests/rebuild_f05.test.mjs", "exitCode": 0, "result": "7/7 pass" },
+    { "id": "E-002", "command": "node --test tests/*.test.mjs", "exitCode": 0, "result": "190/190 pass" },
+    { "id": "E-003", "command": "inventory read-only scan", "exitCode": 0, "result": "79 catalog items; 23 release directories" },
+    { "id": "E-004", "command": "native subagent independent review", "exitCode": 0, "result": "G0 GO; G1 GO; no remaining Critical/High findings in reviewed local controls" }
+  ]
+}

@@ -196,30 +196,31 @@ describe('5. pathResolver & CLI Generator options', () => {
   const { pathResolver } = engine;
   const generator = require('../tools/generator.js');
 
-  test('resolveRootDir mặc định LUÔN LUÔN là D:\\google sheet', () => {
+  test('resolveRootDir xác định root từ repository đang mở', () => {
     const resolved = pathResolver.resolveRootDir();
     assert.equal(resolved, pathResolver.ROOT_DIR);
-    assert.equal(resolved, 'D:\\google sheet');
+    assert.ok(fs.existsSync(path.join(resolved, '.git')));
+    assert.ok(fs.existsSync(path.join(resolved, 'package.json')));
   });
 
-  test('resolveRootDir ưu tiên CLI argument khi được truyền', () => {
-    const custom = 'D:/custom_test_root';
-    assert.equal(pathResolver.resolveRootDir(custom), path.resolve(custom));
+  test('path resolver từ chối root và output ngoài workspace', () => {
+    assert.throws(() => pathResolver.resolveRootDir(path.resolve(pathResolver.ROOT_DIR, '..')), /project root/);
+    assert.throws(() => pathResolver.resolveOutputDir(pathResolver.ROOT_DIR, path.resolve(pathResolver.ROOT_DIR, '..', 'ngoai-workspace')), /project root/);
   });
 
-  test('resolveConfigsDir trỏ về D:\\google sheet\\configs', () => {
+  test('resolveConfigsDir trỏ vào configs trong workspace', () => {
     const configsDir = pathResolver.resolveConfigsDir();
-    assert.equal(configsDir, path.resolve('D:/google sheet/configs'));
+    assert.equal(configsDir, path.join(pathResolver.ROOT_DIR, 'configs'));
   });
 
-  test('resolveReportsDir trỏ về D:\\google sheet\\reports', () => {
+  test('resolveReportsDir trỏ vào reports trong workspace', () => {
     const reportsDir = pathResolver.resolveReportsDir();
-    assert.equal(reportsDir, path.resolve('D:/google sheet/reports'));
+    assert.equal(reportsDir, path.join(pathResolver.ROOT_DIR, 'reports'));
   });
 
-  test('resolveOutputDir trả về D:\\google sheet\\releases mặc định', () => {
-    assert.equal(pathResolver.resolveOutputDir(), path.resolve('D:/google sheet/releases'));
-    assert.equal(pathResolver.resolveOutputDir('D:/custom', 'custom_out'), path.resolve('D:/custom/custom_out'));
+  test('resolveOutputDir trả về releases trong workspace', () => {
+    assert.equal(pathResolver.resolveOutputDir(), path.join(pathResolver.ROOT_DIR, 'releases'));
+    assert.equal(pathResolver.resolveOutputDir(pathResolver.ROOT_DIR, 'releases/F05/3.0.0-vi'), path.join(pathResolver.ROOT_DIR, 'releases', 'F05', '3.0.0-vi'));
   });
 
   test('syncSafely luôn trả về SYNC_DISABLED vì sync sang ổ C đã bị tắt vĩnh viễn', () => {
@@ -232,15 +233,15 @@ describe('5. pathResolver & CLI Generator options', () => {
     const defaultOpts = generator.parseArgs([]);
     assert.equal(defaultOpts.noSync, true, 'Mặc định noSync phải là true');
     assert.equal(defaultOpts.strict, true, 'Mặc định strict phải là true');
-    assert.equal(defaultOpts.root, 'D:\\google sheet');
+    assert.equal(defaultOpts.root, pathResolver.ROOT_DIR);
 
     const args = [
       '--sku', 'F01',
       '--tier', 'all',
       '--batch', '1',
       '--all',
-      '--root', 'D:/google sheet',
-      '--output', 'D:/google sheet/releases',
+      '--root', pathResolver.ROOT_DIR,
+      '--output', 'releases',
       '--no-sync',
       '--dry-run',
       '--strict'
@@ -250,8 +251,8 @@ describe('5. pathResolver & CLI Generator options', () => {
     assert.equal(opts.tier, 'all');
     assert.equal(opts.batch, '1');
     assert.equal(opts.all, true);
-    assert.equal(opts.root, 'D:/google sheet');
-    assert.equal(opts.output, 'D:/google sheet/releases');
+    assert.equal(opts.root, pathResolver.ROOT_DIR);
+    assert.equal(opts.output, 'releases');
     assert.equal(opts.noSync, true);
     assert.equal(opts.dryRun, true);
     assert.equal(opts.strict, true);

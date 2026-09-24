@@ -1,0 +1,17 @@
+{
+  "sku": "F05",
+  "version": "3.0.0-vi",
+  "locale": "vi-VN",
+  "tables": {
+    "Lead": ["Mã lead", "Tên lead", "Nguồn", "Phụ trách", "Ngày tạo", "Phiên bản dòng", "Lưu trữ"],
+    "Khách hàng": ["Mã khách hàng", "Tên khách hàng", "Mã lead", "Phụ trách", "Ngày tạo", "Phiên bản dòng", "Lưu trữ"],
+    "Người liên hệ": ["Mã liên hệ", "Mã khách hàng", "Tên hiển thị", "Vai trò", "Phiên bản dòng", "Lưu trữ"],
+    "Cơ hội": ["Mã cơ hội", "Tên cơ hội", "Mã khách hàng", "Giai đoạn", "Giá trị kỳ vọng", "Xác suất", "Giá trị trọng số", "Kỳ", "Phiên bản dòng", "Lưu trữ"],
+    "Hoạt động": ["Mã hoạt động", "Mã cơ hội", "Hình thức", "Trạng thái", "Ngày hẹn", "Phiên bản dòng", "Lưu trữ"],
+    "Lịch sử chăm sóc": ["Mã lịch sử", "Mã khách hàng", "Nội dung", "Thời điểm", "Phiên bản dòng", "Lưu trữ"],
+    "Nhân viên": ["Mã nhân viên", "Tên hiển thị", "Vai trò", "Đang hoạt động", "Phiên bản dòng"],
+    "Nhật ký": ["Mã bằng chứng", "Thời điểm", "Thao tác", "Thực thể", "Mã thực thể", "Trường thay đổi đã che"]
+  },
+  "formulaColumns": { "Cơ hội": ["Giá trị trọng số"] },
+  "workflow": { "MỚI": ["TIẾP CẬN", "THẮNG", "THUA"], "TIẾP CẬN": ["BÁO GIÁ", "THẮNG", "THUA"], "BÁO GIÁ": ["ĐÀM PHÁN", "THẮNG", "THUA"], "ĐÀM PHÁN": ["THẮNG", "THUA"] }
+}

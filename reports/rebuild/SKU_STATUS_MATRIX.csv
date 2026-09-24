@@ -1,0 +1,80 @@
+SKU,Trạng_thái_catalog,Trạng_thái_rebuild,Gate_G0,Gate_G1,Gate_G2,Gate_G3,Phát_hành
+F01,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F02,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F03,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F04,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F05,implemented_local,implemented_local,PASS,PASS,blocked_external_setup,blocked_external_setup,Beta
+F06,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F07,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F08,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F09,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F10,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F11,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F12,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F13,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F14,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F15,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F16,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F17,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F18,implemented_local,chờ_gated_F05,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F19,implemented_local,chờ_gated_F05,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F20,implemented_local,chờ_gated_F05,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F21,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F22,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F23,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F24,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F25,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F26,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F27,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F28,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F29,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F30,implemented_local,chờ_gated_F05,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F31,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F32,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F33,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F34,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F35,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F36,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F37,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F38,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F39,planned,chờ_gated_F05,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F40,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F41,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F42,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F43,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F44,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F45,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F46,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F47,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F48,implemented_local,đóng_băng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Beta
+F49,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+F50,planned,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U01,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U02,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U03,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U04,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U05,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U06,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U07,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U08,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U09,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U10,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U11,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U12,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U13,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U14,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U15,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U16,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U17,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U18,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U19,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U20,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U21,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U22,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U23,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U24,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U25,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U26,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U27,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U28,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt
+U29,blocked_missing_spec,chưa_mở_rộng,NOT_RUN,NOT_RUN,NOT_RUN,NOT_RUN,Sắp ra mắt

@@ -4,9 +4,8 @@
  * tools/generator.js: CLI Runner sinh mã nguồn Apps Script theo SKU và Tier
  * 
  * CÁC QUY TẮC BẮT BUỘC:
- * - ROOT_DIR luôn là D:\google sheet
- * - Config đọc từ D:\google sheet\configs (và configs\skus)
- * - Releases ghi vào D:\google sheet\releases
+ * - Root được xác định từ repository đang mở.
+ * - Config và releases luôn nằm bên trong root đó.
  * - Tắt hoàn toàn chức năng sync/copy sang ổ C hoặc Downloads
  * - Nếu thiếu config hoặc build lỗi thì trả exit code khác 0
  */
@@ -62,7 +61,7 @@ function parseArgs(rawArgs = process.argv.slice(2)) {
 }
 
 /**
- * Tìm file config trong D:google sheetconfigs hoặc configsskus
+ * Tìm file config trong configs hoặc configs/skus của workspace.
  * @param {string} sku
  * @param {string} configsDir
  * @returns {string|null}
@@ -70,7 +69,7 @@ function parseArgs(rawArgs = process.argv.slice(2)) {
 function findConfigFile(sku, configsDir) {
   const skuLower = sku.toLowerCase();
   
-  // 1. Kiểm tra trực tiếp tại configsDir (D:google sheetconfigs)
+  // 1. Kiểm tra trực tiếp tại configsDir.
   const directPath = path.resolve(configsDir, `${skuLower}.config.js`);
   if (fs.existsSync(directPath)) return directPath;
 
@@ -213,7 +212,7 @@ function main() {
   const configsDir = resolveConfigsDir(rootDir);
 
   console.log(`======================================================`);
-  console.log(`🏭 MINH TEMPLATES FACTORY — GENERATOR ENGINE V2.2 (STRICT D: ROOT)`);
+  console.log(`🏭 MINH TEMPLATES FACTORY — GENERATOR ENGINE (STRICT WORKSPACE ROOT)`);
   console.log(`📌 Root Directory  : ${rootDir}`);
   console.log(`📦 Output Directory: ${outputDir}`);
   console.log(`📄 Configs Dir     : ${configsDir}`);

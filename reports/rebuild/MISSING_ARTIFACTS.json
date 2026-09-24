@@ -1,0 +1,11 @@
+{
+  "measuredAt": "2026-09-24",
+  "missing": [
+    { "path": "HO_SO_TOAN_BO_DU_AN_MINH_TEMPLATES.md", "impact": "baseline hồ sơ dự án không khả dụng", "classification": "documentation" },
+    { "path": "coding-agent-orchestration.md", "impact": "reference của skill đính kèm không khả dụng", "classification": "documentation" },
+    { "path": "evaluation-and-verification.md", "impact": "reference của skill đính kèm không khả dụng", "classification": "documentation" },
+    { "path": "project-detection-and-checks.md", "impact": "reference của skill đính kèm không khả dụng", "classification": "documentation" },
+    { "path": "Google Spreadsheet ID thử nghiệm", "impact": "G2 chưa thể chạy", "classification": "external_setup" },
+    { "path": "AppSheet App ID và data binding", "impact": "G3 chưa thể chạy", "classification": "external_setup" }
+  ]
+}

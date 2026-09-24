@@ -1,0 +1,18 @@
+{
+  "sku": "F05",
+  "name": "CRM khách hàng và pipeline",
+  "version": "3.0.0-vi",
+  "status": "implemented_local",
+  "locale": "vi-VN",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "tiers": {
+    "demo": { "seedsDemo": true, "modules": ["dashboard"] },
+    "pro": { "seedsDemo": true, "modules": ["dashboard", "phân_quyền", "sao_lưu", "nhật_ký"] },
+    "business": { "seedsDemo": false, "modules": ["dashboard", "phân_quyền", "sao_lưu", "nhật_ký", "khóa_kỳ", "nhập_xuất"] }
+  },
+  "appsheet": {
+    "enabled": false,
+    "reason": "Chỉ bật khi có App ID, data binding, view, action, bot và security filter thực."
+  },
+  "gates": { "G0": "PASS", "G1": "PASS", "G2": "blocked_external_setup", "G3": "blocked_external_setup", "G4": "NOT_RUN" }
+}
