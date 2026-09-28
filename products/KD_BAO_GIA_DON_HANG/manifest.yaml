@@ -1,0 +1,28 @@
+product_id: KD_BAO_GIA_DON_HANG
+name: Quản lý Báo giá và Đơn hàng
+department_id: PB01_KINH_DOANH
+version: 3.0.0-vi
+locale: vi-VN
+timezone: Asia/Ho_Chi_Minh
+status: specified
+legacy_read_only:
+  - F19
+  - F20
+install_modes:
+  demo:
+    seeds_demo: true
+  clean:
+    seeds_demo: false
+  business:
+    seeds_demo: false
+gates:
+  G0: PENDING
+  G1: PENDING
+  G2: NOT_RUN
+  G3: NOT_RUN
+  G4: NOT_RUN
+external_integrations:
+  email: disabled
+  oauth: disabled
+  web_app: disabled
+  appsheet: NOT_RUN

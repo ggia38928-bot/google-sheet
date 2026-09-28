@@ -1,4 +1,12 @@
 .env
+.env.*
+!.env.example
+credentials*.json
+token*.json
+debug.log
 node_modules/
+tmp/
+reports/local/
+*.local
 incoming/*.zip
 incoming/_skill_extract/

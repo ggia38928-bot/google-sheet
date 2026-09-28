@@ -1,0 +1,7 @@
+schema_version: 1
+departments:
+  - id: PB01_KINH_DOANH
+    name: Phòng Kinh doanh
+    status: active
+    product_ids:
+      - KD_BAO_GIA_DON_HANG

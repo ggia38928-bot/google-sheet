@@ -1,0 +1,16 @@
+schema_version: 1
+products:
+  - id: KD_BAO_GIA_DON_HANG
+    name: Quản lý Báo giá và Đơn hàng
+    department_id: PB01_KINH_DOANH
+    version: 3.0.0-vi
+    status: specified
+    legacy_read_only:
+      - F19
+      - F20
+    gates:
+      G0: PENDING
+      G1: PENDING
+      G2: NOT_RUN
+      G3: NOT_RUN
+      G4: NOT_RUN
