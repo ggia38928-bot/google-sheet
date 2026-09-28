@@ -1,2 +1,4 @@
 .env
 node_modules/
+incoming/*.zip
+incoming/_skill_extract/
