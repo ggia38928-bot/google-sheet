@@ -4,7 +4,7 @@ department_id: PB01_KINH_DOANH
 version: 3.0.0-vi
 locale: vi-VN
 timezone: Asia/Ho_Chi_Minh
-status: specified
+status: local_verified
 legacy_read_only:
   - F19
   - F20
@@ -16,11 +16,16 @@ install_modes:
   business:
     seeds_demo: false
 gates:
-  G0: PENDING
-  G1: PENDING
-  G2: NOT_RUN
+  G0: PASS
+  G1: PASS
+  G2: BLOCKED_EXTERNAL
   G3: NOT_RUN
   G4: NOT_RUN
+google_verification:
+  spreadsheet_id: 1alkYa6KTyy4CS3D4lbl_KselHDnNHV16fVgEgGBaN7Q
+  sheets_api_readback: PASS
+  apps_script_execution: BLOCKED_EXTERNAL
+  reason: Môi trường không có Apps Script API, clasp hoặc browser write
 external_integrations:
   email: disabled
   oauth: disabled

@@ -1,0 +1,27 @@
+{
+  "product_id": "KD_BAO_GIA_DON_HANG",
+  "department_id": "PB01_KINH_DOANH",
+  "name": "Quản lý Báo giá và Đơn hàng",
+  "version": "3.0.0-vi",
+  "status": "local_verified",
+  "locale": "vi-VN",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "business_demo_records": 50,
+  "install_modes": {
+    "demo": { "entrypoint": "setupDemoKD", "seeds_demo": true },
+    "clean": { "entrypoint": "setupCleanKD", "seeds_demo": false },
+    "business": { "entrypoint": "caiDatBusinessBaoGiaDonHang", "seeds_demo": false }
+  },
+  "google_uat": {
+    "spreadsheet_id": "1alkYa6KTyy4CS3D4lbl_KselHDnNHV16fVgEgGBaN7Q",
+    "sheets_api_readback": "PASS",
+    "apps_script_execution": "BLOCKED_EXTERNAL"
+  },
+  "gates": {
+    "G0": "PASS",
+    "G1": "PASS",
+    "G2": "BLOCKED_EXTERNAL",
+    "G3": "NOT_RUN",
+    "G4": "NOT_RUN"
+  }
+}

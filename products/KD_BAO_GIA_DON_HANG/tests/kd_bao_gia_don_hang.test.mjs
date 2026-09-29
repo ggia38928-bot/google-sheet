@@ -172,3 +172,17 @@ test('Installer có đủ entrypoint và cơ chế an toàn bắt buộc', () =>
   for (const required of ['LockService.getDocumentLock', 'PropertiesService.getDocumentProperties', 'setDataValidation', '.protect()', 'backupKD_']) assert.ok(source.includes(required));
   for (const forbidden of ['MailApp', 'GmailApp', 'doGet(', 'doPost(']) assert.equal(source.includes(forbidden), false);
 });
+
+test('Installer dùng công thức vi_VN và dựng Dashboard động đủ 12 KPI, 3 biểu đồ', () => {
+  const source = fs.readFileSync(path.join(root, 'products/KD_BAO_GIA_DON_HANG/apps-script/installer.gs'), 'utf8');
+  assert.match(source, /setSpreadsheetLocale\('vi_VN'\)/);
+  assert.match(source, /=IF\(RC\[-1\]="";"";/);
+  assert.match(source, /const kpis = \[/);
+  assert.equal((source.match(/sheet\.newChart\(\)/g) || []).length, 3);
+  assert.ok(source.includes("sheet.getCharts().forEach"));
+  assert.ok(source.includes("['Giá trị báo giá chấp nhận'"));
+  assert.ok(source.includes("['Lợi nhuận gộp dự kiến'"));
+  assert.ok(source.includes("['Đơn hủy'"));
+  assert.ok(source.includes("F3=\"TẤT CẢ\""));
+  assert.ok(source.includes("B4=\"TẤT CẢ\""));
+});
