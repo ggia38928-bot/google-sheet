@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "node --test tests/*.test.mjs",
+    "test:kd": "node --test products/KD_BAO_GIA_DON_HANG/tests/*.test.mjs",
     "test:engine": "node --test tests/core_engine.test.mjs",
     "generate:batch1": "node tools/generator.js --batch 1",
     "generate:all": "node tools/generator.js --all"
