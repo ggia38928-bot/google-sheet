@@ -1,6 +1,6 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
-import { extname, join, normalize } from 'node:path';
+import { extname, join, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import repositoryModule from './lib/repositories/fixture-repository.cjs';
 import serviceModule from './lib/services/commercial-service.cjs';
@@ -61,7 +61,7 @@ const server = http.createServer(async (request, response) => {
       if (handled === false && !response.writableEnded) sendJson(response, 404, { error: 'Không tìm thấy API.' });
       return;
     }
-    const asset = ['/app.js', '/styles.css'].includes(url.pathname) ? url.pathname.slice(1) : 'index.html';
+    const asset = ['/app.js', '/styles.css', '/security.js'].includes(url.pathname) ? url.pathname.slice(1) : 'index.html';
     const path = normalize(join(publicRoot, asset));
     if (!path.startsWith(publicRoot)) return sendJson(response, 403, { error: 'Đường dẫn không hợp lệ.' });
     const content = await readFile(path);
@@ -72,4 +72,9 @@ const server = http.createServer(async (request, response) => {
   }
 });
 
-server.listen(port, '127.0.0.1', () => console.log(`Web App KD đang chạy tại http://127.0.0.1:${port}`));
+const isMain = Boolean(process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url));
+if (isMain) {
+  server.listen(port, '127.0.0.1', () => console.log(`Web App KD đang chạy tại http://127.0.0.1:${port}`));
+}
+
+export { server, api, service, repository };

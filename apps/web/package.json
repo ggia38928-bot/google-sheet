@@ -2,6 +2,7 @@
   "name": "@minh-templates/kd-web",
   "version": "3.0.0-vi",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "node build.mjs",
     "start": "node server.mjs",

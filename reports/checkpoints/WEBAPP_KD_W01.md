@@ -76,3 +76,17 @@ node apps/web/server.mjs
 ```
 
 Sau đó mở `http://127.0.0.1:4173`. G2/G3/G4 chỉ được đổi trạng thái khi có phiên runtime/UAT thật riêng và bản sao kiểm thử được phép sử dụng.
+
+## Đối soát đóng W01 — 2026-10-06 12:11 +07:00
+
+- Review năm thay đổi do Gemini để lại xác nhận đều thuộc W01: sửa công nợ loại đơn hủy, chặn thanh toán/giao hàng đơn hủy, kiểm tra trạng thái báo giá, escape dữ liệu động và bổ sung HTTP integration test.
+- Tách `escapeHtml()` thành `public/security.js` và thêm payload XSS đối kháng vào test.
+- HTTP integration test kiểm tra thêm module bảo mật và hai POST bị từ chối cho đơn `DH-004` đã hủy.
+- Kiểm tra trực quan bằng Edge headless cho đủ sáu route `/`, `/khach-hang`, `/bao-gia`, `/don-hang`, `/giao-hang`, `/cong-no` ở desktop 1440 px và mobile 500 px. Đã sửa layout mobile thành KPI/bộ lọc một cột; bảng rộng cuộn trong container riêng.
+- Ảnh kiểm tra nằm trong `reports/local/w01-visual-20261006-1150/`, là evidence local ignored, không commit.
+- `node --test --test-isolation=none apps/web/tests/*.test.mjs`: 13/13 PASS.
+- `node --check apps/web/server.mjs`: PASS.
+- `node --check apps/web/public/app.js`: PASS.
+- `node apps/web/build.mjs`: PASS, sinh `dist/index.html`, `dist/app.js`, `dist/security.js`, `dist/styles.css`.
+- `git diff --check`: PASS; secret/absolute-path scan trên diff W01 không có kết quả.
+- W1: `PASS (local_verified, browser-reviewed)`. Trạng thái này không nâng G2/G3/G4 và không đồng nghĩa `ready_to_sell`.

@@ -23,7 +23,7 @@ function createCommercialService(repository, clock = () => new Date()) {
     const { data, receivables } = enrich();
     return data.KHACH_HANG.map(customer => ({
       ...customer,
-      CONG_NO: data.DON_HANG.filter(order => order.MA_KHACH_HANG === customer.MA_KHACH_HANG)
+      CONG_NO: data.DON_HANG.filter(order => order.MA_KHACH_HANG === customer.MA_KHACH_HANG && order.TRANG_THAI !== 'HỦY')
         .reduce((sum, order) => sum + receivables[order.MA_DON_HANG].receivable, 0)
     }));
   }
@@ -60,7 +60,7 @@ function createCommercialService(repository, clock = () => new Date()) {
     const date = input.NGAY_BAO_GIA || clock().toISOString().slice(0, 10);
     const header = {
       MA_BAO_GIA_REVISION: revisionId, MA_BAO_GIA: baseId, REVISION: 1, LA_REVISION_MOI_NHAT: true,
-      MA_KHACH_HANG: input.MA_KHACH_HANG, NGAY_BAO_GIA: date, HAN_HIEU_LUC: input.HAN_HIEU_LUC || date,
+      MA_KHACH_HANG: String(input.MA_KHACH_HANG), NGAY_BAO_GIA: date, HAN_HIEU_LUC: input.HAN_HIEU_LUC || date,
       TRANG_THAI: 'NHÁP', NGUOI_PHU_TRACH: input.NGUOI_PHU_TRACH || 'Chưa phân công'
     };
     input.lines.forEach(line => {
@@ -69,14 +69,27 @@ function createCommercialService(repository, clock = () => new Date()) {
     });
     repository.append('BAO_GIA', header);
     input.lines.forEach((line, index) => {
-      repository.append('CHI_TIET_BAO_GIA', { MA_DONG_BAO_GIA: `${revisionId}-D${index + 1}`, MA_BAO_GIA_REVISION: revisionId, ...line });
+      repository.append('CHI_TIET_BAO_GIA', {
+        MA_DONG_BAO_GIA: `${revisionId}-D${index + 1}`,
+        MA_BAO_GIA_REVISION: revisionId,
+        MA_SAN_PHAM: String(line.MA_SAN_PHAM),
+        SO_LUONG: Number(line.SO_LUONG),
+        DON_GIA: Number(line.DON_GIA),
+        TY_LE_CHIET_KHAU: Number(line.TY_LE_CHIET_KHAU),
+        THUE_SUAT: Number(line.THUE_SUAT)
+      });
     });
     return quote(revisionId);
   }
 
+  const VALID_QUOTE_STATUSES = new Set(['NHÁP', 'CHỜ DUYỆT', 'ĐÃ DUYỆT', 'ĐÃ GỬI', 'CHẤP NHẬN', 'TỪ CHỐI', 'HẾT HẠN']);
+
   function updateQuote(id, input) {
     const allowed = ['HAN_HIEU_LUC', 'TRANG_THAI', 'NGUOI_PHU_TRACH'];
     const change = Object.fromEntries(allowed.filter(key => input[key] !== undefined).map(key => [key, input[key]]));
+    if (change.TRANG_THAI && !VALID_QUOTE_STATUSES.has(change.TRANG_THAI)) {
+      throw new Error('Trạng thái báo giá không hợp lệ.');
+    }
     const result = repository.update('BAO_GIA', item => item.MA_BAO_GIA_REVISION === id, change);
     if (!result) throw new Error('Không tìm thấy báo giá.');
     return quote(id);
@@ -103,6 +116,9 @@ function createCommercialService(repository, clock = () => new Date()) {
 
   function addPayment(orderId, amount) {
     const data = repository.snapshot();
+    const targetOrder = data.DON_HANG.find(item => item.MA_DON_HANG === orderId);
+    if (!targetOrder) throw new Error('Đơn hàng không tồn tại.');
+    if (targetOrder.TRANG_THAI === 'HỦY') throw new Error('Đơn hàng đã hủy không thể ghi nhận thanh toán.');
     const current = engine.calculateReceivables(data.DON_HANG, data.CHI_TIET_DON_HANG, data.THANH_TOAN)[orderId];
     const value = Number(amount);
     if (!current) throw new Error('Đơn hàng không tồn tại.');
@@ -112,10 +128,11 @@ function createCommercialService(repository, clock = () => new Date()) {
 
   function addShipment(orderId, quantity) {
     const data = repository.snapshot();
+    const targetOrder = data.DON_HANG.find(order => order.MA_DON_HANG === orderId);
+    if (!targetOrder) throw new Error('Đơn hàng không tồn tại.');
     const ordered = data.CHI_TIET_DON_HANG.filter(line => line.MA_DON_HANG === orderId).reduce((sum, line) => sum + Number(line.SO_LUONG), 0);
-    if (!data.DON_HANG.some(order => order.MA_DON_HANG === orderId)) throw new Error('Đơn hàng không tồn tại.');
     const existing = data.GIAO_HANG.filter(item => item.MA_DON_HANG === orderId).map(item => item.SO_LUONG);
-    engine.calculateDelivery(ordered, [...existing, Number(quantity)]);
+    engine.calculateDelivery(ordered, [...existing, Number(quantity)], targetOrder.TRANG_THAI === 'HỦY');
     return repository.append('GIAO_HANG', { MA_GIAO_HANG: nextId(data.GIAO_HANG, 'MA_GIAO_HANG', 'GH'), MA_DON_HANG: orderId, NGAY_GIAO: clock().toISOString().slice(0, 10), SO_LUONG: Number(quantity), TRANG_THAI: 'ĐÃ GIAO' });
   }
 
