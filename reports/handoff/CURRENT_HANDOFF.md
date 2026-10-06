@@ -1,40 +1,55 @@
-# Current handoff — WEBAPP-KD-W01
+# Current handoff — GSHEET-KD-W02
 
-## Trạng thái hiện tại
+## Trạng thái
 
-- Commit: `eeafcd7`
-- Test: 13/13 PASS
-- Syntax: PASS
-- Build: PASS
-- Push: BLOCKED (GitHub trả HTTP 403: `Permission to ggia38928-bot/google-sheet.git denied to gia417808-dot`)
-- Đồng bộ local/remote: local ahead so với `origin/feature/webapp-kd-bao-gia-don-hang-3.0.0-vi`
-- File ngoài phạm vi: `build_exact_catalog.py`, giữ nguyên untracked
-- W01: VERIFIED
-- G0: PASS; G1: PASS; G2: BLOCKED_EXTERNAL; G3: NOT_RUN; G4: BLOCKED_EXTERNAL
-- Không mở W02, không chạy generator, không ghi Google Sheet UAT, không merge và không tạo Pull Request.
+- Branch: `feature/webapp-kd-bao-gia-don-hang-3.0.0-vi`.
+- HEAD nền: `c59b5821d1e7a135ee066bd73751db943273cdda`.
+- READY: PASS.
+- BUILT: PASS local.
+- REVIEWED: PASS (GO; 0 finding P0/P1).
+- VERIFIED: PASS local (G0/G1 PASS); G2 `BLOCKED_EXTERNAL`.
+- WEBAPP-KD-W03: chưa mở.
 
-## Phạm vi đã đóng và kết quả kiểm chứng
+## File đã sửa
 
-- Commit `eeafcd7` gồm đúng 10 file, không có lỗi P0/P1:
-  + Logic route và API đầy đủ, xử lý POST an toàn, chặn đơn hủy.
-  + Dữ liệu động được escape qua `apps/web/public/security.js` với unit test chống XSS đối kháng.
-  + Responsive mobile hoàn tất (layout một cột, thanh cuộn trong bảng).
-  + Không lộ credential, không hard-code đường dẫn, không chứa build output.
-  + `build_exact_catalog.py` hoàn toàn ngoài phạm vi, không bị stage hay sửa đổi.
-- Bốn gate đều PASS:
-  + `node --test --test-isolation=none apps/web/tests/*.test.mjs`: 13/13 PASS.
-  + `node --check apps/web/server.mjs`: PASS.
-  + `node --check apps/web/public/app.js`: PASS.
-  + `node apps/web/build.mjs`: PASS (sinh 4 artifact trong `dist/`).
-  + `git diff --check`: PASS.
+- `.dots/work-items/GSHEET-KD-W02/*`
+- `packages/core-engine/src/kd_bao_gia_don_hang.js`
+- `products/KD_BAO_GIA_DON_HANG/README.md`
+- `products/KD_BAO_GIA_DON_HANG/apps-script/installer.gs`
+- `products/KD_BAO_GIA_DON_HANG/fixtures/demo_data.json`
+- `products/KD_BAO_GIA_DON_HANG/formulas/FORMULA_CONTRACT.md`
+- `products/KD_BAO_GIA_DON_HANG/schema/schema.json`
+- `products/KD_BAO_GIA_DON_HANG/tests/kd_bao_gia_don_hang.test.mjs`
+- `releases/KD_BAO_GIA_DON_HANG/3.0.0-vi/*` (CHECKSUMS.sha256, FORMULA_CONTRACT.md, README.md, TEST_RESULTS.md, manifest.json, schema.json, setup.gs, setup_clean.gs, setup_demo.gs)
+- `governance/BACKLOG.md`
+- `reports/checkpoints/GSHEET_KD_W02.md`
+- `reports/handoff/CURRENT_HANDOFF.md`
 
-## Lỗi còn lại và bước tiếp theo
+## File ngoài phạm vi
 
-- Push đang bị chặn do phân quyền Git Credential Manager trên máy (`gia417808-dot` chưa có quyền push vào `ggia38928-bot/google-sheet.git`).
-- Người dùng đăng nhập tài khoản có quyền qua trình duyệt / Git Credential Manager để thực hiện push.
-- Không tự ý thêm token vào URL hoặc log.
+- `build_exact_catalog.py` là file untracked ngoài phạm vi, giữ nguyên, tuyệt đối không sửa, stage hoặc xóa.
+
+## Lệnh và test thực tế
+
+- `node --test --test-isolation=none products/KD_BAO_GIA_DON_HANG/tests/kd_bao_gia_don_hang.test.mjs` → 44/44 PASS.
+- `node --test --test-isolation=none tests/rebuild_kd_bao_gia_don_hang.test.mjs` → 4/4 PASS.
+- `node --test --test-isolation=none apps/web/tests/*.test.mjs` → 13/13 PASS.
+- `node --test --test-isolation=none tests/*.test.mjs` → 194/194 PASS.
+- `git diff --check` → PASS (0 lỗi khoảng trắng / format).
+- Checksum SHA256 release 3.0.0-vi khớp tuyệt đối 100%.
+
+## Kết quả sửa chữa P0/P1
+
+1. P0 (Paste nhiều ô): Bổ sung snapshot ẩn `__KS_*`, `syncControlSnapshotsKD_` và `restoreControlledRangeKD_` tự động hoàn tác khi dán nhiều ô trên các tab kiểm soát. Đã đồng bộ giữa `installer.gs` và `setup.gs`.
+2. P1 (Đơn giá báo giá): Đã chốt đơn giá cố định (`chotDonGiaBaoGiaKD_`) khi báo giá rời khỏi `NHÁP`; `applyQuoteUnitPricesKD_` bảo toàn đơn giá đã chốt; `taoRevisionBaoGiaKD` sao chép đơn giá; `seedDemoKD_` điền giá cố định.
+3. P1 (Validation thanh toán / giao hàng): Siết chặt ràng buộc giao hàng cùng đơn; chặn thanh toán đơn hủy; kiểm tra số tiền > 0; chặn thanh toán vượt tổng giá trị đơn hàng; tích hợp `validatePaymentRulesKD_`.
+
+## Bước tiếp theo
+
+1. Chạy xác minh G2 trên bản sao Google Sheets UAT với tài khoản tester thật.
+2. Chỉ mở `WEBAPP-KD-W03` sau khi G2 PASS.
 
 ACTIVE_AGENT=NONE
 NEXT_AGENT=CODEX
-NEXT_TASK=GSHEET-KD-W02
+NEXT_TASK=GSHEET-KD-W02-G2-UAT
 STATUS=VERIFIED

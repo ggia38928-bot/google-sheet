@@ -7,7 +7,7 @@
   "locale": "vi-VN",
   "timezone": "Asia/Ho_Chi_Minh",
   "business_demo_records": 50,
-  "hotfixes": ["WEBAPP-KD-W00"],
+  "hotfixes": ["WEBAPP-KD-W00", "GSHEET-KD-W02"],
   "install_modes": {
     "demo": { "entrypoint": "setupDemoKD", "seeds_demo": true },
     "clean": { "entrypoint": "setupCleanKD", "seeds_demo": false },

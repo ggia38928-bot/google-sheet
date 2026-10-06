@@ -16,7 +16,7 @@
 |---|---|---|---|---|---|---|---|
 | 1 | Tra tên sản phẩm | `CHI_TIẾT_BÁO_GIÁ.D` | `=IF(C2="";"";IFNA(VLOOKUP(C2;'SẢN_PHẨM'!A:G;2;FALSE);""))` | Mã sản phẩm → tên | `D2:D500`, Apps Script | Mã trống/không tìm thấy → rỗng | `SP-001` → `Gói tư vấn khởi động` |
 | 2 | Tra đơn vị tính | `CHI_TIẾT_BÁO_GIÁ.E` | `=IF(C2="";"";IFNA(VLOOKUP(C2;'SẢN_PHẨM'!A:G;3;FALSE);""))` | Mã sản phẩm → đơn vị | `E2:E500`, Apps Script | Mã trống/không tìm thấy → rỗng | `SP-001` → `Gói` |
-| 3 | Tra đơn giá | `CHI_TIẾT_BÁO_GIÁ.G` | `=IF(C2="";"";IFNA(VLOOKUP(C2;'SẢN_PHẨM'!A:G;4;FALSE);""))` | Mã sản phẩm → VND | `G2:G500`, Apps Script | Mã trống/không tìm thấy → rỗng | `SP-001` → `100.000` |
+| 3 | Tra đơn giá ban đầu | `CHI_TIẾT_BÁO_GIÁ.G` | `=IF(C2="";"";IFNA(VLOOKUP(C2;'SẢN_PHẨM'!A:G;4;FALSE);""))` | Mã sản phẩm → VND | `G2:G500` khi chưa chốt | Mã trống/không tìm thấy → rỗng | `SP-001` → `100.000`; khi vào workflow chuyển thành giá trị chốt cố định |
 | 4 | Thành tiền trước chiết khấu | `CHI_TIẾT_BÁO_GIÁ.J` | `=IF(OR(F2="";G2="");"";F2*G2)` | Số lượng, đơn giá → VND | `J2:J500`, Apps Script | Thiếu input → rỗng; số âm bị validation chặn | `2 × 100.000 = 200.000` |
 | 5 | Tiền chiết khấu dòng | `CHI_TIẾT_BÁO_GIÁ.K` | `=IF(J2="";"";J2*H2)` | Thành tiền, tỷ lệ giảm → VND | `K2:K500`, Apps Script | Thành tiền trống → rỗng; tỷ lệ ngoài 0–1 bị chặn | `200.000 × 10% = 20.000` |
 | 6 | Giá trị sau chiết khấu | `CHI_TIẾT_BÁO_GIÁ.L` | `=IF(J2="";"";J2-K2)` | Thành tiền, tiền giảm → VND | `L2:L500`, Apps Script | Thành tiền trống → rỗng | `200.000 - 20.000 = 180.000` |
@@ -34,6 +34,7 @@
 ## Giao hàng, lợi nhuận và dashboard
 
 - `CHI_TIẾT_ĐƠN_HÀNG.I`: `=IF(A2="";"";SUMIFS('CHI_TIẾT_GIAO_HÀNG'!D:D;'CHI_TIẾT_GIAO_HÀNG'!C:C;A2;'CHI_TIẾT_GIAO_HÀNG'!E:E;"ĐÃ GIAO"))`; giao 6 rồi 4 cho tổng 10.
+- `CHI_TIẾT_ĐƠN_HÀNG.G` là đơn giá chốt, không phải công thức tra danh mục. Khi chuyển báo giá thành đơn, Apps Script sao chép trực tiếp đơn giá từ revision đã chấp nhận để thay đổi catalog sau đó không làm sai lịch sử. Đơn giá dòng báo giá `CHI_TIẾT_BÁO_GIÁ.G` cũng được chốt cố định khi rời trạng thái NHÁP hoặc khi tạo revision mới, đảm bảo catalog thay đổi không làm sai lệch báo giá lịch sử.
 - `CHI_TIẾT_ĐƠN_HÀNG.J`: `=IF(A2="";"";MAX(0;F2-I2))`; đặt 10, giao 6 còn 4; giao đủ còn 0.
 - `CHI_TIẾT_ĐƠN_HÀNG.K`: doanh thu dòng trừ số lượng × giá vốn tra từ `SẢN_PHẨM`; không có giá vốn dùng 0 và validator báo dữ liệu danh mục thiếu.
 - Dashboard có 12 KPI lấy dữ liệu nguồn thật, bộ lọc ngày/trạng thái/người phụ trách, bảng top sản phẩm/hiệu suất nhân viên và ba biểu đồ.

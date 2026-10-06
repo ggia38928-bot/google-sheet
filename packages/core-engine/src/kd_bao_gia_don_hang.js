@@ -7,13 +7,15 @@ const BUSINESS_TABLES = Object.freeze([
   'CHI_TIET_BAO_GIA',
   'DON_HANG',
   'CHI_TIET_DON_HANG',
+  'GIAO_HANG',
+  'CHI_TIET_GIAO_HANG',
   'THANH_TOAN'
 ]);
 
 const QUOTE_TRANSITIONS = Object.freeze({
   'NHÁP': ['CHỜ DUYỆT'],
-  'CHỜ DUYỆT': ['ĐÃ DUYỆT', 'NHÁP'],
-  'ĐÃ DUYỆT': ['ĐÃ GỬI'],
+  'CHỜ DUYỆT': ['ĐÃ DUYỆT', 'TỪ CHỐI', 'NHÁP'],
+  'ĐÃ DUYỆT': ['ĐÃ GỬI', 'HẾT HẠN'],
   'ĐÃ GỬI': ['CHẤP NHẬN', 'TỪ CHỐI', 'HẾT HẠN'],
   'CHẤP NHẬN': [],
   'TỪ CHỐI': [],
@@ -54,6 +56,12 @@ function roundMoney(value) {
 function assertFiniteNonNegative(value, label) {
   const number = Number(value);
   if (!Number.isFinite(number) || number < 0) throw new Error(`${label} phải là số không âm.`);
+  return number;
+}
+
+function assertFinitePositive(value, label) {
+  const number = Number(value);
+  if (!Number.isFinite(number) || number <= 0) throw new Error(`${label} phải là số lớn hơn 0.`);
   return number;
 }
 
@@ -112,6 +120,7 @@ function calculateReceivables(orders, orderLines, payments) {
     const orderId = order.MA_DON_HANG;
     const total = totals[orderId];
     const confirmedPaid = paid[orderId];
+    if (confirmedPaid > total) throw new Error(`Tổng thanh toán vượt giá trị đơn hàng: ${orderId}`);
     return [orderId, { orderTotal: total, confirmedPaid, receivable: Math.max(0, roundMoney(total - confirmedPaid)) }];
   }));
 }
@@ -153,10 +162,16 @@ function validateDataset(fixture) {
   const productIds = assertUnique(fixture.SAN_PHAM, 'MA_SAN_PHAM', 'SAN_PHAM');
   const quoteIds = assertUnique(fixture.BAO_GIA, 'MA_BAO_GIA_REVISION', 'BAO_GIA');
   const orderIds = assertUnique(fixture.DON_HANG, 'MA_DON_HANG', 'DON_HANG');
+  const orderLineIds = assertUnique(fixture.CHI_TIET_DON_HANG, 'MA_DONG_DON_HANG', 'CHI_TIET_DON_HANG');
+  const deliveryIds = assertUnique(fixture.GIAO_HANG || [], 'MA_GIAO_HANG', 'GIAO_HANG');
   assertUnique(fixture.CHI_TIET_BAO_GIA, 'MA_DONG_BAO_GIA', 'CHI_TIET_BAO_GIA');
-  assertUnique(fixture.CHI_TIET_DON_HANG, 'MA_DONG_DON_HANG', 'CHI_TIET_DON_HANG');
+  assertUnique(fixture.CHI_TIET_GIAO_HANG || [], 'MA_DONG_GIAO_HANG', 'CHI_TIET_GIAO_HANG');
   assertUnique(fixture.THANH_TOAN, 'MA_THANH_TOAN', 'THANH_TOAN');
-  for (const quote of fixture.BAO_GIA) if (!customerIds.has(quote.MA_KHACH_HANG)) throw new Error(`Ref khách hàng sai: ${quote.MA_KHACH_HANG}`);
+  for (const quote of fixture.BAO_GIA) {
+    if (!customerIds.has(quote.MA_KHACH_HANG)) throw new Error(`Ref khách hàng sai: ${quote.MA_KHACH_HANG}`);
+    if (!Number.isInteger(quote.PHIEN_BAN_DONG) || quote.PHIEN_BAN_DONG < 1) throw new Error(`Phiên bản dòng báo giá sai: ${quote.MA_BAO_GIA_REVISION}`);
+    if (quote.TRANG_THAI === 'TỪ CHỐI' && !String(quote.LY_DO_TU_CHOI || '').trim()) throw new Error(`Báo giá từ chối thiếu lý do: ${quote.MA_BAO_GIA_REVISION}`);
+  }
   for (const line of fixture.CHI_TIET_BAO_GIA) {
     if (!quoteIds.has(line.MA_BAO_GIA_REVISION)) throw new Error(`Ref báo giá sai: ${line.MA_BAO_GIA_REVISION}`);
     if (!productIds.has(line.MA_SAN_PHAM)) throw new Error(`Ref sản phẩm sai: ${line.MA_SAN_PHAM}`);
@@ -164,23 +179,57 @@ function validateDataset(fixture) {
   for (const order of fixture.DON_HANG) {
     if (!customerIds.has(order.MA_KHACH_HANG)) throw new Error(`Ref khách hàng sai: ${order.MA_KHACH_HANG}`);
     if (order.MA_BAO_GIA_REVISION && !quoteIds.has(order.MA_BAO_GIA_REVISION)) throw new Error(`Ref báo giá sai: ${order.MA_BAO_GIA_REVISION}`);
+    if (!Number.isInteger(order.PHIEN_BAN_DONG) || order.PHIEN_BAN_DONG < 1) throw new Error(`Phiên bản dòng đơn hàng sai: ${order.MA_DON_HANG}`);
   }
   for (const line of fixture.CHI_TIET_DON_HANG) {
     if (!orderIds.has(line.MA_DON_HANG)) throw new Error(`Ref đơn hàng sai: ${line.MA_DON_HANG}`);
     if (!productIds.has(line.MA_SAN_PHAM)) throw new Error(`Ref sản phẩm sai: ${line.MA_SAN_PHAM}`);
   }
-  for (const payment of fixture.THANH_TOAN) if (!orderIds.has(payment.MA_DON_HANG)) throw new Error(`Ref đơn hàng sai: ${payment.MA_DON_HANG}`);
+  for (const delivery of fixture.GIAO_HANG || []) {
+    if (!orderIds.has(delivery.MA_DON_HANG)) throw new Error(`Ref đơn hàng giao sai: ${delivery.MA_DON_HANG}`);
+    if (fixture.DON_HANG.find(order => order.MA_DON_HANG === delivery.MA_DON_HANG).TRANG_THAI === 'HỦY') throw new Error(`Đơn hủy không được phát sinh giao hàng: ${delivery.MA_DON_HANG}`);
+  }
+  const deliveredByLine = {};
+  const orderLineToOrder = new Map(fixture.CHI_TIET_DON_HANG.map(l => [l.MA_DONG_DON_HANG, l.MA_DON_HANG]));
+  const deliveryToOrder = new Map((fixture.GIAO_HANG || []).map(d => [d.MA_GIAO_HANG, d.MA_DON_HANG]));
+  for (const line of fixture.CHI_TIET_GIAO_HANG || []) {
+    if (!deliveryIds.has(line.MA_GIAO_HANG)) throw new Error(`Ref giao hàng sai: ${line.MA_GIAO_HANG}`);
+    if (!orderLineIds.has(line.MA_DONG_DON_HANG)) throw new Error(`Ref dòng đơn hàng giao sai: ${line.MA_DONG_DON_HANG}`);
+    const delivOrder = deliveryToOrder.get(line.MA_GIAO_HANG);
+    const lineOrder = orderLineToOrder.get(line.MA_DONG_DON_HANG);
+    if (delivOrder && lineOrder && delivOrder !== lineOrder) {
+      throw new Error(`Dòng giao ${line.MA_DONG_GIAO_HANG} không cùng đơn hàng với phiếu giao.`);
+    }
+    if (line.TRANG_THAI === 'ĐÃ GIAO') deliveredByLine[line.MA_DONG_DON_HANG] = (deliveredByLine[line.MA_DONG_DON_HANG] || 0) + assertFinitePositive(line.SO_LUONG_GIAO, `Số lượng giao ${line.MA_DONG_GIAO_HANG}`);
+  }
+  for (const line of fixture.CHI_TIET_DON_HANG) if ((deliveredByLine[line.MA_DONG_DON_HANG] || 0) > Number(line.SO_LUONG)) throw new Error(`Tổng giao vượt số lượng đặt: ${line.MA_DONG_DON_HANG}`);
+  const orderMap = new Map(fixture.DON_HANG.map(o => [o.MA_DON_HANG, o]));
+  for (const payment of fixture.THANH_TOAN) {
+    if (!orderIds.has(payment.MA_DON_HANG)) throw new Error(`Ref đơn hàng sai: ${payment.MA_DON_HANG}`);
+    const order = orderMap.get(payment.MA_DON_HANG);
+    if (order && order.TRANG_THAI === 'HỦY') throw new Error(`Đơn hủy không được phát sinh thanh toán: ${payment.MA_DON_HANG}`);
+    assertFinitePositive(payment.SO_TIEN, `Số tiền thanh toán ${payment.MA_THANH_TOAN}`);
+  }
   calculateQuoteTotals(fixture.BAO_GIA, fixture.CHI_TIET_BAO_GIA);
   calculateReceivables(fixture.DON_HANG, fixture.CHI_TIET_DON_HANG, fixture.THANH_TOAN);
   return true;
 }
 
-function transitionStatus(entity, targetStatus, expectedRowVersion, role) {
+function transitionStatus(entity, targetStatus, expectedRowVersion, role, options = {}) {
   const transitions = entity.type === 'BAO_GIA' ? QUOTE_TRANSITIONS : ORDER_TRANSITIONS;
   if (!transitions[entity.TRANG_THAI] || !transitions[entity.TRANG_THAI].includes(targetStatus)) throw new Error('Chuyển trạng thái không hợp lệ.');
   if (entity.PHIEN_BAN_DONG !== expectedRowVersion) throw new Error('Phiên bản dòng không khớp.');
-  if (entity.type === 'BAO_GIA' && ['ĐÃ DUYỆT', 'TỪ CHỐI'].includes(targetStatus) && !['TRƯỞNG PHÒNG', 'SALES ADMIN'].includes(role)) throw new Error('Vai trò không có quyền duyệt báo giá.');
-  return { ...entity, TRANG_THAI: targetStatus, PHIEN_BAN_DONG: expectedRowVersion + 1 };
+  const approvalAction = entity.type === 'BAO_GIA' && ['ĐÃ DUYỆT', 'TỪ CHỐI'].includes(targetStatus);
+  if (approvalAction && !['TRƯỞNG PHÒNG', 'SALES ADMIN'].includes(role)) throw new Error('Vai trò không có quyền duyệt báo giá.');
+  if (approvalAction && options.separateApprover === true && options.actorId && options.actorId === entity.NGUOI_TAO) throw new Error('Người tạo không được tự duyệt báo giá.');
+  if (entity.type === 'BAO_GIA' && targetStatus === 'TỪ CHỐI' && !String(options.rejectionReason || '').trim()) throw new Error('Lý do từ chối là bắt buộc.');
+  return {
+    ...entity,
+    TRANG_THAI: targetStatus,
+    PHIEN_BAN_DONG: expectedRowVersion + 1,
+    ...(approvalAction ? { NGUOI_DUYET: options.actorId || entity.NGUOI_DUYET || '' } : {}),
+    ...(targetStatus === 'TỪ CHỐI' ? { LY_DO_TU_CHOI: String(options.rejectionReason).trim() } : {})
+  };
 }
 
 function createQuoteRevision(quotes, sourceRevisionId, patch) {
@@ -189,7 +238,7 @@ function createQuoteRevision(quotes, sourceRevisionId, patch) {
   const highest = Math.max(...quotes.filter(q => q.MA_BAO_GIA === source.MA_BAO_GIA).map(q => q.REVISION));
   const next = highest + 1;
   const revisedQuotes = quotes.map(q => q.MA_BAO_GIA === source.MA_BAO_GIA ? { ...q, LA_REVISION_MOI_NHAT: false } : { ...q });
-  const revision = { ...source, ...patch, MA_BAO_GIA_REVISION: `${source.MA_BAO_GIA}-R${next}`, REVISION: next, LA_REVISION_MOI_NHAT: true, TRANG_THAI: 'NHÁP', PHIEN_BAN_DONG: 1 };
+  const revision = { ...source, ...patch, MA_BAO_GIA_REVISION: `${source.MA_BAO_GIA}-R${next}`, REVISION: next, LA_REVISION_MOI_NHAT: true, TRANG_THAI: 'NHÁP', PHIEN_BAN_DONG: 1, NGUOI_DUYET: '', THOI_DIEM_DUYET: '', LY_DO_TU_CHOI: '' };
   revisedQuotes.push(revision);
   return { quotes: revisedQuotes, revision };
 }
@@ -277,6 +326,17 @@ function restoreWorkbook(model, backupId) {
   return model;
 }
 
+function freezeQuotePrices(quoteRevisionId, quoteLines, products = []) {
+  const productPriceMap = new Map(products.map(p => [p.MA_SAN_PHAM, p.DON_GIA]));
+  return quoteLines.map(line => {
+    if (line.MA_BAO_GIA_REVISION !== quoteRevisionId) return { ...line };
+    const price = line.DON_GIA !== undefined && line.DON_GIA !== '' && line.DON_GIA !== null
+      ? Number(line.DON_GIA)
+      : (productPriceMap.get(line.MA_SAN_PHAM) || 0);
+    return { ...line, DON_GIA: price };
+  });
+}
+
 module.exports = {
   BUSINESS_TABLES,
   FORMULAS,
@@ -293,6 +353,7 @@ module.exports = {
   createQuoteRevision,
   convertAcceptedQuote,
   calculateDelivery,
+  freezeQuotePrices,
   sanitizeImportValue,
   createWorkbookModel,
   installDemo,

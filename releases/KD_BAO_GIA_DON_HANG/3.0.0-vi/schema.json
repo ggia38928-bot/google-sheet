@@ -51,7 +51,8 @@
       "columns": [
         { "name": "MA_NHAN_VIEN", "display": "Mã nhân viên", "type": "text", "required": true, "validation": "^NV-[0-9]{3,}$" },
         { "name": "TEN_NHAN_VIEN", "display": "Tên nhân viên", "type": "text", "required": true, "validation": "Tên giả lập tiếng Việt" },
-        { "name": "VAI_TRO", "display": "Vai trò", "type": "enum", "required": true, "validation": "TRƯỞNG PHÒNG|SALES ADMIN|KINH DOANH|KẾ TOÁN|GIAO NHẬN" }
+        { "name": "VAI_TRO", "display": "Vai trò", "type": "enum", "required": true, "validation": "TRƯỞNG PHÒNG|SALES ADMIN|KINH DOANH|KẾ TOÁN|GIAO NHẬN" },
+        { "name": "EMAIL_DANG_NHAP", "display": "Email đăng nhập", "type": "text", "required": true, "validation": "Email Google duy nhất; tab chỉ chủ cài đặt được sửa" }
       ]
     },
     {
@@ -69,6 +70,9 @@
         { "name": "NGAY_BAO_GIA", "display": "Ngày báo giá", "type": "date", "required": true, "validation": "ISO date" },
         { "name": "HAN_HIEU_LUC", "display": "Hạn hiệu lực", "type": "date", "required": true, "validation": ">= ngày báo giá" },
         { "name": "TONG_THANH_TOAN", "display": "Tổng thanh toán", "type": "formula", "required": true, "validation": "SUMIFS theo mã báo giá revision" },
+        { "name": "NGUOI_DUYET", "display": "Người duyệt", "type": "ref", "required": false, "ref": "NHAN_VIEN.MA_NHAN_VIEN", "validation": "TRƯỞNG PHÒNG hoặc SALES ADMIN; khác người tạo khi cấu hình yêu cầu" },
+        { "name": "THOI_DIEM_DUYET", "display": "Thời điểm duyệt", "type": "datetime", "required": false, "validation": "Bắt buộc khi duyệt hoặc từ chối" },
+        { "name": "LY_DO_TU_CHOI", "display": "Lý do từ chối", "type": "text", "required": false, "validation": "Bắt buộc khi trạng thái TỪ CHỐI" },
         { "name": "MA_DON_HANG", "display": "Mã đơn hàng", "type": "ref", "required": false, "ref": "DON_HANG.MA_DON_HANG", "validation": "Duy nhất khi đã chuyển đơn" }
       ]
     },
@@ -101,7 +105,7 @@
         { "name": "MA_KHACH_HANG", "display": "Mã khách hàng", "type": "ref", "required": true, "ref": "KHACH_HANG.MA_KHACH_HANG", "validation": "Ref tồn tại" },
         { "name": "KENH_BAN", "display": "Kênh bán", "type": "enum", "required": true, "validation": "TRỰC TIẾP|ĐIỆN THOẠI|WEBSITE|ĐỐI TÁC" },
         { "name": "NGAY_DAT", "display": "Ngày đặt", "type": "date", "required": true, "validation": "ISO date" },
-        { "name": "HAN_GIAO", "display": "Hạn giao", "type": "date", "required": true, "validation": ">= ngày đặt" },
+        { "name": "HAN_THANH_TOAN", "display": "Hạn thanh toán", "type": "date", "required": true, "validation": ">= ngày đặt" },
         { "name": "TONG_DON_HANG", "display": "Tổng đơn hàng", "type": "formula", "required": true, "validation": "SUMIFS chi tiết đơn" },
         { "name": "THUC_THU", "display": "Thực thu", "type": "formula", "required": true, "validation": "Chỉ thanh toán đã xác nhận" },
         { "name": "CONG_NO", "display": "Công nợ", "type": "formula", "required": true, "validation": "MAX(0, tổng đơn - thực thu)" }
