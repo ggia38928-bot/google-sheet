@@ -44,6 +44,40 @@ test('Tỷ lệ và số tiền không hợp lệ bị chặn', () => {
   assert.throws(() => engine.calculateQuoteLine(1, 100, 1.2, 0.08), /0–1/);
 });
 
+test('Mọi tỷ lệ chiết khấu fixture nằm trong khoảng 0 đến 1', () => {
+  for (const line of fixture.CHI_TIET_BAO_GIA) {
+    assert.equal(Number.isFinite(line.TY_LE_CHIET_KHAU), true, line.MA_DONG_BAO_GIA);
+    assert.ok(line.TY_LE_CHIET_KHAU >= 0 && line.TY_LE_CHIET_KHAU <= 1, line.MA_DONG_BAO_GIA);
+  }
+});
+
+test('Tiền chiết khấu bằng thành tiền trước chiết khấu nhân tỷ lệ', () => {
+  const result = engine.calculateQuoteLine(3, 125000, 0.12, 0.08);
+  assert.equal(result.subtotal, 375000);
+  assert.equal(result.discountAmount, result.subtotal * 0.12);
+});
+
+test('Thanh toán không tham gia cột tỷ lệ chiết khấu hoặc tổng báo giá', () => {
+  const changed = copy(fixture);
+  changed.THANH_TOAN[0].SO_TIEN = 999999999;
+  assert.deepEqual(
+    engine.calculateQuoteTotals(changed.BAO_GIA, changed.CHI_TIET_BAO_GIA),
+    engine.calculateQuoteTotals(fixture.BAO_GIA, fixture.CHI_TIET_BAO_GIA)
+  );
+  assert.doesNotMatch(engine.FORMULAS.quoteLine.discount, /THANH_TOAN|THANH_TOÁN/);
+  assert.match(engine.FORMULAS.quoteLine.discount, /J2\*H2/);
+});
+
+test('Tổng báo giá thay đổi đúng khi thay đổi tỷ lệ chiết khấu', () => {
+  const changed = copy(fixture);
+  changed.CHI_TIET_BAO_GIA.find(line => line.MA_DONG_BAO_GIA === 'DBG-001').TY_LE_CHIET_KHAU = 0.2;
+  const before = engine.calculateQuoteTotals(fixture.BAO_GIA, fixture.CHI_TIET_BAO_GIA);
+  const after = engine.calculateQuoteTotals(changed.BAO_GIA, changed.CHI_TIET_BAO_GIA);
+  assert.equal(before['BG-001-R1'], 464400);
+  assert.equal(after['BG-001-R1'], 442800);
+  assert.equal(before['BG-001-R1'] - after['BG-001-R1'], 21600);
+});
+
 test('Tổng báo giá tách theo revision và revision cũ giữ nguyên', () => {
   const totals = engine.calculateQuoteTotals(fixture.BAO_GIA, fixture.CHI_TIET_BAO_GIA);
   assert.equal(totals['BG-001-R1'], 464400);
@@ -185,4 +219,22 @@ test('Installer dùng công thức vi_VN và dựng Dashboard động đủ 12 K
   assert.ok(source.includes("['Đơn hủy'"));
   assert.ok(source.includes("F3=\"TẤT CẢ\""));
   assert.ok(source.includes("B4=\"TẤT CẢ\""));
+});
+
+test('Installer giữ H là input chiết khấu và chỉ ghi thanh toán vào ĐƠN_HÀNG.H', () => {
+  const source = fs.readFileSync(path.join(root, 'products/KD_BAO_GIA_DON_HANG/apps-script/installer.gs'), 'utf8');
+  assert.ok(source.includes("getRange('H2:H500').setDataValidation(rateRule).setNumberFormat('0.00%')"));
+  assert.doesNotMatch(source, /quoteLines\.getRange\(2,\s*8[^\n]*setFormula/);
+  assert.match(source, /quoteLines\.getRange\(2,\s*11[^\n]*RC\[-1\]\*RC\[-3\]/);
+  assert.match(source, /orders\.getRange\(2,\s*8[^\n]*SUMIFS\(\\'THANH_TOÁN\\'/);
+  assert.ok(source.includes('clearUnexpectedDiscountFormulasKD_'));
+});
+
+test('Metadata sau cài đặt không giữ trạng thái đang cài hoặc SHA cũ', () => {
+  const source = fs.readFileSync(path.join(root, 'products/KD_BAO_GIA_DON_HANG/apps-script/installer.gs'), 'utf8');
+  assert.ok(source.includes("['Trạng thái', 'Đã cài đặt']"));
+  assert.ok(source.includes("['Mức xác minh', 'local_verified']"));
+  assert.ok(source.includes("['G2 Google Sheets/Apps Script', 'BLOCKED_EXTERNAL']"));
+  assert.ok(source.includes("getProperty('KD_SOURCE_COMMIT')"));
+  assert.doesNotMatch(source, /Đang cài dữ liệu Demo|thay đổi local chưa commit|\b[0-9a-f]{40}\b/);
 });

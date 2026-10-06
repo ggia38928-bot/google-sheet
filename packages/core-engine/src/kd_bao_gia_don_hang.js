@@ -31,16 +31,16 @@ const ORDER_TRANSITIONS = Object.freeze({
 
 const FORMULAS = Object.freeze({
   quoteLine: {
-    subtotal: '=IF(OR(D2="",E2=""),"",D2*E2)',
-    discount: '=IF(H2="","",H2*F2)',
-    net: '=IF(H2="","",H2-I2)',
-    vat: '=IF(J2="","",J2*G2)',
-    total: '=IF(J2="","",J2+K2)'
+    subtotal: '=IF(OR(F2="";G2="");"";F2*G2)',
+    discount: '=IF(J2="";"";J2*H2)',
+    net: '=IF(J2="";"";J2-K2)',
+    vat: '=IF(L2="";"";L2*I2)',
+    total: '=IF(L2="";"";L2+M2)'
   },
-  quoteTotal: '=IF(A2="","",SUMIFS(CHI_TIET_BAO_GIA!$L:$L,CHI_TIET_BAO_GIA!$B:$B,A2))',
-  orderTotal: '=IF(A2="","",SUMIFS(CHI_TIET_DON_HANG!$F:$F,CHI_TIET_DON_HANG!$B:$B,A2))',
-  confirmedPaid: '=IF(A2="","",SUMIFS(THANH_TOAN!$D:$D,THANH_TOAN!$B:$B,A2,THANH_TOAN!$F:$F,"ĐÃ XÁC NHẬN"))',
-  receivable: '=IF(A2="","",MAX(0,G2-H2))'
+  quoteTotal: '=IF(A2="";"";SUMIFS(CHI_TIẾT_BÁO_GIÁ!$N:$N;CHI_TIẾT_BÁO_GIÁ!$B:$B;A2))',
+  orderTotal: '=IF(A2="";"";SUMIFS(CHI_TIẾT_ĐƠN_HÀNG!$H:$H;CHI_TIẾT_ĐƠN_HÀNG!$B:$B;A2))',
+  confirmedPaid: '=IF(A2="";"";SUMIFS(THANH_TOÁN!$D:$D;THANH_TOÁN!$B:$B;A2;THANH_TOÁN!$F:$F;"ĐÃ XÁC NHẬN"))',
+  receivable: '=IF(A2="";"";MAX(0;G2-H2))'
 });
 
 function clone(value) {

@@ -7,6 +7,8 @@
 - Ô không có khóa trả rỗng. Lookup không tìm thấy trả rỗng hoặc 0 theo ngữ nghĩa, đồng thời `kiemTraHeThongBaoGiaDonHang()` báo ref sai.
 - Cột tiền dùng `#,##0 "₫"`; tỷ lệ dùng `0.00%`; ngày dùng định dạng ngày Việt Nam.
 - Cột công thức được bảo vệ cảnh báo; người dùng chỉ nhập vào cột input.
+- `CHI_TIẾT_BÁO_GIÁ.H2:H500` là vùng input **Tỷ lệ chiết khấu**, chỉ nhận số từ 0 đến 1 và tuyệt đối không chứa công thức thanh toán. Khi installer phát hiện công thức lạc vào H, nó xóa riêng ô công thức đó rồi áp lại validation; các giá trị tỷ lệ hợp lệ vẫn được giữ nguyên.
+- Công thức tổng thanh toán từ bảng `THANH_TOÁN` chỉ được ghi vào `ĐƠN_HÀNG.H2:H500` (Thực thu đã xác nhận).
 
 ## Danh mục công thức
 

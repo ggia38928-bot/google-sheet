@@ -11,6 +11,8 @@ Release này đóng gói vertical slice `PB01_KINH_DOANH / KD_BAO_GIA_DON_HANG` 
 
 `setup.gs` là installer chính; hai file còn lại chỉ cung cấp entrypoint ngắn cho chế độ Demo/Sạch. Rerun không được nhân đôi dữ liệu Demo, chart, menu, trigger hoặc vùng bảo vệ.
 
+Hotfix `WEBAPP-KD-W00` khóa `CHI_TIẾT_BÁO_GIÁ.H` là input tỷ lệ 0–1, tự gỡ công thức lạc cột và chỉ cho phép công thức thanh toán xuất hiện tại `ĐƠN_HÀNG.H`.
+
 ## Trạng thái xác minh
 
 - G0/G1: PASS bằng 26 test hẹp, 4 test rebuild và regression repository.

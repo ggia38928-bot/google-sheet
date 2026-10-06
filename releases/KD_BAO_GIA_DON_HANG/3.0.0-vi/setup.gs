@@ -7,7 +7,7 @@
 const KD_VERSION = '3.0.0-vi';
 const KD_MAX_ROWS = 500;
 const KD_TABS = [
-  'HƯỚNG_DẪN', 'CẤU_HÌNH', 'NGƯỜI_DÙNG', 'KHÁCH_HÀNG', 'SẢN_PHẨM',
+  'BẮT_ĐẦU', 'HƯỚNG_DẪN', 'CẤU_HÌNH', 'NGƯỜI_DÙNG', 'KHÁCH_HÀNG', 'SẢN_PHẨM',
   'BÁO_GIÁ', 'CHI_TIẾT_BÁO_GIÁ', 'ĐƠN_HÀNG', 'CHI_TIẾT_ĐƠN_HÀNG',
   'GIAO_HÀNG', 'CHI_TIẾT_GIAO_HÀNG', 'THANH_TOÁN', 'NHẬT_KÝ', 'DASHBOARD'
 ];
@@ -63,6 +63,7 @@ function taoDuLieuDemoBaoGiaDonHang() {
     applyFormulasKD_(ss);
     buildDashboardKD_(ss);
     logKD_(ss, 'TẠO DỮ LIỆU DEMO', 'HỆ THỐNG', '50 bản ghi nghiệp vụ');
+    buildStartKD_(ss, 'demo');
     return { created: 50, version: KD_VERSION };
   });
 }
@@ -106,6 +107,7 @@ function khoiPhucBaoGiaDonHang() {
     applyValidationsKD_(ss);
     protectFormulaRangesKD_(ss);
     logKD_(ss, 'KHÔI PHỤC', 'HỆ THỐNG', 'Khôi phục bản sao lưu mới nhất');
+    buildStartKD_(ss, 'restore');
     return { restored: true };
   });
 }
@@ -121,6 +123,7 @@ function lamSachBaoGiaDonHang() {
     applyFormulasKD_(ss);
     buildDashboardKD_(ss);
     logKD_(ss, 'LÀM SẠCH', 'HỆ THỐNG', backupId);
+    buildStartKD_(ss, 'clean');
     return { backupId: backupId, cleaned: true };
   });
 }
@@ -135,6 +138,7 @@ function installKD_(mode, seedDemo) {
   buildDashboardKD_(ss);
   PropertiesService.getDocumentProperties().setProperties({ KD_VERSION: KD_VERSION, KD_MODE: mode, KD_INSTALLED_AT: new Date().toISOString() });
   logKD_(ss, 'CÀI ĐẶT', 'HỆ THỐNG', mode);
+  buildStartKD_(ss, mode);
   return { installed: true, mode: mode, seeded: seedDemo, version: KD_VERSION };
 }
 
@@ -192,6 +196,8 @@ function applyValidationsKD_(ss) {
   setDropdownKD_(ss.getSheetByName('THANH_TOÁN'), 6, KD_PAYMENT_STATUS);
   setDropdownKD_(ss.getSheetByName('NGƯỜI_DÙNG'), 3, ['TRƯỞNG PHÒNG', 'SALES ADMIN', 'KINH DOANH', 'KẾ TOÁN', 'GIAO NHẬN']);
   setDropdownKD_(ss.getSheetByName('ĐƠN_HÀNG'), 6, ['TRỰC TIẾP', 'ĐIỆN THOẠI', 'WEBSITE', 'ĐỐI TÁC']);
+  const rateRule = SpreadsheetApp.newDataValidation().requireNumberBetween(0, 1).setAllowInvalid(false).setHelpText('Nhập tỷ lệ từ 0 đến 1, ví dụ 0,1 tương ứng 10%.').build();
+  ss.getSheetByName('CHI_TIẾT_BÁO_GIÁ').getRange('H2:H500').setDataValidation(rateRule).setNumberFormat('0.00%');
 }
 
 function setDropdownKD_(sheet, column, values) {
@@ -201,6 +207,7 @@ function setDropdownKD_(sheet, column, values) {
 
 function applyFormulasKD_(ss) {
   const quoteLines = ss.getSheetByName('CHI_TIẾT_BÁO_GIÁ');
+  clearUnexpectedDiscountFormulasKD_(quoteLines);
   quoteLines.getRange(2, 4, KD_MAX_ROWS - 1, 2).setFormulasR1C1(Array.from({ length: KD_MAX_ROWS - 1 }, function () { return [
     '=IF(RC[-1]="";"";IFNA(VLOOKUP(RC[-1];\'SẢN_PHẨM\'!C1:C7;2;FALSE);""))',
     '=IF(RC[-2]="";"";IFNA(VLOOKUP(RC[-2];\'SẢN_PHẨM\'!C1:C7;3;FALSE);""))'
@@ -236,6 +243,35 @@ function applyFormulasKD_(ss) {
 
   [quoteLines.getRange('G2:G500'), quoteLines.getRange('J2:N500'), orders.getRange('G2:I500'), orderLines.getRange('G2:H500'), orderLines.getRange('K2:K500'), ss.getSheetByName('THANH_TOÁN').getRange('D2:D500')].forEach(function (range) { range.setNumberFormat('#,##0 "₫"'); });
   [quoteLines.getRange('H2:I500'), ss.getSheetByName('SẢN_PHẨM').getRange('F2:F500')].forEach(function (range) { range.setNumberFormat('0.00%'); });
+}
+
+function clearUnexpectedDiscountFormulasKD_(quoteLines) {
+  const range = quoteLines.getRange('H2:H500');
+  const formulas = range.getFormulas();
+  formulas.forEach(function (row, index) {
+    if (row[0]) quoteLines.getRange(index + 2, 8).clearContent();
+  });
+}
+
+function buildStartKD_(ss, mode) {
+  const sheet = ss.getSheetByName('BẮT_ĐẦU');
+  const properties = PropertiesService.getDocumentProperties();
+  const sourceCommit = properties.getProperty('KD_SOURCE_COMMIT') || 'Không khai báo trong runtime';
+  const rows = [
+    ['QUẢN LÝ BÁO GIÁ VÀ ĐƠN HÀNG', '3.0.0-vi'],
+    ['Trạng thái', 'Đã cài đặt'],
+    ['Chế độ', mode],
+    ['Mức xác minh', 'local_verified'],
+    ['G2 Google Sheets/Apps Script', 'BLOCKED_EXTERNAL'],
+    ['Source commit', sourceCommit],
+    ['Tình trạng nguồn', 'Sạch khi đóng gói'],
+    ['Hướng dẫn', 'Dùng menu Báo giá & Đơn hàng để kiểm tra hệ thống, sao lưu hoặc làm sạch dữ liệu.']
+  ];
+  sheet.clear();
+  sheet.getRange(1, 1, rows.length, 2).setValues(rows).setWrap(true).setFontFamily('Arial');
+  sheet.getRange('A1:B1').setBackground('#1F4E78').setFontColor('#FFFFFF').setFontWeight('bold').setFontSize(14);
+  sheet.getRange('A2:A8').setFontWeight('bold').setBackground('#ECEFF1');
+  sheet.setColumnWidth(1, 220); sheet.setColumnWidth(2, 560); sheet.setFrozenRows(1); sheet.setHiddenGridlines(true);
 }
 
 function protectFormulaRangesKD_(ss) {
