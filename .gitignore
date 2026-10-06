@@ -5,6 +5,7 @@ credentials*.json
 token*.json
 debug.log
 node_modules/
+apps/web/dist/
 tmp/
 reports/local/
 *.local

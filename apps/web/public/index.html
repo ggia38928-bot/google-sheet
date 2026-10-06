@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Điều hành báo giá, đơn hàng, giao hàng và công nợ">
+  <title>Minh Kinh Doanh</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" data-link><span>MK</span><strong>Minh Kinh Doanh<small>Trung tâm điều hành</small></strong></a>
+    <nav aria-label="Điều hướng chính">
+      <a href="/" data-link>⌂ <span>Tổng quan</span></a>
+      <a href="/khach-hang" data-link>♙ <span>Khách hàng</span></a>
+      <a href="/bao-gia" data-link>▤ <span>Báo giá</span></a>
+      <a href="/don-hang" data-link>▣ <span>Đơn hàng</span></a>
+      <a href="/giao-hang" data-link>⇢ <span>Giao hàng</span></a>
+      <a href="/cong-no" data-link>₫ <span>Thanh toán & công nợ</span></a>
+    </nav>
+    <div class="gate"><i></i><span>Môi trường cục bộ<small>G2 · BLOCKED_EXTERNAL</small></span></div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <button id="menu" aria-label="Mở điều hướng">☰</button>
+      <div><p class="eyebrow">VẬN HÀNH THƯƠNG MẠI</p><h1 id="page-title">Tổng quan kinh doanh</h1></div>
+      <div class="today"><span>Ngày làm việc</span><strong id="today"></strong></div>
+    </header>
+    <section id="app" aria-live="polite"><div class="loading"><span></span>Đang tải dữ liệu…</div></section>
+  </main>
+  <div id="toast" role="status"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "@minh-templates/kd-web",
+  "version": "3.0.0-vi",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node server.mjs",
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "typecheck": "node --check server.mjs && node --check public/app.js"
+  }
+}
