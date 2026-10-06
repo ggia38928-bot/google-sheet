@@ -183,12 +183,6 @@ function onEditPaymentKD_(e) {
   if (e.range.getColumn() === 6 || (status && status !== 'CHỜ XÁC NHẬN')) {
     e.range.setValue(e.oldValue === undefined ? '' : e.oldValue);
     e.source.toast('Thanh toán chỉ được xác nhận/hủy bằng menu và không sửa sau quyết định.', 'Đã chặn sửa', 6);
-    return;
-  }
-  const errors = validatePaymentRulesKD_(e.source);
-  if (errors.length) {
-    e.range.setValue(e.oldValue === undefined ? '' : e.oldValue);
-    e.source.toast(errors[0], 'Đã chặn thanh toán không hợp lệ', 8);
   }
 }
 
@@ -311,7 +305,7 @@ function taoRevisionBaoGiaKD() {
     const newLines = sourceLines.map(function (line) {
       const lineId = nextSequentialIdKD_(allocated, 'DBG');
       allocated.push(lineId);
-      return [lineId, nextId, line[2], '', '', line[5], line[6], line[7], '', '', '', '', '', ''];
+      return [lineId, nextId, line[2], '', '', line[5], '', line[7], '', '', '', '', '', ''];
     });
     if (newLines.length) quoteLineSheet.getRange(quoteLineSheet.getLastRow() + 1, 1, newLines.length, 14).setValues(newLines);
     applyFormulasKD_(ss);
@@ -402,13 +396,6 @@ function chuyenTrangThaiThanhToanKD() {
     const sheet = ss.getSheetByName('THANH_TOÁN');
     const row = sheet.getRange(rowNumber, 1, 1, 6).getValues()[0];
     if (row[5] !== 'CHỜ XÁC NHẬN') throw new Error('Chỉ thanh toán CHỜ XÁC NHẬN được quyết định.');
-    if (targetStatus === 'ĐÃ XÁC NHẬN') {
-      const orderSheet = ss.getSheetByName('ĐƠN_HÀNG');
-      const orders = orderSheet.getLastRow() < 2 ? [] : orderSheet.getRange(2, 1, orderSheet.getLastRow() - 1, 11).getValues();
-      const matchedOrder = orders.find(function (o) { return String(o[0]) === String(row[1]); });
-      if (matchedOrder && matchedOrder[10] === 'HỦY') throw new Error('Không thể xác nhận thanh toán cho đơn hàng đã hủy: ' + row[1]);
-      if (Number(row[3] || 0) <= 0) throw new Error('Số tiền thanh toán phải lớn hơn 0.');
-    }
     sheet.getRange(rowNumber, 6).setValue(targetStatus);
     logKD_(ss, 'QUYẾT ĐỊNH THANH TOÁN', 'THANH_TOÁN', JSON.stringify({ truoc: 'CHỜ XÁC NHẬN', sau: targetStatus, nguoiThucHien: actor.id, soTien: Number(row[3]) }), row[0]);
     buildDashboardKD_(ss);
@@ -443,9 +430,6 @@ function transitionSelectedQuoteKD_(targetStatus, rejectionReason) {
     if (planned.approvedAt) sheet.getRange(selection.row, 15).setValue(now);
     sheet.getRange(selection.row, 16).setValue(planned.rejectionReason);
     sheet.getRange(selection.row, 17).setValue(now);
-    if (before.status === 'NHÁP' && planned.status !== 'NHÁP') {
-      chotDonGiaBaoGiaKD_(ss, row[0]);
-    }
     const after = { status: planned.status, rowVersion: planned.rowVersion };
     logKD_(ss, 'CHUYỂN TRẠNG THÁI', 'BÁO_GIÁ', buildQuoteAuditDetailKD_(before, after, actor.id, rejectionReason), row[0]);
     ss.toast('Đã chuyển ' + row[0] + ' sang ' + planned.status + '.', 'Workflow báo giá', 5);
@@ -526,29 +510,6 @@ function buildQuoteAuditDetailKD_(before, after, actorId, rejectionReason) {
   });
 }
 
-function chotDonGiaBaoGiaKD_(ss, quoteRevisionId) {
-  const lineSheet = ss.getSheetByName('CHI_TIẾT_BÁO_GIÁ');
-  if (!lineSheet || lineSheet.getLastRow() < 2) return;
-  const numRows = lineSheet.getLastRow() - 1;
-  const lines = lineSheet.getRange(2, 1, numRows, 14).getValues();
-  const productSheet = ss.getSheetByName('SẢN_PHẨM');
-  const products = productSheet && productSheet.getLastRow() >= 2
-    ? Object.fromEntries(productSheet.getRange(2, 1, productSheet.getLastRow() - 1, 4).getValues().map(function (p) { return [String(p[0]), Number(p[3] || 0)]; }))
-    : {};
-  for (let i = 0; i < lines.length; i++) {
-    if (String(lines[i][1]) === String(quoteRevisionId)) {
-      let currentVal = lines[i][6];
-      if (currentVal === '' || currentVal === null || isNaN(Number(currentVal))) {
-        const productId = String(lines[i][2]);
-        currentVal = products[productId] || 0;
-      } else {
-        currentVal = Number(currentVal);
-      }
-      lineSheet.getRange(i + 2, 7).setValue(currentVal);
-    }
-  }
-}
-
 function caiDatDemoBaoGiaDonHang() {
   return withLockKD_(function () { requireAdminKD_(SpreadsheetApp.getActive(), true); return installKD_('demo', true); });
 }
@@ -588,7 +549,6 @@ function kiemTraHeThongBaoGiaDonHang() {
   });
   const refErrors = validateRefsKD_(ss);
   Array.prototype.push.apply(refErrors, validateDeliveryRulesKD_(ss));
-  Array.prototype.push.apply(refErrors, validatePaymentRulesKD_(ss));
   return { valid: missing.length === 0 && duplicateErrors.length === 0 && refErrors.length === 0, missing: missing, duplicateIds: duplicateErrors, refErrors: refErrors, version: KD_VERSION };
 }
 
@@ -750,7 +710,7 @@ function applyFormulasKD_(ss) {
     '=IF(RC[-1]="";"";IFNA(VLOOKUP(RC[-1];\'SẢN_PHẨM\'!C1:C7;2;FALSE);""))',
     '=IF(RC[-2]="";"";IFNA(VLOOKUP(RC[-2];\'SẢN_PHẨM\'!C1:C7;3;FALSE);""))'
   ]; }));
-  applyQuoteUnitPricesKD_(ss);
+  quoteLines.getRange(2, 7, KD_MAX_ROWS - 1, 1).setFormulaR1C1('=IF(RC[-4]="";"";IFNA(VLOOKUP(RC[-4];\'SẢN_PHẨM\'!C1:C7;4;FALSE);""))');
   quoteLines.getRange(2, 9, KD_MAX_ROWS - 1, 1).setFormulaR1C1('=IF(RC[-6]="";"";IFNA(VLOOKUP(RC[-6];\'SẢN_PHẨM\'!C1:C7;6;FALSE);""))');
   quoteLines.getRange(2, 10, KD_MAX_ROWS - 1, 1).setFormulaR1C1('=IF(OR(RC[-4]="";RC[-3]="");"";RC[-4]*RC[-3])');
   quoteLines.getRange(2, 11, KD_MAX_ROWS - 1, 1).setFormulaR1C1('=IF(RC[-1]="";"";RC[-1]*RC[-3])');
@@ -780,35 +740,6 @@ function applyFormulasKD_(ss) {
 
   [quoteLines.getRange('G2:G500'), quoteLines.getRange('J2:N500'), orders.getRange('G2:I500'), orderLines.getRange('G2:H500'), orderLines.getRange('K2:K500'), ss.getSheetByName('THANH_TOÁN').getRange('D2:D500')].forEach(function (range) { range.setNumberFormat('#,##0 "₫"'); });
   [quoteLines.getRange('H2:I500'), ss.getSheetByName('SẢN_PHẨM').getRange('F2:F500')].forEach(function (range) { range.setNumberFormat('0.00%'); });
-}
-
-function applyQuoteUnitPricesKD_(ss) {
-  const quoteSheet = ss.getSheetByName('BÁO_GIÁ');
-  const quoteLines = ss.getSheetByName('CHI_TIẾT_BÁO_GIÁ');
-  if (!quoteLines) return;
-  const quoteStatuses = quoteSheet && quoteSheet.getLastRow() >= 2
-    ? Object.fromEntries(quoteSheet.getRange(2, 1, quoteSheet.getLastRow() - 1, 8).getValues().map(function (row) { return [String(row[0]), String(row[7] || '')]; }))
-    : {};
-  const lastRow = quoteLines.getLastRow();
-  if (lastRow >= 2) {
-    const lines = quoteLines.getRange(2, 1, lastRow - 1, 7).getValues();
-    for (let i = 0; i < lines.length; i++) {
-      const qId = String(lines[i][1]);
-      const status = quoteStatuses[qId];
-      const hasFixedPrice = lines[i][6] !== '' && lines[i][6] !== null && !isNaN(Number(lines[i][6]));
-      if (status && status !== 'NHÁP') {
-        if (!hasFixedPrice) chotDonGiaBaoGiaKD_(ss, qId);
-      } else {
-        if (!hasFixedPrice) {
-          quoteLines.getRange(i + 2, 7).setFormulaR1C1('=IF(RC[-4]="";"";IFNA(VLOOKUP(RC[-4];\'SẢN_PHẨM\'!C1:C7;4;FALSE);""))');
-        }
-      }
-    }
-  }
-  if (KD_MAX_ROWS > lastRow) {
-    quoteLines.getRange(Math.max(2, lastRow + 1), 7, KD_MAX_ROWS - Math.max(2, lastRow + 1) + 1, 1)
-      .setFormulaR1C1('=IF(RC[-4]="";"";IFNA(VLOOKUP(RC[-4];\'SẢN_PHẨM\'!C1:C7;4;FALSE);""))');
-  }
 }
 
 function clearUnexpectedDiscountFormulasKD_(quoteLines) {
@@ -882,7 +813,7 @@ function demoDataKD_() {
     'KHÁCH_HÀNG': [['KH-001', 'Công ty Sao Khuê', 'DOANH NGHIỆP', 'Hà Nội', 'NV-003', 'ĐANG HOẠT ĐỘNG'], ['KH-002', 'Hộ kinh doanh Mây Việt', 'HỘ KINH DOANH', 'Đà Nẵng', 'NV-004', 'ĐANG HOẠT ĐỘNG'], ['KH-003', 'Công ty Ánh Dương', 'DOANH NGHIỆP', 'Hải Phòng', 'NV-003', 'ĐANG HOẠT ĐỘNG'], ['KH-004', 'Cửa hàng Gió Mới', 'HỘ KINH DOANH', 'Cần Thơ', 'NV-004', 'ĐANG HOẠT ĐỘNG'], ['KH-005', 'Công ty Trúc Xanh', 'DOANH NGHIỆP', 'Bình Dương', 'NV-003', 'ĐANG HOẠT ĐỘNG'], ['KH-006', 'Xưởng Mộc Bình Minh', 'HỘ KINH DOANH', 'Lâm Đồng', 'NV-004', 'ĐANG HOẠT ĐỘNG']],
     'SẢN_PHẨM': [['SP-001', 'Gói tư vấn khởi động', 'Gói', 100000, 60000, 0.08, 'ĐANG KINH DOANH'], ['SP-002', 'Bộ biểu mẫu bán hàng', 'Bộ', 250000, 120000, 0.08, 'ĐANG KINH DOANH'], ['SP-003', 'Dịch vụ cấu hình dữ liệu', 'Gói', 400000, 220000, 0.08, 'ĐANG KINH DOANH'], ['SP-004', 'Giờ đào tạo vận hành', 'Giờ', 150000, 70000, 0.08, 'ĐANG KINH DOANH'], ['SP-005', 'Gói hỗ trợ tiêu chuẩn', 'Tháng', 300000, 140000, 0.08, 'ĐANG KINH DOANH'], ['SP-006', 'Gói hỗ trợ nâng cao', 'Tháng', 500000, 240000, 0.08, 'ĐANG KINH DOANH'], ['SP-007', 'Báo cáo quản trị tùy chỉnh', 'Gói', 600000, 320000, 0.08, 'ĐANG KINH DOANH'], ['SP-008', 'Buổi rà soát quy trình', 'Gói', 200000, 90000, 0.08, 'ĐANG KINH DOANH']],
     'BÁO_GIÁ': [['BG-001-R1', 'BG-001', 1, false, 'KH-001', new Date('2026-08-01'), new Date('2026-08-15'), 'ĐÃ DUYỆT', '', '', 'NV-003', 3, 'NV-003', 'NV-001', new Date('2026-08-02'), '', new Date('2026-08-02')], ['BG-001-R2', 'BG-001', 2, true, 'KH-001', new Date('2026-08-05'), new Date('2026-08-20'), 'CHẤP NHẬN', '', '', 'NV-003', 6, 'NV-003', 'NV-001', new Date('2026-08-06'), '', new Date('2026-08-08')], ['BG-002-R1', 'BG-002', 1, true, 'KH-002', new Date('2026-08-12'), new Date('2026-08-26'), 'TỪ CHỐI', '', '', 'NV-004', 3, 'NV-004', 'NV-002', new Date('2026-08-13'), 'Ngân sách chưa phù hợp', new Date('2026-08-13')], ['BG-003-R1', 'BG-003', 1, true, 'KH-003', new Date('2026-09-01'), new Date('2026-09-15'), 'HẾT HẠN', '', '', 'NV-003', 5, 'NV-003', 'NV-001', new Date('2026-09-02'), '', new Date('2026-09-16')], ['BG-004-R1', 'BG-004', 1, true, 'KH-004', new Date('2026-09-20'), new Date('2026-10-04'), 'CHỜ DUYỆT', '', '', 'NV-004', 2, 'NV-004', '', '', '', new Date('2026-09-20')], ['BG-005-R1', 'BG-005', 1, true, 'KH-005', new Date('2026-09-25'), new Date('2026-10-10'), 'NHÁP', '', '', 'NV-003', 1, 'NV-003', '', '', '', new Date('2026-09-25')]],
-    'CHI_TIẾT_BÁO_GIÁ': [['DBG-001', 'BG-001-R1', 'SP-001', '', '', 2, 100000, 0.1, '', '', '', '', '', ''], ['DBG-002', 'BG-001-R1', 'SP-002', '', '', 1, 250000, 0, '', '', '', '', '', ''], ['DBG-003', 'BG-001-R2', 'SP-001', '', '', 2, 100000, 0.1, '', '', '', '', '', ''], ['DBG-004', 'BG-001-R2', 'SP-003', '', '', 1, 400000, 0, '', '', '', '', '', ''], ['DBG-005', 'BG-002-R1', 'SP-004', '', '', 4, 150000, 0.05, '', '', '', '', '', ''], ['DBG-006', 'BG-002-R1', 'SP-005', '', '', 1, 300000, 0, '', '', '', '', '', ''], ['DBG-007', 'BG-003-R1', 'SP-006', '', '', 1, 500000, 0.1, '', '', '', '', '', ''], ['DBG-009', 'BG-004-R1', 'SP-002', '', '', 2, 250000, 0, '', '', '', '', '', ''], ['DBG-011', 'BG-005-R1', 'SP-003', '', '', 1, 400000, 0, '', '', '', '', '', '']],
+    'CHI_TIẾT_BÁO_GIÁ': [['DBG-001', 'BG-001-R1', 'SP-001', '', '', 2, '', 0.1, '', '', '', '', '', ''], ['DBG-002', 'BG-001-R1', 'SP-002', '', '', 1, '', 0, '', '', '', '', '', ''], ['DBG-003', 'BG-001-R2', 'SP-001', '', '', 2, '', 0.1, '', '', '', '', '', ''], ['DBG-004', 'BG-001-R2', 'SP-003', '', '', 1, '', 0, '', '', '', '', '', ''], ['DBG-005', 'BG-002-R1', 'SP-004', '', '', 4, '', 0.05, '', '', '', '', '', ''], ['DBG-006', 'BG-002-R1', 'SP-005', '', '', 1, '', 0, '', '', '', '', '', ''], ['DBG-007', 'BG-003-R1', 'SP-006', '', '', 1, '', 0.1, '', '', '', '', '', ''], ['DBG-009', 'BG-004-R1', 'SP-002', '', '', 2, '', 0, '', '', '', '', '', ''], ['DBG-011', 'BG-005-R1', 'SP-003', '', '', 1, '', 0, '', '', '', '', '', '']],
     'ĐƠN_HÀNG': [['DH-001', 'BG-001-R2', 'KH-001', new Date('2026-08-21'), new Date('2026-09-20'), 'TRỰC TIẾP', '', '', '', '', 'XÁC NHẬN', 'NV-003', 2, 'NV-003', new Date('2026-08-21')], ['DH-002', '', 'KH-002', new Date('2026-09-05'), new Date('2026-10-05'), 'ĐIỆN THOẠI', '', '', '', '', 'ĐANG GIAO', 'NV-004', 3, 'NV-004', new Date('2026-09-20')], ['DH-003', '', 'KH-003', new Date('2026-08-10'), new Date('2026-09-10'), 'ĐỐI TÁC', '', '', '', '', 'HOÀN TẤT', 'NV-003', 4, 'NV-003', new Date('2026-08-25')], ['DH-004', '', 'KH-004', new Date('2026-09-18'), new Date('2026-10-18'), 'WEBSITE', '', '', '', '', 'HỦY', 'NV-004', 2, 'NV-004', new Date('2026-09-19')], ['DH-005', '', 'KH-006', new Date('2026-08-15'), new Date('2026-09-15'), 'TRỰC TIẾP', '', '', '', '', 'GIAO MỘT PHẦN', 'NV-003', 4, 'NV-003', new Date('2026-09-10')]],
     'CHI_TIẾT_ĐƠN_HÀNG': [['DDH-001', 'DH-001', 'SP-003', '', '', 2, 400000, '', '', '', ''], ['DDH-002', 'DH-002', 'SP-001', '', '', 10, 100000, '', '', '', ''], ['DDH-003', 'DH-002', 'SP-004', '', '', 2, 150000, '', '', '', ''], ['DDH-004', 'DH-003', 'SP-006', '', '', 1, 500000, '', '', '', ''], ['DDH-005', 'DH-003', 'SP-008', '', '', 1, 200000, '', '', '', ''], ['DDH-006', 'DH-004', 'SP-002', '', '', 1, 250000, '', '', '', ''], ['DDH-007', 'DH-005', 'SP-007', '', '', 1, 600000, '', '', '', ''], ['DDH-008', 'DH-005', 'SP-005', '', '', 1, 300000, '', '', '', '']],
     'THANH_TOÁN': [['TT-001', 'DH-001', new Date('2026-09-01'), 500000, 'CHUYỂN KHOẢN', 'ĐÃ XÁC NHẬN'], ['TT-002', 'DH-002', new Date('2026-09-25'), 300000, 'CHUYỂN KHOẢN', 'CHỜ XÁC NHẬN'], ['TT-003', 'DH-003', new Date('2026-08-25'), 700000, 'TIỀN MẶT', 'ĐÃ XÁC NHẬN'], ['TT-005', 'DH-005', new Date('2026-09-10'), 200000, 'CHUYỂN KHOẢN', 'ĐÃ XÁC NHẬN']],
@@ -1036,49 +967,9 @@ function validateDeliveryRulesKD_(ss) {
     if (!delivery || !orderLine) return;
     if (delivery.orderId !== orderLine.orderId) errors.push('Dòng giao ' + row[0] + ' không cùng đơn hàng với phiếu giao.');
     if (orders[delivery.orderId] && orders[delivery.orderId].status === 'HỦY') errors.push('Đơn hủy không được phát sinh giao hàng: ' + delivery.orderId);
-    if (Number(row[3] || 0) <= 0) errors.push('Số lượng giao phải lớn hơn 0: ' + row[0]);
     if (row[4] === 'ĐÃ GIAO' && delivery.status !== 'HỦY') delivered[String(row[2])] = (delivered[String(row[2])] || 0) + Number(row[3] || 0);
   });
   Object.keys(delivered).forEach(function (lineId) { if (delivered[lineId] > orderLines[lineId].ordered) errors.push('Tổng giao vượt số lượng đặt: ' + lineId); });
-  return errors;
-}
-
-function validatePaymentRulesKD_(ss) {
-  const errors = [];
-  const read = function (name, width) {
-    const sheet = ss.getSheetByName(name);
-    return !sheet || sheet.getLastRow() < 2 ? [] : sheet.getRange(2, 1, sheet.getLastRow() - 1, width).getValues().filter(function (row) { return row[0]; });
-  };
-  const orders = Object.fromEntries(read('ĐƠN_HÀNG', 15).map(function (row) { return [String(row[0]), { status: row[10], total: Number(row[6] || 0) }]; }));
-  const orderLines = read('CHI_TIẾT_ĐƠN_HÀNG', 8);
-  const orderTotals = {};
-  orderLines.forEach(function (row) {
-    const orderId = String(row[1]);
-    orderTotals[orderId] = (orderTotals[orderId] || 0) + (Number(row[5] || 0) * Number(row[6] || 0));
-  });
-  const paidByOrder = {};
-  read('THANH_TOÁN', 6).forEach(function (row) {
-    const paymentId = String(row[0]);
-    const orderId = String(row[1]);
-    const amount = Number(row[3] || 0);
-    const status = String(row[5] || '');
-    if (!orders[orderId]) return;
-    if (orders[orderId].status === 'HỦY') {
-      errors.push('Đơn hủy không được phát sinh thanh toán: ' + orderId);
-    }
-    if (amount <= 0) {
-      errors.push('Số tiền thanh toán phải lớn hơn 0: ' + paymentId);
-    }
-    if (status === 'ĐÃ XÁC NHẬN') {
-      paidByOrder[orderId] = (paidByOrder[orderId] || 0) + amount;
-    }
-  });
-  Object.keys(paidByOrder).forEach(function (orderId) {
-    const expectedTotal = orderTotals[orderId] !== undefined ? orderTotals[orderId] : (orders[orderId] ? orders[orderId].total : 0);
-    if (expectedTotal > 0 && paidByOrder[orderId] > expectedTotal) {
-      errors.push('Tổng thanh toán vượt giá trị đơn hàng: ' + orderId);
-    }
-  });
   return errors;
 }
 

@@ -2,7 +2,7 @@
 
 Ngày xác minh local: 2026-10-06.
 
-- `node --test --test-isolation=none products/KD_BAO_GIA_DON_HANG/tests/kd_bao_gia_don_hang.test.mjs` → 44/44 PASS.
+- `node --test --test-isolation=none products/KD_BAO_GIA_DON_HANG/tests/kd_bao_gia_don_hang.test.mjs` → 38/38 PASS.
 - `node --test --test-isolation=none tests/rebuild_kd_bao_gia_don_hang.test.mjs` → 4/4 PASS.
 - `node --test --test-isolation=none apps/web/tests/*.test.mjs` → 13/13 PASS.
 - `node --test --test-isolation=none tests/*.test.mjs` → 194/194 PASS; generator F17 chỉ chạy ở dry-run do regression nội bộ, không ghi artifact.
